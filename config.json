@@ -17,10 +17,28 @@
         "كما في الصورة",
         "بنفسجي"
       ]
+    },
+    "17": {
+      "name": "مودال 2",
+      "price": 8000,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761144949105-modal1.jpg",
+      "description": "فستان الملكات الساحرات",
+      "availableSizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "S1"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "أسود",
+        "زهري"
+      ]
     }
   },
   "DELIVERY_PRICES": {
-    
     "01 - أدرار": {
       "home": 1100,
       "desk": 600
