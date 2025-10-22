@@ -30,6 +30,21 @@
         "كما في الصورة",
         "ذهبي"
       ]
+    },
+    "6": {
+      "name": "مودال 3",
+      "price": 4000,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761137343559-modal5.jpg",
+      "description": "لباس أطفال فائق النعومة",
+      "availableSizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "availableColors": [
+        "كما في الصورة"
+      ]
     }
   },
   "DELIVERY_PRICES": {
