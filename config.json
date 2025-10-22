@@ -33,6 +33,24 @@
         "أحمر",
         "زهري"
       ]
+    },
+    "16": {
+      "name": "مودال 3",
+      "price": 3700,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761141877869-modal12.jpg",
+      "description": "فستان بمواصفات خيالية",
+      "availableSizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "S1"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "بنفسجي"
+      ]
     }
   },
   "DELIVERY_PRICES": {
