@@ -1,47 +1,23 @@
 {
   "PRODUCTS": {
-    "16": {
+    "1": {
       "name": "مودال 1",
-      "price": 3700,
-      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761141877869-modal12.jpg",
-      "description": "فستان بمواصفات خيالية",
-      "availableSizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL",
-        "S1"
-      ],
+      "price": 3300,
+      "image": "https://i.ibb.co/wFhBNhmf/modal6-jpg.webp",
+      "description": "تصميم مريح وعصري مع تفاصيل راقية تناسب جميع المناسبات",
       "availableColors": [
-        "كما في الصورة",
-        "بنفسجي"
+        "كما في الصورة"
+      ],
+      "availableSizes": [
+        "M",
+        "L"
       ]
     },
-    "17": {
-      "name": "مودال 2",
-      "price": 8000,
-      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761144949105-modal1.jpg",
-      "description": "فستان الملكات الساحرات",
-      "availableSizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL",
-        "S1"
-      ],
-      "availableColors": [
-        "كما في الصورة",
-        "أسود",
-        "زهري"
-      ]
-    },
-    "18": {
-      "name": "مودال 3",
+    "2": {
+      "name": "مودال 14",
       "price": 5200,
-      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761166214428-modle6.jpg",
-      "description": "وصف المنتج الجديد",
+      "image": "https://raw.githubusercontent.com/Ahcene43/Inas/main/images/1760731352265-modal6.jpg",
+      "description": "مودال شتوي فاخر",
       "availableSizes": [
         "S",
         "M",
@@ -298,7 +274,7 @@
   },
   "STORE_INFO": {
     "name": "RIHAB12-Shopp",
-    "tagline": "متجر أفخم الملابس ",
+    "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
       "0671466489",
       "0551102155"
