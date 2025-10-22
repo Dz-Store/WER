@@ -36,6 +36,26 @@
         "أسود",
         "زهري"
       ]
+    },
+    "18": {
+      "name": "مودال 3",
+      "price": 5200,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761166214428-modle6.jpg",
+      "description": " فستان ملكي بامتياز",
+      "availableSizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "S1",
+        "XXL"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "أبيض",
+        "أسود",
+        "رمادي"
+      ]
     }
   },
   "DELIVERY_PRICES": {
