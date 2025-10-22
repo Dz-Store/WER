@@ -1,9 +1,26 @@
 {
   "PRODUCTS": {
-    "15": {
+    "14": {
       "name": "مودال 1",
+      "price": 4200,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761064146882-modal11.jpg",
+      "description": "مودال فاخر",
+      "availableSizes": [
+        "S",
+        "M",
+        "L",
+        "S1"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "زهري",
+        "بنفسجي"
+      ]
+    },
+    "15": {
+      "name": "مودال 2",
       "price": 3300,
-      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761141877869-modal12.jpg",
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761063720965-modal15.jpg",
       "description": "فستان الافراح ",
       "availableSizes": [
         "S",
@@ -15,6 +32,24 @@
         "كما في الصورة",
         "أحمر",
         "زهري"
+      ]
+    },
+    "16": {
+      "name": "مودال 3",
+      "price": 3700,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761141877869-modal12.jpg",
+      "description": "فستان بمواصفات خيالية",
+      "availableSizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "S1"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "بنفسجي"
       ]
     }
   },
