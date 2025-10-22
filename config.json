@@ -41,14 +41,14 @@
       "name": "مودال 3",
       "price": 5200,
       "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761166214428-modle6.jpg",
-      "description": " فستان ملكي بامتياز",
+      "description": "وصف المنتج الجديد",
       "availableSizes": [
         "S",
         "M",
         "L",
         "XL",
-        "S1",
-        "XXL"
+        "XXL",
+        "S1"
       ],
       "availableColors": [
         "كما في الصورة",
