@@ -319,7 +319,7 @@ async function loadRemoteConfig(tokenConfig = null, repo = null) {
     if (tokenConfig && repo) {
       configUrl = `https://raw.githubusercontent.com/${tokenConfig.username}/${repo}/${tokenConfig.branch || 'main'}/config.json?t=${Date.now()}`;
     } else {
-      configUrl = 'https://raw.githubusercontent.com/Ahcene43/WAW/main/config.json?t=' + Date.now();
+      configUrl = 'https://raw.githubusercontent.com/Ahcene43/WER/main/config.json?t=' + Date.now();
     }
     
     console.log('🔄 جاري تحميل الإعدادات من:', configUrl);
