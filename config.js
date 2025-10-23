@@ -252,7 +252,7 @@ const STORE_CONFIG = {
     }
   },
   "DISCOUNTS": {
-    "minQuantityForDiscount": 3,
+    "minQuantityForDiscount": 1,
     "discountPerItem": 300
   },
   "STORE_INFO": {
