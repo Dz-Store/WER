@@ -16,21 +16,14 @@ const STORE_CONFIG = {
     "3": {
       "name": "مودال 3",
       "price": 5000,
-      "image": "images/modal3.jpg",
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/product-3-1761251517726-Screenshot_20251006-133727_Facebook.jpg",
       "description": "وصف المنتج الجديد",
       "availableSizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL",
-        "S1"
+        "XXL"
       ],
       "availableColors": [
-        "كما في الصورة",
-        "أبيض",
-        "أسود",
-        "رمادي"
+        "رمادي",
+        "أبيض"
       ]
     }
   },
