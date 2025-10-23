@@ -10,7 +10,9 @@ const STORE_CONFIG = {
         "M"
       ],
       "availableColors": [
-        "كما في الصورة"
+        "كما في الصورة",
+        "أبيض",
+        "أسود"
       ]
     }
   },
