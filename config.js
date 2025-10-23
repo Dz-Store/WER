@@ -252,7 +252,7 @@ const STORE_CONFIG = {
     }
   },
   "DISCOUNTS": {
-    "minQuantityForDiscount": 1,
+    "minQuantityForDiscount": 2,
     "discountPerItem": 300
   },
   "STORE_INFO": {
@@ -260,7 +260,7 @@ const STORE_CONFIG = {
     "tagline": "متجر أفخم الملابس ",
     "phoneNumbers": [
       "0671466489",
-      "0551102155"
+      "0551102166"
     ]
   },
   "AGE_SIZES": {
