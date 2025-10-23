@@ -9,8 +9,7 @@ const STORE_CONFIG = {
         "S"
       ],
       "availableColors": [
-        "كما في الصورة",
-        "رمادي"
+        "كما في الصورة"
       ]
     }
   },
