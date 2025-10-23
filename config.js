@@ -6,11 +6,11 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761144949105-modal1.jpg",
       "description": "فستان الملكات الساحرات",
       "availableSizes": [
-        "S",
-        "M"
+        "S"
       ],
       "availableColors": [
-        "كما في الصورة"
+        "أبيض",
+        "أسود"
       ]
     }
   },
