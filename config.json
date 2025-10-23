@@ -10,7 +10,8 @@
         "M"
       ],
       "availableColors": [
-        "كما في الصورة"
+        "كما في الصورة",
+        "بنفسجي"
       ]
     },
     "17": {
@@ -30,19 +31,6 @@
         "كما في الصورة",
         "أسود",
         "زهري"
-      ]
-    },
-    "18": {
-      "name": "مودال 3",
-      "price": 6300,
-      "image": "images/modal18.jpg",
-      "description": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761206658391-modal13.jpg",
-      "availableSizes": [
-        "XXL",
-        "XL"
-      ],
-      "availableColors": [
-        "كما في الصورة"
       ]
     }
   },
