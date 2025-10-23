@@ -19,11 +19,14 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/product-3-1761251517726-Screenshot_20251006-133727_Facebook.jpg",
       "description": "وصف المنتج الجديد",
       "availableSizes": [
-        "XXL"
+        "XXL",
+        "M"
       ],
       "availableColors": [
         "رمادي",
-        "أبيض"
+        "أبيض",
+        "أزرق",
+        "أحمر"
       ]
     }
   },
