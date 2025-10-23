@@ -475,3 +475,16 @@ setInterval(() => {
   console.log('🔄 التحقق من التحديثات...');
   loadRemoteConfig();
 }, 60000);
+// إضافة في نهاية config.js
+function manualSave() {
+    saveConfig();
+    showNotification('تم الحفظ محلياً', 'success');
+}
+
+// استدعاء تلقائي للحفظ عند أي تغيير
+setInterval(() => {
+    if (window.CONFIG && JSON.stringify(window.CONFIG) !== JSON.stringify(STORE_CONFIG)) {
+        manualSave();
+    }
+}, 3000);
+      
