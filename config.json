@@ -10,7 +10,8 @@
         "M"
       ],
       "availableColors": [
-        "كما في الصورة"
+        "كما في الصورة",
+        "بنفسجي"
       ]
     },
     "17": {
@@ -20,23 +21,16 @@
       "description": "فستان الملكات الساحرات",
       "availableSizes": [
         "S",
-        "M"
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "S1"
       ],
       "availableColors": [
-        "كما في الصورة"
-      ]
-    },
-    "18": {
-      "name": "مودال 3",
-      "price": 4400,
-      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761172640667-Screenshot_20251006-135317_Facebook.jpg",
-      "description": " معطف شتوي ",
-      "availableSizes": [
-        "S",
-        "M"
-      ],
-      "availableColors": [
-        "كما في الصورة"
+        "كما في الصورة",
+        "أسود",
+        "زهري"
       ]
     }
   },
