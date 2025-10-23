@@ -1,4 +1,3 @@
-// config.js - ملف الإعدادات الأساسية فقط
 const STORE_CONFIG = {
   "PRODUCTS": {
     "1": {
@@ -21,17 +20,10 @@ const STORE_CONFIG = {
       "description": "مودال شتوي فاخر",
       "availableSizes": [
         "S",
-        "M",
-        "L",
-        "XL",
-        "XXL",
-        "S1"
+        "M"
       ],
       "availableColors": [
-        "كما في الصورة",
-        "أبيض",
-        "أسود",
-        "رمادي"
+        "كما في الصورة"
       ]
     }
   },
