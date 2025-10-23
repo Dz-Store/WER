@@ -12,6 +12,22 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
+    },
+    "18": {
+      "name": "مودال 18",
+      "price": 5000,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761221738633-Screenshot_20251006-134027_Facebook.jpg",
+      "description": "وصف المنتج الجديد",
+      "availableSizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "زهري",
+        "أخضر"
+      ]
     }
   },
   "DELIVERY_PRICES": {
