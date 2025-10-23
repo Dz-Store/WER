@@ -19,11 +19,11 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Ahcene43/Inas/main/images/1760731352265-modal6.jpg",
       "description": "مودال شتوي فاخر",
       "availableSizes": [
-        "S",
-        "M"
+        "S"
       ],
       "availableColors": [
-        "كما في الصورة"
+        "كما في الصورة",
+        "رمادي"
       ]
     }
   },
