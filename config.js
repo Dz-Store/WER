@@ -256,7 +256,7 @@ const STORE_CONFIG = {
     "discountPerItem": 300
   },
   "STORE_INFO": {
-    "name": "RIHAB2-Shopp",
+    "name": "RIHAB3-Shopp",
     "tagline": "متجر أفخم الملابس ",
     "phoneNumbers": [
       "0671466489",
