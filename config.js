@@ -7,7 +7,8 @@ const STORE_CONFIG = {
       "description": "فستان الملكات الساحرات",
       "availableSizes": [
         "S",
-        "M"
+        "M",
+        "L"
       ],
       "availableColors": [
         "كما في الصورة",
