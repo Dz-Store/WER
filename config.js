@@ -1,8 +1,8 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
     "17": {
-      "name": "مودال 2",
-      "price": 800,
+      "name": "مودال 1",
+      "price": 5600,
       "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761144949105-modal1.jpg",
       "description": "فستان الملكات الساحرات",
       "availableSizes": [
