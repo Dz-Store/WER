@@ -1,8 +1,8 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
     "17": {
-      "name": "مودال 1",
-      "price": 5600,
+      "name": "مودال 2",
+      "price": 800,
       "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761144949105-modal1.jpg",
       "description": "فستان الملكات الساحرات",
       "availableSizes": [
@@ -10,21 +10,10 @@ const STORE_CONFIG = {
         "M"
       ],
       "availableColors": [
-        "كما في الصورة"
-      ]
-    },
-    "18": {
-      "name": "مودال 2",
-      "price": 3600,
-      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761221738633-Screenshot_20251006-134027_Facebook.jpg",
-      "description": "وصف المنتج الجديد",
-      "availableSizes": [
-        "L",
-        "XL"
-      ],
-      "availableColors": [
-        "بنفسجي",
-        "زهري"
+        "كما في الصورة",
+        "رمادي",
+        "أزرق",
+        "بنفسجي"
       ]
     }
   },
