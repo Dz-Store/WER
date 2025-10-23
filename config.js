@@ -10,10 +10,7 @@ const STORE_CONFIG = {
         "M"
       ],
       "availableColors": [
-        "كما في الصورة",
-        "رمادي",
-        "أزرق",
-        "بنفسجي"
+        "كما في الصورة"
       ]
     }
   },
@@ -252,7 +249,7 @@ const STORE_CONFIG = {
     }
   },
   "DISCOUNTS": {
-    "minQuantityForDiscount": 2,
+    "minQuantityForDiscount": 1,
     "discountPerItem": 300
   },
   "STORE_INFO": {
@@ -260,7 +257,7 @@ const STORE_CONFIG = {
     "tagline": "متجر أفخم الملابس ",
     "phoneNumbers": [
       "0671466489",
-      "0551102166"
+      "0551102155"
     ]
   },
   "AGE_SIZES": {
