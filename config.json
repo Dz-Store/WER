@@ -32,6 +32,18 @@
         "أسود",
         "زهري"
       ]
+    },
+    "18": {
+      "name": "مودال 3",
+      "price": 3300,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761214072921-Screenshot_20251006-133445_Facebook.jpg",
+      "description": "وصف المنتج الجديد",
+      "availableSizes": [
+        "M"
+      ],
+      "availableColors": [
+        "كما في الصورة"
+      ]
     }
   },
   "DELIVERY_PRICES": {
