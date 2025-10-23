@@ -12,6 +12,19 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
+    },
+    "18": {
+      "name": "مودال 3",
+      "price": 5500,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/product-18-1761231775668-modal5.jpg",
+      "description": "بدلة تركية",
+      "availableSizes": [
+        "S",
+        "M"
+      ],
+      "availableColors": [
+        "كما في الصورة"
+      ]
     }
   },
   "DELIVERY_PRICES": {
