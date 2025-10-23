@@ -2,7 +2,7 @@ const STORE_CONFIG = {
   "PRODUCTS": {
     "2": {
       "name": "مودال 14",
-      "price": 5200,
+      "price": 8000,
       "image": "https://raw.githubusercontent.com/Ahcene43/Inas/main/images/1760731352265-modal6.jpg",
       "description": "مودال شتوي فاخر",
       "availableSizes": [
