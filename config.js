@@ -10,20 +10,10 @@ const STORE_CONFIG = {
         "M"
       ],
       "availableColors": [
-        "كما في الصورة"
-      ]
-    },
-    "18": {
-      "name": "مودال 3",
-      "price": 5500,
-      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/product-18-1761231775668-modal5.jpg",
-      "description": "بدلة تركية",
-      "availableSizes": [
-        "S",
-        "M"
-      ],
-      "availableColors": [
-        "كما في الصورة"
+        "كما في الصورة",
+        "رمادي",
+        "أزرق",
+        "بنفسجي"
       ]
     }
   },
@@ -263,7 +253,7 @@ const STORE_CONFIG = {
   },
   "DISCOUNTS": {
     "minQuantityForDiscount": 1,
-    "discountPerItem": 300
+    "discountPerItem": 200
   },
   "STORE_INFO": {
     "name": "RIHAB3-Shopp",
