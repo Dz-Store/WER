@@ -1,37 +1,29 @@
-// config.js - ملف الإعدادات المشترك
-let STORE_CONFIG = {
+const STORE_CONFIG = {
   "PRODUCTS": {
-    "1": {
+    "16": {
       "name": "مودال 1",
-      "price": 3300,
-      "image": "https://i.ibb.co/wFhBNhmf/modal6-jpg.webp",
-      "description": "تصميم مريح وعصري مع تفاصيل راقية تناسب جميع المناسبات",
-      "availableColors": [
-        "كما في الصورة"
-      ],
-      "availableSizes": [
-        "M",
-        "L"
-      ]
-    },
-    "2": {
-      "name": "مودال 14",
-      "price": 5200,
-      "image": "https://raw.githubusercontent.com/Ahcene43/Inas/main/images/1760731352265-modal6.jpg",
-      "description": "مودال شتوي فاخر",
+      "price": 3700,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761141877869-modal12.jpg",
+      "description": "فستان بمواصفات خيالية",
       "availableSizes": [
         "S",
-        "M",
-        "L",
-        "XL",
-        "XXL",
-        "S1"
+        "M"
       ],
       "availableColors": [
-        "كما في الصورة",
-        "أبيض",
-        "أسود",
-        "رمادي"
+        "كما في الصورة"
+      ]
+    },
+    "17": {
+      "name": "مودال 2",
+      "price": 8000,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761144949105-modal1.jpg",
+      "description": "فستان الملكات الساحرات",
+      "availableSizes": [
+        "L",
+        "XL"
+      ],
+      "availableColors": [
+        "كما في الصورة"
       ]
     }
   },
@@ -275,7 +267,7 @@ let STORE_CONFIG = {
   },
   "STORE_INFO": {
     "name": "RIHAB12-Shopp",
-    "tagline": "متجر أفخم الملابس",
+    "tagline": "متجر أفخم الملابس ",
     "phoneNumbers": [
       "0671466489",
       "0551102155"
@@ -310,202 +302,3 @@ let STORE_CONFIG = {
     "S1"
   ]
 };
-
-// دالة محسنة لتحميل الإعدادات من GitHub
-async function loadRemoteConfig(tokenConfig = null, repo = null) {
-  try {
-    let configUrl;
-    
-    if (tokenConfig && repo) {
-      configUrl = `https://raw.githubusercontent.com/${tokenConfig.username}/${repo}/${tokenConfig.branch || 'main'}/config.json?t=${Date.now()}`;
-    } else {
-      configUrl = 'https://raw.githubusercontent.com/Ahcene43/WAW/main/config.json?t=' + Date.now();
-    }
-    
-    console.log('🔄 جاري تحميل الإعدادات من:', configUrl);
-    const response = await fetch(configUrl);
-    
-    if (response.ok) {
-      const remoteConfig = await response.json();
-      STORE_CONFIG = remoteConfig;
-      saveConfig(STORE_CONFIG);
-      console.log('✅ تم تحميل الإعدادات من GitHub');
-      
-      // إطلاق حدث مخصص للتحديث
-      window.dispatchEvent(new CustomEvent('configUpdated', { detail: STORE_CONFIG }));
-      
-      return true;
-    }
-  } catch (error) {
-    console.log('⚠️ استخدام الإعدادات المحلية بسبب الخطأ:', error);
-  }
-  return false;
-}
-
-// تحميل الإعدادات المحفوظة محلياً
-function loadConfig() {
-  const saved = localStorage.getItem('storeConfig');
-  if (saved) {
-    try {
-      const parsedConfig = JSON.parse(saved);
-      STORE_CONFIG = parsedConfig;
-      console.log('📂 تم تحميل الإعدادات المحلية');
-    } catch (e) {
-      console.error('Error loading config:', e);
-    }
-  }
-  return STORE_CONFIG;
-}
-
-// حفظ الإعدادات محلياً
-function saveConfig(config = STORE_CONFIG) {
-  try {
-    localStorage.setItem('storeConfig', JSON.stringify(config));
-    STORE_CONFIG = config;
-    console.log('💾 تم حفظ الإعدادات محلياً');
-    
-    // إطلاق حدث الحفظ
-    window.dispatchEvent(new CustomEvent('configSaved', { detail: STORE_CONFIG }));
-  } catch (error) {
-    console.error('Error saving config locally:', error);
-  }
-}
-
-// دالة محسنة للحفظ على GitHub
-async function saveToGitHub(config, tokenConfig, repo) {
-  try {
-    if (!tokenConfig || !tokenConfig.token || !tokenConfig.username || !repo) {
-      throw new Error('إعدادات GitHub غير مكتملة');
-    }
-
-    const content = btoa(unescape(encodeURIComponent(JSON.stringify(config, null, 2))));
-    const branch = tokenConfig.branch || 'main';
-    
-    console.log('🔼 محاولة الحفظ على GitHub:', { repo, branch, username: tokenConfig.username });
-    
-    // محاولة الحصول على الـ SHA للملف الموجود
-    let sha = '';
-    try {
-      const existingFileResponse = await fetch(
-        `https://api.github.com/repos/${tokenConfig.username}/${repo}/contents/config.json`,
-        {
-          headers: {
-            'Authorization': `token ${tokenConfig.token}`,
-            'Accept': 'application/vnd.github.v3+json'
-          }
-        }
-      );
-      
-      if (existingFileResponse.ok) {
-        const fileData = await existingFileResponse.json();
-        sha = fileData.sha;
-        console.log('📁 وجدنا ملف موجود، سيتم تحديثه');
-      }
-    } catch (error) {
-      console.log('📄 سيتم إنشاء ملف جديد');
-    }
-
-    const response = await fetch(
-      `https://api.github.com/repos/${tokenConfig.username}/${repo}/contents/config.json`,
-      {
-        method: 'PUT',
-        headers: {
-          'Authorization': `token ${tokenConfig.token}`,
-          'Content-Type': 'application/json',
-          'Accept': 'application/vnd.github.v3+json'
-        },
-        body: JSON.stringify({
-          message: 'تحديث إعدادات المتجر - ' + new Date().toLocaleString('ar-EG'),
-          content: content,
-          sha: sha,
-          branch: branch
-        })
-      }
-    );
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      const errorMsg = errorData.message || `فشل في حفظ الإعدادات على GitHub: ${response.status}`;
-      console.error('❌ خطأ في الحفظ على GitHub:', errorMsg);
-      throw new Error(errorMsg);
-    }
-
-    const result = await response.json();
-    console.log('✅ تم الحفظ على GitHub بنجاح:', result);
-    return result;
-  } catch (error) {
-    console.error('❌ Error saving to GitHub:', error);
-    throw error;
-  }
-}
-
-// دالة محسنة لتحميل الإعدادات مع التوكن
-async function loadRemoteConfigWithToken(tokenConfig, repo) {
-  return await loadRemoteConfig(tokenConfig, repo);
-}
-
-// دالة محسنة للمزامنة الفورية
-async function forceSync() {
-    try {
-        console.log('🔄 بدء المزامنة الفورية...');
-        const response = await fetch('https://raw.githubusercontent.com/Ahcene43/WAW/main/config.json?t=' + Date.now());
-        if (response.ok) {
-            const remoteConfig = await response.json();
-            STORE_CONFIG = remoteConfig;
-            saveConfig(STORE_CONFIG);
-            console.log('✅ تمت المزامنة الفورية بنجاح');
-            
-            // إطلاق حدث التحديث
-            window.dispatchEvent(new CustomEvent('configUpdated', { detail: STORE_CONFIG }));
-            return true;
-        }
-    } catch (error) {
-        console.error('❌ فشل المزامنة الفورية:', error);
-    }
-    return false;
-}
-
-// نظام الحفظ التلقائي المحسن
-let lastConfigState = JSON.stringify(STORE_CONFIG);
-
-function initAutoSave() {
-    console.log('🔄 تفعيل الحفظ التلقائي...');
-    
-    setInterval(() => {
-        const currentConfig = JSON.stringify(STORE_CONFIG);
-        if (currentConfig !== lastConfigState) {
-            console.log('💾 اكتشاف تغييرات، جاري الحفظ التلقائي...');
-            saveConfig();
-            lastConfigState = currentConfig;
-            
-            // إشعار إذا كان متاحاً
-            if (typeof window.showNotification === 'function') {
-                window.showNotification('تم الحفظ التلقائي', 'success');
-            }
-        }
-    }, 5000);
-}
-
-// جعل الدوال متاحة globally
-window.STORE_CONFIG = STORE_CONFIG;
-window.loadRemoteConfig = loadRemoteConfig;
-window.saveToGitHub = saveToGitHub;
-window.forceSync = forceSync;
-window.initAutoSave = initAutoSave;
-
-// تحميل الإعدادات عند استيراد الملف
-loadConfig();
-
-// بدء الحفظ التلقائي
-setTimeout(initAutoSave, 2000);
-
-// محاولة تحميل الإعدادات من الخادم بعد تحميل الصفحة
-setTimeout(() => {
-  loadRemoteConfig();
-}, 1000);
-
-// التحقق من التحديثات كل دقيقة
-setInterval(() => {
-  console.log('🔄 التحقق من التحديثات...');
-  loadRemoteConfig();
-}, 60000);
