@@ -9,7 +9,28 @@ const STORE_CONFIG = {
         "S"
       ],
       "availableColors": [
-        "كما في الصورة"
+        "كما في الصورة",
+        "رمادي"
+      ]
+    },
+    "3": {
+      "name": "مودال 3",
+      "price": 5000,
+      "image": "images/modal3.jpg",
+      "description": "وصف المنتج الجديد",
+      "availableSizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "S1"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "أبيض",
+        "أسود",
+        "رمادي"
       ]
     }
   },
