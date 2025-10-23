@@ -270,7 +270,7 @@ const STORE_CONFIG = {
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
       "0671466489",
-      "0551102155"
+      "0655102155"
     ]
   },
   "AGE_SIZES": {
