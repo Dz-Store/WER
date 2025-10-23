@@ -15,19 +15,6 @@ const STORE_CONFIG = {
         "أزرق",
         "بنفسجي"
       ]
-    },
-    "18": {
-      "name": "مودال 18",
-      "price": 3300,
-      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/product-18-1761225916810-modal5.jpg",
-      "description": "وصف المنتج الجديد",
-      "availableSizes": [
-        "S",
-        "M"
-      ],
-      "availableColors": [
-        "كما في الصورة"
-      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -269,7 +256,7 @@ const STORE_CONFIG = {
     "discountPerItem": 300
   },
   "STORE_INFO": {
-    "name": "RIHAB12-Shopp",
+    "name": "RIHAB2-Shopp",
     "tagline": "متجر أفخم الملابس ",
     "phoneNumbers": [
       "0671466489",
