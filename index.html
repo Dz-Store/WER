@@ -1606,7 +1606,9 @@
             } else if (discountInfo.discountPerItem > 0) {
                 discountText.innerHTML = `
                     اشتري ${discountInfo.minQuantity} قطع أو أكثر واحصل على خصم ${discountInfo.discountPerItem} دج لكل قطعة
-                    <br><em>أضف ${discountInfo.minQuantity - quantity} قطع أخرى لتحصل على الخصم!</em>
+
+
+                    
                 `;
                 discountInfoElement.style.display = 'block';
             } else {
