@@ -299,6 +299,6 @@ const STORE_CONFIG = {
     "L",
     "XL",
     "XXL",
-    "S1"
+    "4XL"
   ]
 };
