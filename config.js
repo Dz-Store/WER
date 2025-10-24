@@ -27,6 +27,24 @@ const STORE_CONFIG = {
       "availableColors": [
         "زهري"
       ]
+    },
+    "18": {
+      "name": "مودال 3",
+      "price": 5000,
+      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/product-18-1761331899479-modle6.jpg",
+      "description": "فستان عالي الجودة",
+      "availableSizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "أبيض",
+        "أسود",
+        "رمادي"
+      ]
     }
   },
   "DELIVERY_PRICES": {
