@@ -7,12 +7,14 @@ const STORE_CONFIG = {
       "description": "فستان بمواصفات خيالية",
       "availableSizes": [
         "L",
-        "XXL",
-        "M"
+        "M",
+        "S",
+        "XL"
       ],
       "availableColors": [
         "بنفسجي",
-        "كما في الصورة"
+        "كما في الصورة",
+        "زهري"
       ]
     },
     "17": {
@@ -22,10 +24,13 @@ const STORE_CONFIG = {
       "description": "فستان الملكات الساحرات",
       "availableSizes": [
         "L",
+        "M",
+        "S",
         "XL"
       ],
       "availableColors": [
-        "زهري"
+        "كما في الصورة",
+        "بنفسجي"
       ]
     }
   },
