@@ -6,13 +6,11 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761141877869-modal12.jpg",
       "description": "فستان بمواصفات خيالية",
       "availableSizes": [
-        "S",
-        "M",
-        "L"
+        "L",
+        "XL"
       ],
       "availableColors": [
-        "أزرق",
-        "أحمر"
+        "بنفسجي"
       ]
     },
     "17": {
@@ -21,14 +19,11 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761144949105-modal1.jpg",
       "description": "فستان الملكات الساحرات",
       "availableSizes": [
-        "S",
-        "XXL",
-        "M",
-        "L"
+        "L",
+        "XL"
       ],
       "availableColors": [
-        "كما في الصورة",
-        "أسود"
+        "زهري"
       ]
     }
   },
