@@ -7,7 +7,8 @@ const STORE_CONFIG = {
       "description": "فستان بمواصفات خيالية",
       "availableSizes": [
         "L",
-        "XL"
+        "XL",
+        "4XL"
       ],
       "availableColors": [
         "بنفسجي"
@@ -280,7 +281,7 @@ const STORE_CONFIG = {
     "9": "L",
     "10": "XL",
     "11": "XXL",
-    "12": "S4"
+    "12": "4XL"
   },
   "AVAILABLE_COLORS": [
     "كما في الصورة",
