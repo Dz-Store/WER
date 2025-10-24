@@ -7,14 +7,12 @@ const STORE_CONFIG = {
       "description": "فستان بمواصفات خيالية",
       "availableSizes": [
         "L",
-        "M",
-        "S",
-        "XL"
+        "XXL",
+        "M"
       ],
       "availableColors": [
         "بنفسجي",
-        "كما في الصورة",
-        "زهري"
+        "كما في الصورة"
       ]
     },
     "17": {
@@ -24,13 +22,10 @@ const STORE_CONFIG = {
       "description": "فستان الملكات الساحرات",
       "availableSizes": [
         "L",
-        "M",
-        "S",
         "XL"
       ],
       "availableColors": [
-        "كما في الصورة",
-        "بنفسجي"
+        "زهري"
       ]
     }
   },
@@ -269,12 +264,12 @@ const STORE_CONFIG = {
     }
   },
   "DISCOUNTS": {
-    "minQuantityForDiscount": 3,
-    "discountPerItem": 300
+    "minQuantityForDiscount": 2,
+    "discountPerItem": 400
   },
   "STORE_INFO": {
-    "name": "RIHAB12-Shopp",
-    "tagline": "متجر أفخم الملابس ",
+    "name": "BEN@AKRAB-SHOPP",
+    "tagline": "متجر أفخم الملابس الأطفال",
     "phoneNumbers": [
       "0671466489",
       "0755102155"
