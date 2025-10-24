@@ -282,8 +282,8 @@ const STORE_CONFIG = {
     }
   },
   "DISCOUNTS": {
-    "minQuantityForDiscount": 0,
-    "discountPerItem": 0
+    "minQuantityForDiscount": 3,
+    "discountPerItem": 500
   },
   "STORE_INFO": {
     "name": "BENA@-Shopp",
