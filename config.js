@@ -264,12 +264,12 @@ const STORE_CONFIG = {
     }
   },
   "DISCOUNTS": {
-    "minQuantityForDiscount": 2,
-    "discountPerItem": 400
+    "minQuantityForDiscount": 3,
+    "discountPerItem": 300
   },
   "STORE_INFO": {
-    "name": "BEN@AKRAB-SHOPP",
-    "tagline": "متجر أفخم الملابس الأطفال",
+    "name": "BENA@-Shopp",
+    "tagline": "متجر أفخم الملابس ",
     "phoneNumbers": [
       "0671466489",
       "0755102155"
