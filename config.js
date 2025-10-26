@@ -6,11 +6,14 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761141877869-modal12.jpg",
       "description": "فستان بمواصفات خيالية",
       "availableSizes": [
-        "M"
+        "M",
+        "L"
       ],
       "availableColors": [
         "بنفسجي",
-        "كما في الصورة"
+        "كما في الصورة",
+        "رمادي",
+        "أزرق"
       ]
     },
     "17": {
