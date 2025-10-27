@@ -28,6 +28,22 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
+    },
+    "18": {
+      "name": "مودال 3",
+      "price": 3300,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-18-1761591341511-modal9.jpg.webp",
+      "description": "لباس ملكي بمواصفات خيالية",
+      "availableSizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "زهري",
+        "بنفسجي"
+      ]
     }
   },
   "DELIVERY_PRICES": {
