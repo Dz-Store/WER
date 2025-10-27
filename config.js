@@ -3,7 +3,7 @@ const STORE_CONFIG = {
     "16": {
       "name": "مودال 1",
       "price": 3700,
-      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761141877869-modal12.jpg",
+      "image": "https://raw.githubusercontent.com/dz-store/WER/main/images/1761141877869-modal12.jpg",
       "description": "فستان بمواصفات خيالية",
       "availableSizes": [
         "M",
@@ -19,7 +19,7 @@ const STORE_CONFIG = {
     "17": {
       "name": "مودال 2",
       "price": 8000,
-      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/1761144949105-modal1.jpg",
+      "image": "https://raw.githubusercontent.comk/dz-store/WER/main/images/1761144949105-modal1.jpg",
       "description": "فستان الملكات الساحرات",
       "availableSizes": [
         "L",
@@ -34,7 +34,7 @@ const STORE_CONFIG = {
     "18": {
       "name": "مودال 3",
       "price": 5000,
-      "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/product-18-1761331899479-modle6.jpg",
+      "image": "https://raw.githubusercontent.com/dz-store/WER/main/images/product-18-1761331899479-modle6.jpg",
       "description": "فستان عالي الجودة",
       "availableSizes": [
         "S"
