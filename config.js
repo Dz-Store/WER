@@ -15,6 +15,19 @@ const STORE_CONFIG = {
         "رمادي",
         "أزرق"
       ]
+    },
+    "17": {
+      "name": "مودال 2",
+      "price": 4500,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-17-1761591250653-modal5.jpg",
+      "description": " لباس تركي ",
+      "availableSizes": [
+        "M",
+        "L"
+      ],
+      "availableColors": [
+        "كما في الصورة"
+      ]
     }
   },
   "DELIVERY_PRICES": {
