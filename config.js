@@ -44,14 +44,17 @@ const STORE_CONFIG = {
     },
     "19": {
       "name": "مودال 4",
-      "price": 7000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-19-1761591736063-modal9.jpg.webp",
+      "price": 8400,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-19-1761592037892-modal7.jpg.webp",
       "description": "فستان سندريلا",
       "availableSizes": [
-        "L"
+        "M",
+        "L",
+        "XL"
       ],
       "availableColors": [
-        "كما في الصورة"
+        "كما في الصورة",
+        "بنفسجي"
       ]
     }
   },
