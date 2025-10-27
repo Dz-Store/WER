@@ -1529,10 +1529,13 @@
             if (discountInfo.hasDiscount) {
                 return `
 
-
+              <div class="discount-badge">
+                        <i class="fas fa-percentage"></i>
         
-                        خصم ${discountInfo.discountPerItem} دج للقطعة
-                        <div class="discount-tooltip">
+
+
+
+                        
                             اشتري ${discountInfo.minQuantity} قطع أو أكثر واحصل على خصم ${discountInfo.discountPerItem} دج لكل قطعة
                         </div>
                     </div>
@@ -2284,7 +2287,7 @@
                         items: JSON.stringify(cartItems.map(item => `${item.name} (${item.quantity}x)`)),
                         total: priceDetails.total,
                         discount: priceDetails.discount,
-                        timestamp: new Date().toLocaleString('ar-EG')
+                        timestamp: new Date().toLocaleString('fr-FR')
                     });
                     
                     await fetch(`${GOOGLE_SCRIPT_URL}?${queryParams}`, {
