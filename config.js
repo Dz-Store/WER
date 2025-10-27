@@ -37,16 +37,10 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Ahcene43/WER/main/images/product-18-1761331899479-modle6.jpg",
       "description": "فستان عالي الجودة",
       "availableSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
+        "S"
       ],
       "availableColors": [
-        "كما في الصورة",
-        "أبيض",
-        "أسود",
-        "رمادي"
+        "كما في الصورة"
       ]
     }
   },
