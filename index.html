@@ -1699,9 +1699,9 @@
             // إضافة مستمع لحدث تغيير الكمية
             document.getElementById('quantityDisplay').addEventListener('DOMSubtreeModified', function() {
                 const quantity = parseInt(this.textContent);
-                const updatedDiscountInfo = calculateDiscountedPrice(product.price, quantity);
-                document.getElementById('productModalPriceValue').textContent = `${updatedDiscountInfo.finalPrice} دج`;
-                
+
+
+        
                 // تحديث نص الخصم بناءً على الكمية
                 if (updatedDiscountInfo.hasDiscount) {
                     discountText.innerHTML = `
