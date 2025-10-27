@@ -18,31 +18,28 @@ const STORE_CONFIG = {
     },
     "17": {
       "name": "مودال 2",
-      "price": 4500,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-17-1761591250653-modal5.jpg",
-      "description": " لباس تركي ",
+      "price": 8000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-17-1761591558129-Screenshot_20251006-134027_Facebook.jpg",
+      "description": "معطف الملكات الساحرات",
       "availableSizes": [
         "M",
+        "S",
         "L"
       ],
       "availableColors": [
-        "كما في الصورة"
+        "زهري"
       ]
     },
     "18": {
       "name": "مودال 3",
-      "price": 3300,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-18-1761591341511-modal9.jpg.webp",
-      "description": "لباس ملكي بمواصفات خيالية",
+      "price": 5000,
+      "image": "https://raw.githubusercontent.com/dz-store/WER/main/images/product-18-1761331899479-modle6.jpg",
+      "description": "فستان عالي الجودة",
       "availableSizes": [
-        "M",
-        "L",
-        "XL"
+        "S"
       ],
       "availableColors": [
-        "كما في الصورة",
-        "زهري",
-        "بنفسجي"
+        "كما في الصورة"
       ]
     }
   },
