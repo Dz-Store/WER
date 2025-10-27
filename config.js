@@ -42,6 +42,18 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
+    },
+    "19": {
+      "name": "مودال 4",
+      "price": 6500,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-19-1761589136049-Screenshot_20251006-134027_Facebook.jpg",
+      "description": "معطف تركي مريح",
+      "availableSizes": [
+        "XL"
+      ],
+      "availableColors": [
+        "أزرق"
+      ]
     }
   },
   "DELIVERY_PRICES": {
