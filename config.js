@@ -51,7 +51,7 @@ const STORE_CONFIG = {
         "L"
       ],
       "availableColors": [
-        "زهري"
+        "كما في الصورة"
       ]
     }
   },
