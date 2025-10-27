@@ -15,33 +15,6 @@ const STORE_CONFIG = {
         "رمادي",
         "أزرق"
       ]
-    },
-    "17": {
-      "name": "مودال 2",
-      "price": 8000,
-      "image": "https://raw.githubusercontent.comk/dz-store/WER/main/images/1761144949105-modal1.jpg",
-      "description": "فستان الملكات الساحرات",
-      "availableSizes": [
-        "L",
-        "XL",
-        "M",
-        "S"
-      ],
-      "availableColors": [
-        "زهري"
-      ]
-    },
-    "18": {
-      "name": "مودال 3",
-      "price": 5000,
-      "image": "https://raw.githubusercontent.com/dz-store/WER/main/images/product-18-1761331899479-modle6.jpg",
-      "description": "فستان عالي الجودة",
-      "availableSizes": [
-        "S"
-      ],
-      "availableColors": [
-        "كما في الصورة"
-      ]
     }
   },
   "DELIVERY_PRICES": {
