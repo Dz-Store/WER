@@ -298,7 +298,7 @@ const STORE_CONFIG = {
   },
   "STORE_INFO": {
     "name": "BENAKRAB-Shopp",
-    "tagline": "متجر أفخم الملابس للاطفال",
+    "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
       "0671466489",
       "0792946548"
