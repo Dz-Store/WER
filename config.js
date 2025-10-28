@@ -36,9 +36,7 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-store/WER/main/images/product-18-1761331899479-modle6.jpg",
       "description": "فستان عالي الجودة",
       "availableSizes": [
-        "S",
-        "M",
-        "L"
+        "S"
       ],
       "availableColors": [
         "كما في الصورة"
@@ -305,8 +303,8 @@ const STORE_CONFIG = {
       "0671466489",
       "0792946548"
     ],
-    "storeTitle": "👑 أحدث موديلات الأولاد",
-    "storeIcon": "&👑&"
+    "storeTitle": "👑 أحدث الموديلات ",
+    "storeIcon": "#👑#"
   },
   "AGE_SIZES": {
     "6": "S1",
