@@ -327,11 +327,11 @@ const STORE_CONFIG = {
     "بنفسجي"
   ],
   "AVAILABLE_SIZES": [
-    "S",
+    "S1",
+    "S2",
     "M",
     "L",
     "XL",
-    "XXL",
-    "S1"
+    "XXL"
   ]
 };
