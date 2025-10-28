@@ -303,8 +303,8 @@ const STORE_CONFIG = {
       "0671466489",
       "0792946548"
     ],
-    "storeIcon": "#👑#",
-    "storeTitle": "أحدث موديلات الأطفال"
+    "storeIcon": "@",
+    "storeTitle": "أحدث الموديلات "
   },
   "AGE_SIZES": {
     "6": "S1",
