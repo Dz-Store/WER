@@ -1,55 +1,13 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
-    "16": {
-      "name": "مودال 1",
-      "price": 3700,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/1761141877869-modal12.jpg",
-      "description": "فستان بمواصفات خيالية",
-      "availableSizes": [
-        "M",
-        "L"
-      ],
-      "availableColors": [
-        "بنفسجي",
-        "كما في الصورة",
-        "رمادي",
-        "أزرق"
-      ]
-    },
-    "17": {
-      "name": "مودال 2",
-      "price": 8000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-17-1761591558129-Screenshot_20251006-134027_Facebook.jpg",
-      "description": "معطف الملكات الساحرات",
-      "availableSizes": [
-        "M",
-        "S",
-        "L"
-      ],
-      "availableColors": [
-        "زهري"
-      ]
-    },
-    "18": {
-      "name": "مودال 3",
-      "price": 5000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-18-1761331899479-modle6.jpg",
-      "description": "فستان عالي الجودة",
-      "availableSizes": [
-        "S"
-      ],
-      "availableColors": [
-        "كما في الصورة"
-      ]
-    },
     "19": {
       "name": "مودال 4",
       "price": 8400,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-19-1761592037892-modal7.jpg.webp",
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-19-1761685522697-modle6.jpg",
       "description": "فستان سندريلا",
       "availableSizes": [
         "M",
-        "L",
+        "S2",
         "XL"
       ],
       "availableColors": [
