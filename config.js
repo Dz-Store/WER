@@ -289,7 +289,7 @@ const STORE_CONFIG = {
     },
     "58 - المنيعة": {
       "home": 1000,
-      "desk": 600
+      "desk": 500
     }
   },
   "DISCOUNTS": {
