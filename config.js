@@ -36,7 +36,9 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-store/WER/main/images/product-18-1761331899479-modle6.jpg",
       "description": "فستان عالي الجودة",
       "availableSizes": [
-        "S"
+        "S",
+        "M",
+        "L"
       ],
       "availableColors": [
         "كما في الصورة"
