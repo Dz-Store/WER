@@ -18,7 +18,7 @@ const STORE_CONFIG = {
     "20": {
       "name": "مودال 5",
       "price": 5000,
-      "image": "images/modal20.jpg",
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-20-1761748332191-modal6.jpg.webp",
       "description": "فستان بمواصفات ملكية",
       "availableSizes": [
         "S1",
