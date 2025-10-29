@@ -1,9 +1,9 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
     "19": {
-      "name": "مودال 4",
+      "name": "مودال 1",
       "price": 8400,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-19-1761772278233-modal9.jpg.webp",
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-19-1761773891608-modal9.jpg.webp",
       "description": "فستان سندريلا",
       "availableSizes": [
         "M",
