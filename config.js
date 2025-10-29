@@ -3,28 +3,11 @@ const STORE_CONFIG = {
     "19": {
       "name": "مودال 4",
       "price": 8400,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-19-1761685522697-modle6.jpg",
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-19-1761772278233-modal9.jpg.webp",
       "description": "فستان سندريلا",
       "availableSizes": [
         "M",
-        "S2",
-        "XL"
-      ],
-      "availableColors": [
-        "كما في الصورة",
-        "بنفسجي"
-      ]
-    },
-    "20": {
-      "name": "مودال 5",
-      "price": 5000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-20-1761748332191-modal6.jpg.webp",
-      "description": "فستان بمواصفات ملكية",
-      "availableSizes": [
-        "S1",
-        "S2",
-        "M",
-        "L"
+        "S2"
       ],
       "availableColors": [
         "كما في الصورة"
