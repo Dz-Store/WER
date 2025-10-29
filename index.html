@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>شريط صور قابل للسحب + تكبير عند النقر</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+      background:#0b1120;
+      color:#eee;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      padding:20px;
+    }
+    .gallery{
+      width:100%;
+      max-width:900px;
+      background:#111a2b;
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 6px 30px rgba(0,0,0,0.5);
+    }
+    .preview{
+      position:relative;
+      height:340px;
+      border-radius:10px;
+      overflow:hidden;
+      background:#000;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:12px;
+      user-select:none;       /* 🔒 منع تحديد النص */
+      pointer-events:auto;    /* 🔒 السماح فقط بالنقر، لا سحب */
+    }
+    .preview img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+      transition:transform .3s ease;
+      pointer-events:none;    /* لا يمكن سحب الصورة الكبيرة */
+    }
+    .thumbs{
+      display:flex;
+      gap:10px;
+      overflow-x:auto;
+      padding:10px;
+      scroll-behavior:smooth;
+      -webkit-overflow-scrolling:touch;
+      cursor:grab;
+      user-select:none;
+    }
+    .thumbs::-webkit-scrollbar{height:6px}
+    .thumbs::-webkit-scrollbar-thumb{background:#333;border-radius:6px}
+    .thumb{
+      flex:0 0 auto;
+      width:120px;
+      height:80px;
+      border-radius:8px;
+      overflow:hidden;
+      position:relative;
+      background:#000;
+      transition:transform .2s ease,border .2s;
+      border:2px solid transparent;
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .thumb:hover{transform:scale(1.05)}
+    .thumb.active{border-color:#06b6d4}
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <div class="preview" id="preview">
+      <img id="bigImg" src="https://picsum.photos/id/1015/1200/800" alt="صورة مكبرة">
+    </div>
+
+    <div class="thumbs" id="thumbs">
+      <div class="thumb active"><img src="https://picsum.photos/id/1015/200/150" alt=""></div>
+      <div class="thumb"><img src="https://picsum.photos/id/1016/200/150" alt=""></div>
+      <div class="thumb"><img src="https://picsum.photos/id/1018/200/150" alt=""></div>
+      <div class="thumb"><img src="https://picsum.photos/id/1020/200/150" alt=""></div>
+      <div class="thumb"><img src="https://picsum.photos/id/1024/200/150" alt=""></div>
+      <div class="thumb"><img src="https://picsum.photos/id/1027/200/150" alt=""></div>
+    </div>
+  </div>
+
+  <script>
+    const thumbs = document.querySelectorAll('.thumb');
+    const bigImg = document.getElementById('bigImg');
+    const thumbsContainer = document.getElementById('thumbs');
+
+    // عند النقر على صورة مصغّرة => عرضها في الأعلى
+    thumbs.forEach((thumb, index) => {
+      thumb.addEventListener('click', () => {
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+        const src = thumb.querySelector('img').src.replace('/200/150', '/1200/800');
+        bigImg.src = src;
+      });
+    });
+
+    // تفعيل السحب للشريط فقط
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    thumbsContainer.addEventListener('mousedown', e => {
+      isDown = true;
+      thumbsContainer.classList.add('active');
+      startX = e.pageX - thumbsContainer.offsetLeft;
+      scrollLeft = thumbsContainer.scrollLeft;
+    });
+    thumbsContainer.addEventListener('mouseleave', () => isDown = false);
+    thumbsContainer.addEventListener('mouseup', () => isDown = false);
+    thumbsContainer.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - thumbsContainer.offsetLeft;
+      const walk = (x - startX) * 1.2; // السرعة
+      thumbsContainer.scrollLeft = scrollLeft - walk;
+    });
+
+    // سحب بالإصبع (للجوال)
+    let touchStartX = 0, touchStartScroll = 0;
+    thumbsContainer.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+      touchStartScroll = thumbsContainer.scrollLeft;
+    }, {passive:true});
+
+    thumbsContainer.addEventListener('touchmove', e => {
+      const x = e.touches[0].clientX;
+      const dx = x - touchStartX;
+      thumbsContainer.scrollLeft = touchStartScroll - dx;
+    }, {passive:true});
+  </script>
+</body>
+</html>
