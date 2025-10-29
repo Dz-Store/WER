@@ -14,6 +14,21 @@ const STORE_CONFIG = {
         "كما في الصورة",
         "بنفسجي"
       ]
+    },
+    "20": {
+      "name": "مودال 5",
+      "price": 5000,
+      "image": "images/modal20.jpg",
+      "description": "فستان بمواصفات ملكية",
+      "availableSizes": [
+        "S1",
+        "S2",
+        "M",
+        "L"
+      ],
+      "availableColors": [
+        "كما في الصورة"
+      ]
     }
   },
   "DELIVERY_PRICES": {
