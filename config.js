@@ -31,14 +31,12 @@ const STORE_CONFIG = {
       "name": "مودال 3",
       "price": 4000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-21-1761838155562-modal5.jpg",
-      "description": "وصف المنتج الجديد",
+      "description": "مودال تركي بتفصيلات عصرية",
       "availableSizes": [
         "S1",
         "S2",
         "M",
-        "L",
-        "XL",
-        "XXL"
+        "L"
       ],
       "availableColors": [
         "كما في الصورة"
@@ -283,7 +281,9 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 400,
     "discountProducts": [
-      20
+      20,
+      21,
+      19
     ],
     "discountScope": "selected"
   },
