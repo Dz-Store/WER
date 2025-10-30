@@ -12,22 +12,6 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
-    },
-    "20": {
-      "name": "مودال 2",
-      "price": 3300,
-      "image": "images/modal20.jpg",
-      "description": "وصف المنتج الجديد",
-      "availableSizes": [
-        "S1",
-        "S2",
-        "M"
-      ],
-      "availableColors": [
-        "كما في الصورة",
-        "رمادي",
-        "أزرق"
-      ]
     }
   },
   "DELIVERY_PRICES": {
