@@ -12,6 +12,26 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
+    },
+    "20": {
+      "name": "مودال ",
+      "price": 6000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-20-1761816208064-modle6.jpg",
+      "description": "",
+      "availableSizes": [
+        "S1",
+        "S2",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "أبيض",
+        "أسود",
+        "رمادي"
+      ]
     }
   },
   "DELIVERY_PRICES": {
