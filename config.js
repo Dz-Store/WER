@@ -21,16 +21,10 @@ const STORE_CONFIG = {
       "availableSizes": [
         "S1",
         "S2",
-        "M",
-        "L",
-        "XL",
-        "XXL"
+        "M"
       ],
       "availableColors": [
-        "كما في الصورة",
-        "أبيض",
-        "أسود",
-        "رمادي"
+        "كما في الصورة"
       ]
     }
   },
