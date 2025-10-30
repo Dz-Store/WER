@@ -24,8 +24,8 @@ const STORE_CONFIG = {
       "desk": 400
     },
     "03 - الأغواط": {
-      "home": 1000,
-      "desk": 600
+      "home": 900,
+      "desk": 500
     },
     "04 - أم البواقي": {
       "home": 650,
@@ -249,11 +249,8 @@ const STORE_CONFIG = {
     }
   },
   "DISCOUNTS": {
-    "minQuantityForDiscount": 3,
-    "discountPerItem": 500,
-    "discountProducts": [
-      19
-    ],
+    "minQuantityForDiscount": 2,
+    "discountPerItem": 400,
     "discountScope": "selected"
   },
   "STORE_INFO": {
