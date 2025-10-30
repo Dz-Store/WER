@@ -2047,41 +2047,41 @@
 
         // دالة لإنشاء رسالة الخصم الإجمالي مع المنطق العددي
         function createTotalDiscountMessage() {
-            if (!STORE_CONFIG.DISCOUNTS) return '';
-            
-            const minQuantity = STORE_CONFIG.DISCOUNTS.minQuantityForDiscount || 3;
-            const discountPerItem = STORE_CONFIG.DISCOUNTS.discountPerItem || 0;
-            const discountScope = STORE_CONFIG.DISCOUNTS.discountScope || 'all';
-            
-            let totalQuantity = 0;
-            let eligibleQuantity = 0;
-            
-            if (discountScope === 'all') {
-                totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-                eligibleQuantity = totalQuantity;
-            } else if (discountScope === 'selected' && STORE_CONFIG.DISCOUNTS.discountProducts) {
-                const eligibleItems = cartItems.filter(item => 
-                    STORE_CONFIG.DISCOUNTS.discountProducts.includes(parseInt(item.key))
-                );
-                eligibleQuantity = eligibleItems.reduce((sum, item) => sum + item.quantity, 0);
-                totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-            }
-            
-            if (eligibleQuantity >= minQuantity) {
-                const totalDiscount = discountPerItem * eligibleQuantity;
-                return `مبروك! حصلت على خصم إجمالي ${totalDiscount} دج (${discountPerItem} دج × ${eligibleQuantity} قطع)`;
-            } else {
-                const remaining = minQuantity - eligibleQuantity;
-                if (discountScope === 'all') {
-                    return `${remaining} قطعة أخرى لتحصل على خصم ${discountPerItem} دج لكل قطعة`;
-                } else {
-                    return ` أضف ${remaining} قطع من المنتجات المؤهلة للخصم لتحصل على خصم ${discountPerItem} دج لكل قطعة`;
-              
-                    
-                }
-                
-            }
+    if (!STORE_CONFIG.DISCOUNTS) return '';
+    
+    const minQuantity = STORE_CONFIG.DISCOUNTS.minQuantityForDiscount || 3; // الحد الأدنى لتفعيل الخصم
+    const discountPerItem = STORE_CONFIG.DISCOUNTS.discountPerItem || 0;    // قيمة الخصم لكل قطعة
+    const discountScope = STORE_CONFIG.DISCOUNTS.discountScope || 'all';    // نطاق الخصم (لكل المنتجات أو منتجات محددة)
+    
+    let totalQuantity = 0;
+    let eligibleQuantity = 0;
+
+    // حساب عدد القطع المؤهلة حسب نطاق الخصم
+    if (discountScope === 'all') {
+        totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        eligibleQuantity = totalQuantity;
+    } else if (discountScope === 'selected' && STORE_CONFIG.DISCOUNTS.discountProducts) {
+        const eligibleItems = cartItems.filter(item =>
+            STORE_CONFIG.DISCOUNTS.discountProducts.includes(parseInt(item.key))
+        );
+        eligibleQuantity = eligibleItems.reduce((sum, item) => sum + item.quantity, 0);
+        totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    }
+
+    // منطق الرسائل حسب حالة الزبون
+    if (eligibleQuantity >= minQuantity) {
+        const totalDiscount = discountPerItem * eligibleQuantity;
+        return `🎉 تهانينا! حصلت على خصم إجمالي ${totalDiscount} دج (${discountPerItem} دج × ${eligibleQuantity} قطع)`;
+    } else {
+        const itemsToAddForDiscount = minQuantity - eligibleQuantity; // عدد القطع الواجب إضافتها من أجل الخصم
+        
+        if (discountScope === 'all') {
+            return `🛒 أضف ${itemsToAddForDiscount} قطع  لتحصل على خصم ${discountPerItem} دج لكل قطعة`;
+        } else {
+            return `🔥 أضف ${itemsToAddForDiscount} قطع من المنتجات المؤهلة للخصم لتحصل على خصم ${discountPerItem} دج لكل قطعة`;
         }
+    }
+}
 
         // =============================================================================
         // 🎨 نظام المعرض مع الخصم المحسن
