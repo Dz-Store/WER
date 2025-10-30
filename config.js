@@ -12,24 +12,6 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
-    },
-    "20": {
-      "name": "مودال 2",
-      "price": 4200,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-20-1761806907541-modle6.jpg",
-      "description": "وصف المنتج الجديد",
-      "availableSizes": [
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "availableColors": [
-        "كما في الصورة",
-        "أبيض",
-        "أسود",
-        "رمادي"
-      ]
     }
   },
   "DELIVERY_PRICES": {
