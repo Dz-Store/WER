@@ -12,6 +12,24 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
+    },
+    "20": {
+      "name": "مودال 2",
+      "price": 4200,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-20-1761806907541-modle6.jpg",
+      "description": "وصف المنتج الجديد",
+      "availableSizes": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "أبيض",
+        "أسود",
+        "رمادي"
+      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -24,8 +42,8 @@ const STORE_CONFIG = {
       "desk": 400
     },
     "03 - الأغواط": {
-      "home": 900,
-      "desk": 500
+      "home": 1000,
+      "desk": 600
     },
     "04 - أم البواقي": {
       "home": 650,
@@ -249,8 +267,11 @@ const STORE_CONFIG = {
     }
   },
   "DISCOUNTS": {
-    "minQuantityForDiscount": 2,
-    "discountPerItem": 400,
+    "minQuantityForDiscount": 3,
+    "discountPerItem": 500,
+    "discountProducts": [
+      19
+    ],
     "discountScope": "selected"
   },
   "STORE_INFO": {
