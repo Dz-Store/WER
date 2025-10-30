@@ -249,8 +249,12 @@ const STORE_CONFIG = {
     }
   },
   "DISCOUNTS": {
-    "minQuantityForDiscount": 2,
-    "discountPerItem": 400
+    "minQuantityForDiscount": 3,
+    "discountPerItem": 500,
+    "discountProducts": [
+      19
+    ],
+    "discountScope": "selected"
   },
   "STORE_INFO": {
     "name": "BENAKRAB-Shopp",
