@@ -2062,7 +2062,7 @@
             } else {
                 const remaining = minQuantity - eligibleQuantity;
                 if (discountScope === 'all') {
-                    return `أضف ${eligibleQuantity} قطع لتحصل على خصم ${discountPerItem} دج لكل قطعة`;
+                    return `أضف ${remaining} قطع أخرى لتحصل على خصم ${discountPerItem} دج لكل قطعة`;
                 } else {
                     return `أضف ${remaining} قطع من المنتجات المؤهلة للخصم لتحصل على خصم ${discountPerItem} دج لكل قطعة`;
                 }
