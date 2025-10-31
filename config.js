@@ -282,8 +282,7 @@ const STORE_CONFIG = {
     "discountPerItem": 400,
     "discountProducts": [
       20,
-      21,
-      19
+      21
     ],
     "discountScope": "selected"
   },
