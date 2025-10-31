@@ -1119,7 +1119,7 @@
                 orderElement.className = 'order-item';
                 
                 const orderDate = new Date(order.timestamp);
-                const formattedDate = orderDate.toLocaleDateString('ar-EG', {
+                const formattedDate = orderDate.toLocaleDateString('fr-FR', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
@@ -1219,7 +1219,7 @@
             document.getElementById('modalOrderId').textContent = order.id;
             
             const orderDate = new Date(order.timestamp);
-            document.getElementById('modalOrderDate').textContent = orderDate.toLocaleDateString('ar-EG', {
+            document.getElementById('modalOrderDate').textContent = orderDate.toLocaleDateString('fr-FR', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
