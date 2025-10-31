@@ -1120,9 +1120,10 @@
                 
                 const orderDate = new Date(order.timestamp);
                 const formattedDate = orderDate.toLocaleDateString('fr-FR', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
+                    day: 'numeric',
+                    month: 'numeric',
+                    year: 'numeric'
+                    
                 });
                 
                 const statusText = getStatusText(order.status);
