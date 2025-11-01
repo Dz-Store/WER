@@ -2736,11 +2736,53 @@
        
             
 
-   // إرسال الطلب إلى الخادم (Google Apps Script)
+   // =============================================================================
+// 📤 نظام إرسال الطلبات - نسخة جاهزة
+// =============================================================================
+
+// التحقق من الاتصال بالإنترنت
+function checkInternetConnection() {
+    return navigator.onLine;
+}
+
+// إرسال الطلب - الدالة الرئيسية
+async function submitOrder(orderData) {
+    try {
+        showLoading('⏳ جاري إرسال طلبك...');
+
+        // 1. إرسال الطلب إلى الخادم
+        const serverSuccess = await sendOrderToServer(orderData);
+
+        hideLoading();
+
+        if (serverSuccess) {
+            showNotification('✅ تم إرسال طلبك بنجاح! سنتصل بك خلال 24 ساعة', 'success');
+
+            // 2. العودة للصفحة الرئيسية بعد 3 ثوانٍ
+            setTimeout(() => {
+                resetOrderForm();
+                switchPage('page1');
+            }, 3000);
+
+            return true;
+        } else {
+            showNotification('❌ فشل في إرسال الطلب. يرجى المحاولة مرة أخرى أو الاتصال بنا', 'error');
+            return false;
+        }
+
+    } catch (error) {
+        hideLoading();
+        console.error('❌ خطأ في إرسال الطلب:', error);
+        showNotification('❌ فشل في إرسال الطلب. يرجى المحاولة مرة أخرى', 'error');
+        return false;
+    }
+}
+
+// إرسال الطلب إلى Google Apps Script
 async function sendOrderToServer(orderData) {
     try {
         if (!checkInternetConnection()) {
-            throw new Error('⚠️ لا يوجد اتصال بالإنترنت - يرجى التحقق من الشبكة والمحاولة مرة أخرى');
+            throw new Error('⚠️ لا يوجد اتصال بالإنترنت - يرجى التحقق من الشبكة');
         }
 
         console.log('📤 جاري إرسال الطلب إلى الخادم...');
@@ -2753,7 +2795,7 @@ async function sendOrderToServer(orderData) {
             body: JSON.stringify({
                 action: 'saveOrder',
                 orderData: orderData,
-                // إذا لم يكن لديك STORE_CONFIG، ضع اسم المتجر مباشرة هنا
+                // إذا لم يكن لديك STORE_CONFIG، سيستخدم الاسم مباشرة
                 storeName: (typeof STORE_CONFIG !== "undefined" && STORE_CONFIG.STORE_INFO) 
                            ? STORE_CONFIG.STORE_INFO.name 
                            : "BENAKRAB-Shopp",
