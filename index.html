@@ -2738,7 +2738,7 @@
         // =============================================================================
 
         // التحقق من الاتصال بالإنترنت
-        function checkInternetConnection() {
+       /*  function checkInternetConnection() {
             return navigator.onLine;
         }
 
@@ -2808,10 +2808,55 @@
                 console.error('❌ خطأ في إرسال الطلب:', error);
                 throw error;
             }
-        } 
+        } */ 
             
 
-   
+   // إرسال الطلب إلى الخادم (Google Apps Script)
+async function sendOrderToServer(orderData) {
+    try {
+        if (!checkInternetConnection()) {
+            throw new Error('⚠️ لا يوجد اتصال بالإنترنت - يرجى التحقق من الشبكة والمحاولة مرة أخرى');
+        }
+
+        console.log('📤 جاري إرسال الطلب إلى الخادم...');
+
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                action: 'saveOrder',
+                orderData: orderData,
+                // إذا لم يكن لديك STORE_CONFIG، ضع اسم المتجر مباشرة هنا
+                storeName: (typeof STORE_CONFIG !== "undefined" && STORE_CONFIG.STORE_INFO) 
+                           ? STORE_CONFIG.STORE_INFO.name 
+                           : "BENAKRAB-Shopp",
+                timestamp: new Date().toISOString()
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('❌ فشل في الاتصال بالخادم (HTTP ' + response.status + ')');
+        }
+
+        const result = await response.json();
+        console.log('📥 رد الخادم:', result);
+
+        if (result.success) {
+            console.log('✅ تم حفظ الطلب بنجاح برقم:', result.data.id);
+            return true;
+        } else {
+            console.error('❌ الخادم رفض الطلب:', result.message);
+            return false;
+        }
+
+    } catch (error) {
+        console.error('❌ خطأ في إرسال الطلب:', error);
+        return false;
+    }
+}
+
 
 
 
