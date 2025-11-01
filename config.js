@@ -41,26 +41,6 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
-    },
-    "22": {
-      "name": "مودال 4",
-      "price": 6500,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-22-1762006347362-Screenshot_20251006-134027_Facebook.jpg",
-      "description": "وصف المنتج الجديد",
-      "availableSizes": [
-        "S1",
-        "S2",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "availableColors": [
-        "كما في الصورة",
-        "أخضر",
-        "بنفسجي",
-        "أزرق"
-      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -302,8 +282,7 @@ const STORE_CONFIG = {
     "discountPerItem": 400,
     "discountProducts": [
       20,
-      21,
-      22
+      21
     ],
     "discountScope": "selected"
   },
