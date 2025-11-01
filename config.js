@@ -41,6 +41,23 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
+    },
+    "22": {
+      "name": "فستان فاخر بمواصفات عالمية",
+      "price": 6000,
+      "image": "",
+      "description": "وصف المنتج الجديد",
+      "availableSizes": [
+        "S1",
+        "S2",
+        "M"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "أبيض",
+        "أسود",
+        "رمادي"
+      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -282,7 +299,8 @@ const STORE_CONFIG = {
     "discountPerItem": 400,
     "discountProducts": [
       20,
-      21
+      21,
+      22
     ],
     "discountScope": "selected"
   },
