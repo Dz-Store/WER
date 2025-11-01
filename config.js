@@ -45,7 +45,7 @@ const STORE_CONFIG = {
     "22": {
       "name": "فستان فاخر بمواصفات عالمية",
       "price": 6000,
-      "image": "",
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-22-1762006952336-modal12.jpg.webp",
       "description": "وصف المنتج الجديد",
       "availableSizes": [
         "S1",
