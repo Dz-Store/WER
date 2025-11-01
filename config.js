@@ -12,20 +12,6 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
-    },
-    "20": {
-      "name": "مودال 2",
-      "price": 6000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-20-1761816208064-modle6.jpg",
-      "description": "مودال أنيق",
-      "availableSizes": [
-        "S1",
-        "S2",
-        "M"
-      ],
-      "availableColors": [
-        "كما في الصورة"
-      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -265,9 +251,7 @@ const STORE_CONFIG = {
   "DISCOUNTS": {
     "minQuantityForDiscount": 2,
     "discountPerItem": 400,
-    "discountProducts": [
-      20
-    ],
+    "discountProducts": [],
     "discountScope": "selected"
   },
   "STORE_INFO": {
