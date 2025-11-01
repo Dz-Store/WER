@@ -2734,13 +2734,11 @@
         }
 
        
-            
-
- // ============================================================================
+   // ============================================================================
 // 🔗 ضع رابط الـ Web App الصحيح هنا
 // مثال: https://script.google.com/macros/s/AKfycb.../exec
 // ============================================================================
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz4kmeKipKudUEMqSx7d3m-2yDDqW3S8bJClqU8o_cjDYQgzOquoUr_pstS2HG3hhAc/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/PASTE_YOUR_WEB_APP_URL_HERE/exec";
 
 // ✅ اسم المتجر (احتياطي إذا لم يكن لديك STORE_CONFIG)
 const FALLBACK_STORE_NAME = "BENAKRAB-Shopp";
@@ -2845,10 +2843,10 @@ async function sendOrderToServer(orderData) {
     console.error("❌ خطأ الإرسال:", error);
     return false;
   }
-}
+});
+         
 
-
-
+ 
 
 
 
