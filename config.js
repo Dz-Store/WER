@@ -58,6 +58,22 @@ const STORE_CONFIG = {
         "أسود",
         "رمادي"
       ]
+    },
+    "23": {
+      "name": "مودال 5",
+      "price": 5000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-23-1762033027944-modal9.jpg.webp",
+      "description": "وصف المنتج الجديد",
+      "availableSizes": [
+        "S1",
+        "S2",
+        "L"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "زهري",
+        "بنفسجي"
+      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -300,7 +316,8 @@ const STORE_CONFIG = {
     "discountProducts": [
       20,
       21,
-      22
+      22,
+      23
     ],
     "discountScope": "selected"
   },
