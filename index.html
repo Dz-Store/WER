@@ -2733,82 +2733,7 @@
             wilayaSelect.classList.add('wilaya-pulse');
         }
 
-        // =============================================================================
-        // 📤 نظام إرسال الطلبات - الحل الجديد
-        // =============================================================================
-
-        // التحقق من الاتصال بالإنترنت
-       /*  function checkInternetConnection() {
-            return navigator.onLine;
-        }
-
-        // إرسال الطلب - الإرسال المباشر إلى الخادم فقط
-        async function submitOrder(orderData) {
-            try {
-                showLoading('جاري إرسال طلبك...');
-                
-                // 1. إرسال الطلب مباشرة إلى الخادم المشترك
-                const serverSuccess = await sendOrderToServer(orderData);
-                
-                hideLoading();
-                
-                if (serverSuccess) {
-                    showNotification('✅ تم إرسال طلبك بنجاح! سنتصل بك خلال 24 ساعة', 'success');
-                    
-                    // 2. الانتقال إلى الصفحة الرئيسية بعد 3 ثوان
-                    setTimeout(() => {
-                        resetOrderForm();
-                        switchPage('page1');
-                    }, 3000);
-                    
-                    return true;
-                } else {
-                    showNotification('❌ فشل في إرسال الطلب. يرجى المحاولة مرة أخرى أو الاتصال بنا', 'error');
-                    return false;
-                }
-                
-            } catch (error) {
-                hideLoading();
-                console.error('❌ خطأ في إرسال الطلب:', error);
-                showNotification('❌ فشل في إرسال الطلب. يرجى المحاولة مرة أخرى', 'error');
-                return false;
-            }
-        }
-
-        // إرسال الطلب إلى الخادم المشترك
-        async function sendOrderToServer(orderData) {
-            try {
-                if (!checkInternetConnection()) {
-                    throw new Error('لا يوجد اتصال بالإنترنت - يرجى التحقق من الاتصال والمحاولة مرة أخرى');
-                }
-
-                console.log('📤 جاري إرسال الطلب إلى الخادم...');
-                
-                const response = await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        action: 'saveOrder',
-                        orderData: orderData,
-                        storeName: STORE_CONFIG.STORE_INFO.name,
-                        timestamp: new Date().toISOString()
-                    })
-                });
-                
-                if (response.ok) {
-                    const result = await response.json();
-                    console.log('✅ تم إرسال الطلب إلى الخادم بنجاح:', result);
-                    return true;
-                } else {
-                    throw new Error('فشل في إرسال الطلب إلى الخادم');
-                }
-            } catch (error) {
-                console.error('❌ خطأ في إرسال الطلب:', error);
-                throw error;
-            }
-        } */ 
+       
             
 
    // إرسال الطلب إلى الخادم (Google Apps Script)
