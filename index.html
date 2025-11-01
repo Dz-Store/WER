@@ -2784,7 +2784,7 @@
 
                 console.log('📤 جاري إرسال الطلب إلى الخادم...');
                 
-               /* const response = await fetch(GOOGLE_SCRIPT_URL, {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -2808,32 +2808,10 @@
                 console.error('❌ خطأ في إرسال الطلب:', error);
                 throw error;
             }
-        } */
+        } 
             
 
-   const response = await fetch(GOOGLE_SCRIPT_URL, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    action: "saveOrder",
-    storeName: "BENAKRAB-Shopp",
-    orderData: orderData,
-    timestamp: new Date().toISOString()
-  })
-})
-.then(res => res.json())
-.then(data => {
-  if (data.success) {
-    alert("تم إرسال الطلب بنجاح ✅");
-  } else {
-    alert("فشل: " + data.message);
-  }
-})
-.catch(err => {
-  alert("خطأ في الاتصال: " + err);
-});
-
-
+   
 
 
 
