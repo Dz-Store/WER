@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الطلبات - BENAKRAB-Shopp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B9D;
+            --primary-dark: #FF4785;
+            --secondary: #00D4FF;
+            --secondary-dark: #00B8E0;
+            --accent: #FFD166;
+            --success: #06D6A0;
+            --warning: #FF9E16;
+            --danger: #EF476F;
+            --light: #F8F9FA;
+            --dark: #1A1A2E;
+            --gray: #6C757D;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --shadow: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+            --radius: 20px;
+            --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Cairo", sans-serif;
+            direction: rtl;
+            background: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            background: var(--gradient);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 1.5rem;
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            padding: 0.6rem 1rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .main-content {
+            padding: 2rem 0;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .stat-pending .stat-icon { background: var(--warning); }
+        .stat-confirmed .stat-icon { background: var(--secondary); }
+        .stat-shipped .stat-icon { background: var(--primary); }
+        .stat-delivered .stat-icon { background: var(--success); }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        .controls {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 3rem;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-family: "Cairo", sans-serif;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            padding: 0.8rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            cursor: pointer;
+            font-family: "Cairo", sans-serif;
+            background: white;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: "Cairo", sans-serif;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .orders-container {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .orders-header {
+            display: grid;
+            grid-template-columns: 100px 1fr 120px 120px 150px;
+            gap: 1rem;
+            padding: 1.2rem 1.5rem;
+            background: var(--light);
+            border-bottom: 2px solid #e2e8f0;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .order-item {
+            display: grid;
+            grid-template-columns: 100px 1fr 120px 120px 150px;
+            gap: 1rem;
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            transition: var(--transition);
+            align-items: center;
+        }
+
+        .order-item:hover {
+            background: #f8f9fa;
+        }
+
+        .order-id {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .customer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .customer-name {
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .customer-phone {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .order-date {
+            color: var(--gray);
+        }
+
+        .order-total {
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        .status-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .status-pending {
+            background: rgba(255, 158, 22, 0.1);
+            color: var(--warning);
+        }
+
+        .status-confirmed {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--secondary);
+        }
+
+        .status-shipped {
+            background: rgba(255, 107, 157, 0.1);
+            color: var(--primary);
+        }
+
+        .status-delivered {
+            background: rgba(6, 214, 160, 0.1);
+            color: var(--success);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--gray);
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #e2e8f0;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray);
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .orders-header {
+                display: none;
+            }
+            
+            .order-item {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+                padding: 1rem;
+                border: 2px solid #e2e8f0;
+                border-radius: var(--radius);
+                margin-bottom: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-crown"></i>
+                    <span>BENAKRAB-Shopp</span>
+                </a>
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>العودة للمتجر</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <h1 class="page-title">
+                <i class="fas fa-tasks"></i>
+                تسيير الطلبيات - BENAKRAB-Shopp
+            </h1>
+
+            <div class="stats-grid">
+                <div class="stat-card stat-pending">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number" id="pendingCount">0</div>
+                    <div class="stat-label">طلبات قيد الانتظار</div>
+                </div>
+                
+                <div class="stat-card stat-confirmed">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-number" id="confirmedCount">0</div>
+                    <div class="stat-label">طلبات مؤكدة</div>
+                </div>
+                
+                <div class="stat-card stat-shipped">
+                    <div class="stat-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="stat-number" id="shippedCount">0</div>
+                    <div class="stat-label">طلبات قيد الشحن</div>
+                </div>
+                
+                <div class="stat-card stat-delivered">
+                    <div class="stat-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div class="stat-number" id="deliveredCount">0</div>
+                    <div class="stat-label">طلبات مكتملة</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="search-box">
+                    <input type="text" class="search-input" id="searchInput" placeholder="ابحث بالاسم أو رقم الهاتف أو رقم الطلب...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                
+                <div class="filter-group">
+                    <select class="filter-select" id="statusFilter">
+                        <option value="all">جميع الحالات</option>
+                        <option value="pending">قيد الانتظار</option>
+                        <option value="confirmed">مؤكد</option>
+                        <option value="shipped">قيد الشحن</option>
+                        <option value="delivered">مكتمل</option>
+                    </select>
+                    
+                    <button class="btn btn-primary" onclick="loadOrders()">
+                        <i class="fas fa-sync-alt"></i>
+                        تحديث البيانات
+                    </button>
+                </div>
+            </div>
+
+            <div class="orders-container">
+                <div class="orders-header">
+                    <div>رقم الطلب</div>
+                    <div>العميل</div>
+                    <div>التاريخ</div>
+                    <div>المجموع</div>
+                    <div>الحالة</div>
+                </div>
+                
+                <div id="ordersList">
+                    <div class="loading">
+                        <div class="loading-spinner"></div>
+                        <p>جاري تحميل البيانات من Google Sheets...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // رابط Google Apps Script الخاص بك
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyjymnOZ4Qvv4Dqa6O9mFdEp3UareKIfylbVhB11d05K2riKS_p9hVB7QDZt4VTmV11/exec";
+        
+        let allOrders = [];
+
+        // تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrders();
+            setupEventListeners();
+        });
+
+        // تحميل الطلبات من Google Sheets
+        async function loadOrders() {
+            try {
+                showLoading();
+                
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'getOrders'
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('فشل في تحميل البيانات');
+                }
+                
+                const result = await response.json();
+                
+                if (result.status === "success" && result.data) {
+                    allOrders = convertSheetDataToOrders(result.data);
+                    displayOrders();
+                    updateStats();
+                    showNotification('تم تحميل البيانات بنجاح', 'success');
+                } else {
+                    throw new Error(result.message || 'خطأ في البيانات المستلمة');
+                }
+                
+            } catch (error) {
+                console.error('خطأ في تحميل الطلبات:', error);
+                showError('فشل في تحميل البيانات: ' + error.message);
+                
+                // استخدام بيانات تجريبية في حالة الخطأ
+                allOrders = getSampleData();
+                displayOrders();
+                updateStats();
+                showNotification('تم تحميل البيانات المحلية كنسخة احتياطية', 'warning');
+            }
+        }
+
+        // تحويل بيانات الجدول إلى مصفوفة الطلبات
+        function convertSheetDataToOrders(sheetData) {
+            if (!sheetData || sheetData.length < 2) return [];
+            
+            const orders = [];
+            const headers = sheetData[0];
+            
+            for (let i = 1; i < sheetData.length; i++) {
+                const row = sheetData[i];
+                const order = {};
+                
+                for (let j = 0; j < headers.length; j++) {
+                    const header = headers[j];
+                    const value = row[j] || '';
+                    
+                    switch(header) {
+                        case 'Numéro Commande':
+                            order.id = value;
+                            break;
+                        case 'Date':
+                            order.timestamp = value;
+                            break;
+                        case 'Nom Client':
+                            order.customerName = value;
+                            break;
+                        case 'Téléphone':
+                            order.customerPhone = value;
+                            break;
+                        case 'Commune':
+                            order.customerCommune = value;
+                            break;
+                        case 'Adresse':
+                            order.customerAddress = value;
+                            break;
+                        case 'Wilaya':
+                            order.wilaya = value;
+                            break;
+                        case 'Type Livraison':
+                            order.deliveryType = value;
+                            break;
+                        case 'Total':
+                            order.total = extractNumber(value);
+                            break;
+                        case 'Statut':
+                            order.status = convertStatus(value);
+                            break;
+                        case 'Nombre Pièces':
+                            order.totalPieces = parseInt(value) || 0;
+                            break;
+                        case 'Sous-total':
+                            order.subtotal = extractNumber(value);
+                            break;
+                        case 'Remise':
+                            order.discount = extractNumber(value);
+                            break;
+                        case 'Frais Livraison':
+                            order.deliveryCost = extractNumber(value);
+                            break;
+                    }
+                }
+                
+                if (order.id && order.customerName) {
+                    orders.push(order);
+                }
+            }
+            
+            return orders;
+        }
+
+        // استخراج الأرقام من النص
+        function extractNumber(text) {
+            const num = text.toString().replace(/[^\d.-]/g, '');
+            return parseFloat(num) || 0;
+        }
+
+        // تحويل حالة الطلب
+        function convertStatus(statusText) {
+            if (statusText.includes('attente') || statusText.includes('انتظار')) return 'pending';
+            if (statusText.includes('Confirmée') || statusText.includes('مؤكد')) return 'confirmed';
+            if (statusText.includes('livraison') || statusText.includes('شحن')) return 'shipped';
+            if (statusText.includes('Livrée') || statusText.includes('مكتمل')) return 'delivered';
+            return 'pending';
+        }
+
+        // عرض الطلبات
+        function displayOrders() {
+            const ordersList = document.getElementById('ordersList');
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const statusFilter = document.getElementById('statusFilter').value;
+            
+            let filteredOrders = allOrders.filter(order => {
+                const matchesSearch = 
+                    (order.customerName && order.customerName.toLowerCase().includes(searchTerm)) ||
+                    (order.customerPhone && order.customerPhone.includes(searchTerm)) ||
+                    (order.id && order.id.toLowerCase().includes(searchTerm));
+                
+                const matchesStatus = statusFilter === 'all' || order.status === statusFilter;
+                
+                return matchesSearch && matchesStatus;
+            });
+            
+            if (filteredOrders.length === 0) {
+                ordersList.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>لا توجد طلبات</h3>
+                        <p>لم يتم العثور على أي طلبات تطابق معايير البحث</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let ordersHTML = '';
+            
+            filteredOrders.forEach(order => {
+                const orderDate = new Date(order.timestamp);
+                const formattedDate = orderDate.toLocaleDateString('ar-EG', {
+                    day: 'numeric',
+                    month: 'numeric',
+                    year: 'numeric'
+                });
+                
+                const statusText = getStatusText(order.status);
+                const statusClass = `status-${order.status}`;
+                
+                ordersHTML += `
+                    <div class="order-item">
+                        <div class="order-id">${order.id || 'غير محدد'}</div>
+                        <div class="customer-info">
+                            <div class="customer-name">${order.customerName || 'غير محدد'}</div>
+                            <div class="customer-phone">${order.customerPhone || 'غير محدد'}</div>
+                        </div>
+                        <div class="order-date">${formattedDate}</div>
+                        <div class="order-total">${order.total || 0} دج</div>
+                        <div class="status-badge ${statusClass}">${statusText}</div>
+                    </div>
+                `;
+            });
+            
+            ordersList.innerHTML = ordersHTML;
+        }
+
+        // تحديث الإحصائيات
+        function updateStats() {
+            const pendingCount = allOrders.filter(order => order.status === 'pending').length;
+            const confirmedCount = allOrders.filter(order => order.status === 'confirmed').length;
+            const shippedCount = allOrders.filter(order => order.status === 'shipped').length;
+            const deliveredCount = allOrders.filter(order => order.status === 'delivered').length;
+            
+            document.getElementById('pendingCount').textContent = pendingCount;
+            document.getElementById('confirmedCount').textContent = confirmedCount;
+            document.getElementById('shippedCount').textContent = shippedCount;
+            document.getElementById('deliveredCount').textContent = deliveredCount;
+        }
+
+        // الحصول على نص الحالة
+        function getStatusText(status) {
+            const statusMap = {
+                'pending': 'قيد الانتظار',
+                'confirmed': 'مؤكد',
+                'shipped': 'قيد الشحن',
+                'delivered': 'مكتمل'
+            };
+            return statusMap[status] || status;
+        }
+
+        // إظهار تحميل
+        function showLoading() {
+            document.getElementById('ordersList').innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>جاري تحميل البيانات من Google Sheets...</p>
+                </div>
+            `;
+        }
+
+        // إظهار خطأ
+        function showError(message) {
+            document.getElementById('ordersList').innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>خطأ في تحميل البيانات</h3>
+                    <p>${message}</p>
+                    <button class="btn btn-primary" onclick="loadOrders()" style="margin-top: 1rem;">
+                        <i class="fas fa-redo"></i> إعادة المحاولة
+                    </button>
+                </div>
+            `;
+        }
+
+        // إظهار إشعار
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? 'var(--success)' : 'var(--warning)'};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check' : 'exclamation'}-circle"></i>
+                ${message}
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // بيانات تجريبية للاختبار
+        function getSampleData() {
+            return [
+                {
+                    id: "CMD-001",
+                    timestamp: new Date().toISOString(),
+                    customerName: "أحمد محمد",
+                    customerPhone: "0551234567",
+                    customerCommune: "الجزائر الوسطى",
+                    customerAddress: "شارع العربي بن مهيدي",
+                    wilaya: "الجزائر",
+                    deliveryType: "Bureau",
+                    total: 15000,
+                    status: "pending",
+                    totalPieces: 3,
+                    subtotal: 14000,
+                    discount: 1000,
+                    deliveryCost: 500
+                },
+                {
+                    id: "CMD-002", 
+                    timestamp: new Date(Date.now() - 86400000).toISOString(),
+                    customerName: "فاطمة الزهراء",
+                    customerPhone: "0777654321",
+                    customerCommune: "باب الوادي",
+                    customerAddress: "حي السلام",
+                    wilaya: "الجزائر",
+                    deliveryType: "Domicile",
+                    total: 8500,
+                    status: "confirmed",
+                    totalPieces: 2,
+                    subtotal: 8000,
+                    discount: 0,
+                    deliveryCost: 500
+                }
+            ];
+        }
+
+        // إعداد مستمعي الأحداث
+        function setupEventListeners() {
+            document.getElementById('searchInput').addEventListener('input', displayOrders);
+            document.getElementById('statusFilter').addEventListener('change', displayOrders);
+        }
+
+        // جعل الدالة متاحة عالمياً
+        window.loadOrders = loadOrders;
+    </script>
+</body>
+</html>
