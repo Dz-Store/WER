@@ -1831,6 +1831,46 @@
         window.refreshOrders = refreshOrders;
 
         console.log('✅ تم تحميل صفحة إدارة الطلبات بنجاح!');
-    </script>
+    
+  async function confirmOrder() {
+    const orderData = {
+      customerName: document.getElementById('customerName').value,
+      customerPhone: document.getElementById('customerPhone').value,
+      customerCommune: document.getElementById('customerCommune').value,
+      customerAddress: document.getElementById('customerAddress').value,
+      wilaya: document.getElementById('wilaya').value,
+      deliveryType: document.querySelector('input[name="deliveryType"]:checked')?.value || '',
+      items: [], // اجمع المنتجات من الصفحة إذا كانت موجودة
+      subtotal: 0,
+      discount: 0,
+      deliveryCost: 0,
+      total: 0,
+      totalPieces: 0
+    };
+
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzRsm9ANsummuQGvU6-tbXxd3QDuPzX_jilOy5RZs23wmctcItUz3E_ocXOjGh_YU8T/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'saveOrder',
+          storeName: 'BENAKRAB-Shopp',
+          orderData: orderData
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        alert('✅ تم إرسال الطلب بنجاح: ' + result.message);
+      } else {
+        alert('❌ فشل في الإرسال: ' + result.message);
+      }
+    } catch (error) {
+      console.error('❌ Network error:', error);
+      alert('❌ حدث خطأ في الاتصال بالخادم');
+    }
+  }
+</script>
+
 </body>
 </html>
