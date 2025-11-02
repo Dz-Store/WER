@@ -1408,10 +1408,10 @@
                         </div>
                     </div>
 
-                    
-                      <div id="sendingMessage" style="display:none; text-align:center; font-size:18px; color:#007bff; margin-top:20px;">
-                   📤 جاري الإرسال...
-                      </div>
+                    <div id="sendingMessage" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(135deg, #00D4FF, #FF6B9D); color:white; z-index:9999; display:flex; align-items:center; justify-content:center; flex-direction:column; font-family:'Segoe UI', sans-serif; text-align:center;">
+  <div style="font-size:48px; font-weight:bold; margin-bottom:20px;">📤 جاري إرسال طلبك...</div>
+  <div style="font-size:20px;">يرجى الانتظار قليلاً حتى يتم تأكيد الطلب</div>
+</div>
 
                     
                     <div class="btn-group">
@@ -3479,5 +3479,7 @@ function resetOrderForm() {
             </div>
         </div>
     </footer>
+    
+
 </body>
 </html>
