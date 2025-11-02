@@ -1408,6 +1408,12 @@
                         </div>
                     </div>
 
+                    
+                      <div id="sendingMessage" style="display:none; text-align:center; font-size:18px; color:#007bff; margin-top:20px;">
+                   📤 جاري الإرسال...
+                      </div>
+
+                    
                     <div class="btn-group">
                         <button type="button" class="btn btn-secondary" onclick="switchPage('page2')">
                             <i class="fas fa-arrow-right"></i> الرجوع
@@ -1511,7 +1517,7 @@
         let selectedWilaya = null;
         let currentPage = 'page1';
 
-        // =============================================================================
+       /*  // =============================================================================
         // 📤 نظام إرسال الطلبات - الحل الممتاز
         // =============================================================================
 
@@ -1700,12 +1706,172 @@
         function hideWaitingOverlay() {
             const waitingOverlay = document.getElementById('waitingOverlay');
             waitingOverlay.classList.remove('show');
-        }
+        }  */ 
 
 
 
         
+        // =============================================================================
+// 📤 نظام إرسال الطلبات - الحل الممتاز
+// =============================================================================
 
+// التحقق من الاتصال بالإنترنت
+function checkInternetConnection() {
+    return navigator.onLine;
+}
+
+// حفظ الطلب في localStorage للإدارة
+function saveOrderToLocalStorage(orderData) {
+    try {
+        const orderId = 'ORD-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+        const orderToSave = {
+            id: orderId,
+            timestamp: new Date().toISOString(),
+            status: 'pending',
+            customerName: orderData.customerName,
+            customerPhone: orderData.customerPhone,
+            customerAddress: orderData.customerAddress,
+            customerCommune: orderData.customerCommune,
+            wilaya: orderData.wilaya,
+            deliveryType: orderData.deliveryType,
+            items: orderData.items,
+            subtotal: orderData.subtotal,
+            discount: orderData.discount,
+            deliveryCost: orderData.deliveryCost,
+            total: orderData.total,
+            totalPieces: orderData.totalPieces
+        };
+        const existingOrders = JSON.parse(localStorage.getItem('storeOrders') || '[]');
+        existingOrders.unshift(orderToSave);
+        localStorage.setItem('storeOrders', JSON.stringify(existingOrders));
+        console.log('💾 تم حفظ الطلب محلياً للإدارة:', orderId);
+        return true;
+    } catch (error) {
+        console.error('❌ خطأ في حفظ الطلب محلياً:', error);
+        return false;
+    }
+}
+
+// إرسال الطلب - النظام المحسن
+async function submitOrder(orderData) {
+    try {
+        // عرض رسالة "📤 جاري الإرسال..."
+        document.getElementById('sendingMessage').style.display = 'block';
+
+        showLoading('⏳ جاري حفظ طلبك...');
+        const saveSuccess = saveOrderToLocalStorage(orderData);
+        if (!saveSuccess) {
+            throw new Error('فشل في الحفظ المحلي');
+        }
+        hideLoading();
+
+        if (checkInternetConnection()) {
+            try {
+                console.log('📤 محاولة إرسال الطلب إلى Google Sheets...');
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(orderData)
+                });
+                console.log('✅ تم محاولة الإرسال (قد لا يظهر رد بسبب no-cors)');
+            } catch (networkError) {
+                console.log('🌐 لا يمكن الاتصال بالخادم، لكن الطلب محفوظ محلياً');
+            }
+        } else {
+            console.log('🌐 لا يوجد اتصال بالإنترنت - الطلب محفوظ محلياً فقط');
+        }
+
+        // إخفاء رسالة "📤 جاري الإرسال..."
+        document.getElementById('sendingMessage').style.display = 'none';
+
+        showNotification('✅ تم استلام طلبك بنجاح! سنتصل بك خلال 24 ساعة', 'success');
+        showAdminNotification('طلب جديد!');
+        setTimeout(() => {
+            resetOrderForm();
+            switchPage('page1');
+        }, 3000);
+
+        return true;
+    } catch (error) {
+        hideLoading();
+        document.getElementById('sendingMessage').style.display = 'none';
+        console.error('❌ خطأ في معالجة الطلب:', error);
+        showNotification('❌ فشل في حفظ الطلب. يرجى المحاولة مرة أخرى', 'error');
+        return false;
+    }
+}
+
+// إشعار للإدارة
+function showAdminNotification(message) {
+    console.log('🔔 إشعار للإدارة:', message);
+}
+
+// تجهيز بيانات الطلب
+function prepareOrderData(formData) {
+    const priceDetails = calculateTotalPrice();
+    const orderItems = cartItems.map(item => {
+        const itemDiscountInfo = calculateDiscountedPrice(item.price, item.quantity, item.key);
+        return {
+            name: item.name,
+            quantity: item.quantity,
+            price: item.price,
+            finalPrice: itemDiscountInfo.finalPrice,
+            size: item.size,
+            color: item.color,
+            discount: itemDiscountInfo.hasDiscount ? itemDiscountInfo.discountAmount : 0,
+            image: item.image
+        };
+    });
+
+    return {
+        timestamp: new Date().toLocaleString('ar-DZ'),
+        customerName: formData.name,
+        customerPhone: formData.phone,
+        customerAddress: formData.address,
+        customerCommune: formData.commune,
+        wilaya: selectedWilaya,
+        deliveryType: selectedDeliveryType,
+        items: orderItems,
+        subtotal: priceDetails.subtotal,
+        discount: priceDetails.discount,
+        deliveryCost: priceDetails.deliveryCost,
+        total: priceDetails.total,
+        totalPieces: priceDetails.totalPieces,
+        status: 'جديد'
+    };
+}
+
+// إعادة تعيين النموذج
+function resetOrderForm() {
+    cartItems = [];
+    document.getElementById('orderForm').reset();
+    document.getElementById('contactForm').reset();
+    selectedWilaya = null;
+    selectedDeliveryType = null;
+    updateCartDisplay();
+    updateSelectedProducts();
+    updatePrice();
+    updateOrderDetailsButton();
+    document.getElementById('deliveryTypeSection').style.display = 'none';
+    const wilayaSelect = document.getElementById('wilaya');
+    wilayaSelect.classList.add('wilaya-pulse');
+    wilayaSelect.classList.remove('wilaya-selected');
+    managePulseEffects();
+}
+
+
+
+
+
+
+
+
+
+
+        
         // =============================================================================
         // 🚀 نظام تفعيل زر تفاصيل الطلبية الثابت المصغر مع الوميض السريع
         // =============================================================================
