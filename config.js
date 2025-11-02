@@ -325,7 +325,7 @@ const STORE_CONFIG = {
     "name": "BENAKRAB-Shopp",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
-      "0671466489",
+      "0778506974",
       "0792946548"
     ],
     "storeIcon": "👗🛍️",
