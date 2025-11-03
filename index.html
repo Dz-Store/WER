@@ -1579,7 +1579,7 @@
 
     <script>
         // رابط Google Apps Script
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwc0VRV9fm6ONtDkFISLvv4cW8IYRGDZMcaH3bl5fyA-KuEDA8VLXkdrKIvkOwpGRe5/exec";
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzYm1yiO70eoS84aJZ8TkoBPlnjrXDEmj9n2iJ6JsrINSkvk56kmV2yBAgq2-Ef76FR/exec";
 
         // المتغيرات العامة
         let cartItems = [];
@@ -1632,7 +1632,7 @@
         }
 
          // إرسال الطلب - النظام المحسن
-      /*  async function submitOrder(orderData) {
+       async function submitOrder(orderData) {
             try {
                 // إيقاف زر التأكيد وإظهار رسالة الانتظار
                 const confirmBtn = document.getElementById('confirmOrderBtn');
@@ -1697,105 +1697,10 @@
                 showNotification('❌ فشل في حفظ الطلب. يرجى المحاولة مرة أخرى', 'error');
                 return false;
             }
-        } */ 
+        }  
 
 
-         // إرسال الطلب - النظام المحسن
-async function submitOrder(orderData) {
-    try {
-        // إيقاف زر التأكيد وإظهار رسالة الانتظار
-        const confirmBtn = document.getElementById('confirmOrderBtn');
-        confirmBtn.disabled = true;
-        confirmBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التأكيد...';
-        confirmBtn.classList.remove('pulse-effect');
-        confirmBtn.classList.add('btn-disabled');
-
-        // إظهار رسالة "📤 جاري الإرسال..."
-        document.getElementById('sendingMessage').style.display = 'block';
-
-        // إظهار نافذة الانتظار
-        showWaitingOverlay();
-
-        // 1. الحفظ المحلي أولاً
-        const saveSuccess = saveOrderToLocalStorage(orderData);
-        if (!saveSuccess) {
-            throw new Error('فشل في الحفظ المحلي');
-        }
-
-        console.log('📤 بدء إرسال الطلب إلى Google Sheets...', orderData);
-
-        // 2. محاولة الإرسال لـ Google Sheets
-        if (checkInternetConnection()) {
-            try {
-                // استخدم mode: 'cors' بدلاً من 'no-cors'
-                const response = await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        action: 'saveOrder',
-                        ...orderData
-                    })
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`خطأ في الإرسال: ${response.status}`);
-                }
-                
-                const result = await response.json();
-                console.log('✅ استجابة الخادم:', result);
-                
-                if (result.status !== "success") {
-                    throw new Error(result.message || 'فشل في حفظ الطلب');
-                }
-                
-                console.log('✅ تم إرسال الطلب بنجاح إلى Google Sheets');
-                
-            } catch (networkError) {
-                console.log('🌐 لا يمكن الاتصال بالخادم، لكن الطلب محفوظ محلياً:', networkError);
-                // نستمر لأن الطلب محفوظ محلياً
-            }
-        } else {
-            console.log('🌐 لا يوجد اتصال بالإنترنت - الطلب محفوظ محلياً فقط');
-        }
-
-        // 3. إخفاء رسالة الانتظار
-        document.getElementById('sendingMessage').style.display = 'none';
-        hideWaitingOverlay();
-
-        // 4. إظهار رسالة النجاح
-        showNotification('✅ تم استلام طلبك بنجاح! سنتصل بك خلال 24 ساعة', 'success');
-        showAdminNotification('طلب جديد!');
-
-        // 5. الانتقال إلى الصفحة الرئيسية بعد 3 ثوان
-        setTimeout(() => {
-            resetOrderForm();
-            switchPage('page1');
-        }, 3000);
-
-        return true;
-        
-    } catch (error) {
-        // إعادة تفعيل الزر في حالة الخطأ
-        const confirmBtn = document.getElementById('confirmOrderBtn');
-        confirmBtn.disabled = false;
-        confirmBtn.innerHTML = '<i class="fas fa-check"></i> تأكيد الطلب';
-        confirmBtn.classList.add('pulse-effect');
-        confirmBtn.classList.remove('btn-disabled');
-
-        document.getElementById('sendingMessage').style.display = 'none';
-        hideWaitingOverlay();
-        console.error('❌ خطأ في معالجة الطلب:', error);
-        showNotification('❌ فشل في حفظ الطلب. يرجى المحاولة مرة أخرى', 'error');
-        return false;
-    }
-}
-
-
-
-
+       
 
         
 
