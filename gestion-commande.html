@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة الطلبات الاحترافي - BENAKRAB-Shopp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #2E86AB;
+            --primary-dark: #1B6B93;
+            --secondary: #A23B72;
+            --accent: #F18F01;
+            --success: #2E8B57;
+            --warning: #FF9E16;
+            --danger: #C44536;
+            --light: #F8F9FA;
+            --dark: #2D3047;
+            --gray: #6C757D;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.15);
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Cairo", sans-serif;
+            background: #f8fafc;
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        .admin-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        /* الشريط الجانبي */
+        .sidebar {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 1.5rem;
+            position: fixed;
+            width: 280px;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-item {
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            color: rgba(255,255,255,0.8);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .nav-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* المحتوى الرئيسي */
+        .main-content {
+            grid-column: 2;
+            padding: 2rem;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* بطاقات الإحصائيات */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-right: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            background: var(--primary);
+        }
+
+        .stat-title {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-change {
+            font-size: 0.8rem;
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        /* عناصر التحكم */
+        .control-panel {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .filters-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr auto;
+            gap: 1rem;
+            align-items: end;
+        }
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            font-family: "Cairo", sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-input:focus, .form-select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(46, 134, 171, 0.1);
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: "Cairo", sans-serif;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-warning {
+            background: var(--warning);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* جدول الطلبات المحسن */
+        .orders-table-container {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 120px 1fr 140px 120px 140px 150px 120px;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--light);
+            border-bottom: 2px solid #e2e8f0;
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        .order-row {
+            display: grid;
+            grid-template-columns: 120px 1fr 140px 120px 140px 150px 120px;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            transition: var(--transition);
+            align-items: center;
+        }
+
+        .order-row:hover {
+            background: #f8fafc;
+        }
+
+        .order-id {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.85rem;
+        }
+
+        .customer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .customer-name {
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .customer-details {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        .order-total {
+            font-weight: 700;
+            color: var(--success);
+            font-size: 1rem;
+        }
+
+        .status-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .status-pending { background: #FFF3CD; color: #856404; }
+        .status-confirmed { background: #D1ECF1; color: #0C5460; }
+        .status-shipped { background: #D1E7FF; color: #004085; }
+        .status-delivered { background: #D4EDDA; color: #155724; }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        /* التكيف مع الشاشات الصغيرة */
+        @media (max-width: 1200px) {
+            .admin-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                display: none;
+            }
+            
+            .main-content {
+                grid-column: 1;
+            }
+            
+            .filters-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .table-header {
+                display: none;
+            }
+            
+            .order-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1.5rem;
+                border: 2px solid #e2e8f0;
+                border-radius: var(--radius);
+                margin-bottom: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- الشريط الجانبي -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <div class="logo-text">BENAKRAB<br>Admin</div>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    لوحة التحكم
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    إدارة الطلبات
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-bar"></i>
+                    التقارير
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-boxes"></i>
+                    المنتجات
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    العملاء
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    الإعدادات
+                </a>
+            </div>
+        </nav>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            <div class="header-bar">
+                <h1 class="page-title">
+                    <i class="fas fa-tachometer-alt"></i>
+                    لوحة تحكم إدارة الطلبات
+                </h1>
+                
+                <div class="user-menu">
+                    <div class="user-avatar">مدير</div>
+                    <div>
+                        <div style="font-weight: 700;">مسؤول النظام</div>
+                        <div style="font-size: 0.8rem; color: var(--gray);">BENAKRAB-Shopp</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- إحصائيات سريعة -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="stat-title">إجمالي الطلبات</div>
+                    <div class="stat-value" id="totalOrders">0</div>
+                    <div class="stat-change" id="ordersChange">+0%</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon" style="background: var(--warning);">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="stat-title">طلبات قيد الانتظار</div>
+                    <div class="stat-value" id="pendingOrders">0</div>
+                    <div class="stat-change" id="pendingChange">+0%</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon" style="background: var(--success);">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                    <div class="stat-title">طلبات مكتملة</div>
+                    <div class="stat-value" id="completedOrders">0</div>
+                    <div class="stat-change" id="completedChange">+0%</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon" style="background: var(--secondary);">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                    </div>
+                    <div class="stat-title">إجمالي الإيرادات</div>
+                    <div class="stat-value" id="totalRevenue">0 دج</div>
+                    <div class="stat-change" id="revenueChange">+0%</div>
+                </div>
+            </div>
+
+            <!-- لوحة التحكم -->
+            <div class="control-panel">
+                <div class="filters-row">
+                    <div class="form-group">
+                        <label class="form-label">بحث في الطلبات</label>
+                        <input type="text" class="form-input" id="searchInput" placeholder="ابحث برقم الطلب، اسم العميل، الهاتف...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">حالة الطلب</label>
+                        <select class="form-select" id="statusFilter">
+                            <option value="all">جميع الحالات</option>
+                            <option value="pending">قيد الانتظار</option>
+                            <option value="confirmed">مؤكد</option>
+                            <option value="shipped">قيد الشحن</option>
+                            <option value="delivered">مكتمل</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">الفترة الزمنية</label>
+                        <select class="form-select" id="dateFilter">
+                            <option value="all">جميع الفترات</option>
+                            <option value="today">اليوم</option>
+                            <option value="week">هذا الأسبوع</option>
+                            <option value="month">هذا الشهر</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">عدد النتائج</label>
+                        <select class="form-select" id="pageSize">
+                            <option value="20">20 طلب</option>
+                            <option value="50">50 طلب</option>
+                            <option value="100">100 طلب</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary" onclick="loadOrders()">
+                            <i class="fas fa-sync-alt"></i>
+                            تحديث
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- جدول الطلبات -->
+            <div class="orders-table-container">
+                <div class="table-header">
+                    <div>رقم الطلب</div>
+                    <div>معلومات العميل</div>
+                    <div>التاريخ</div>
+                    <div>الولاية</div>
+                    <div>المجموع</div>
+                    <div>الحالة</div>
+                    <div>الإجراءات</div>
+                </div>
+                
+                <div id="ordersList">
+                    <div style="padding: 3rem; text-align: center; color: var(--gray);">
+                        <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <p>جاري تحميل بيانات الطلبات...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- السكريبت الرئيسي -->
+    <script>
+        // 🔧 الإعدادات
+        const CONFIG = {
+            SCRIPT_URL: "https://script.google.com/macros/s/AKfycbyVdYaMBeL9sAy01W9EfXSkhDWlVox5Ss-N6EEjsIS9xQoDjQdB7cE_33wSQtuNWZEv/exec",
+            AUTO_REFRESH: 30000
+        };
+
+        // 📊 المتغيرات العامة
+        let allOrders = [];
+        let currentStats = {};
+
+        // 🚀 تهيئة النظام
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 بدء تحميل نظام إدارة الطلبات...');
+            initializeSystem();
+        });
+
+        // 🔧 تهيئة النظام
+        function initializeSystem() {
+            loadOrders();
+            setupEventListeners();
+            setupAutoRefresh();
+        }
+
+        // 📥 تحميل الطلبات
+        async function loadOrders() {
+            try {
+                showLoading();
+                
+                const filters = {
+                    status: document.getElementById('statusFilter').value,
+                    dateRange: document.getElementById('dateFilter').value,
+                    searchTerm: document.getElementById('searchInput').value,
+                    pageSize: document.getElementById('pageSize').value
+                };
+                
+                const response = await fetch(CONFIG.SCRIPT_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'getOrders',
+                        ...filters
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`خطأ في الاتصال: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                
+                if (result.status === "success") {
+                    allOrders = result.data;
+                    currentStats = result.stats;
+                    displayOrders();
+                    updateStats();
+                    showNotification('✅ تم تحديث بيانات الطلبات', 'success');
+                } else {
+                    throw new Error(result.message);
+                }
+                
+            } catch (error) {
+                console.error('❌ خطأ في تحميل الطلبات:', error);
+                showNotification(`❌ فشل في تحميل البيانات: ${error.message}`, 'error');
+            }
+        }
+
+        // 📋 عرض الطلبات
+        function displayOrders() {
+            const ordersList = document.getElementById('ordersList');
+            
+            if (!allOrders || allOrders.length === 0) {
+                ordersList.innerHTML = `
+                    <div style="padding: 4rem; text-align: center; color: var(--gray);">
+                        <i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem; color: #e2e8f0;"></i>
+                        <h3 style="margin-bottom: 0.5rem; color: var(--dark);">لا توجد طلبات</h3>
+                        <p>لم يتم العثور على أي طلبات تطابق معايير البحث</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let ordersHTML = '';
+            
+            allOrders.forEach(order => {
+                const orderDate = new Date(order.timestamp);
+                const formattedDate = orderDate.toLocaleDateString('ar-EG', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+                
+                const statusText = getStatusText(order.status);
+                const statusClass = `status-${order.status}`;
+                
+                ordersHTML += `
+                    <div class="order-row">
+                        <div class="order-id">${order.id || 'غير محدد'}</div>
+                        <div class="customer-info">
+                            <div class="customer-name">${order.customerName || 'غير محدد'}</div>
+                            <div class="customer-details">
+                                ${order.customerPhone || 'لا يوجد'} | ${order.customerCommune || 'غير محدد'}
+                            </div>
+                            <div class="customer-details" style="font-size: 0.75rem;">
+                                ${order.customerAddress || 'لا يوجد عنوان'}
+                            </div>
+                        </div>
+                        <div class="order-date">${formattedDate}</div>
+                        <div class="wilaya">${order.wilaya || 'غير محدد'}</div>
+                        <div class="order-total">${formatCurrency(order.total || 0)}</div>
+                        <div class="status-badge ${statusClass}">
+                            ${statusText}
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary btn-icon" onclick="viewOrderDetails('${order.id}')" title="عرض التفاصيل">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-success btn-icon" onclick="changeOrderStatus('${order.id}')" title="تغيير الحالة">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-outline btn-icon" onclick="contactCustomer('${order.id}')" title="الاتصال بالعميل">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            ordersList.innerHTML = ordersHTML;
+        }
+
+        // 📊 تحديث الإحصائيات
+        function updateStats() {
+            document.getElementById('totalOrders').textContent = currentStats.total || 0;
+            document.getElementById('pendingOrders').textContent = currentStats.pending || 0;
+            document.getElementById('completedOrders').textContent = currentStats.delivered || 0;
+            document.getElementById('totalRevenue').textContent = formatCurrency(currentStats.totalRevenue || 0);
+        }
+
+        // 🔄 تغيير حالة الطلب
+        async function changeOrderStatus(orderId) {
+            const order = allOrders.find(o => o.id === orderId);
+            if (!order) return;
+            
+            const currentStatus = order.status;
+            const nextStatus = getNextStatus(currentStatus);
+            
+            const confirmMessage = `هل تريد تغيير حالة الطلب ${orderId} من "${getStatusText(currentStatus)}" إلى "${getStatusText(nextStatus)}"؟`;
+            
+            if (confirm(confirmMessage)) {
+                try {
+                    const response = await fetch(CONFIG.SCRIPT_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            action: 'updateOrderStatus',
+                            orderId: orderId,
+                            newStatus: nextStatus,
+                            updatedBy: 'مدير النظام'
+                        })
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.status === "success") {
+                        showNotification(`✅ تم تحديث حالة الطلب ${orderId}`, 'success');
+                        loadOrders(); // إعادة تحميل البيانات
+                    } else {
+                        throw new Error(result.message);
+                    }
+                    
+                } catch (error) {
+                    console.error('❌ خطأ في تحديث الحالة:', error);
+                    showNotification(`❌ فشل في تحديث الحالة: ${error.message}`, 'error');
+                }
+            }
+        }
+
+        // 👁️ عرض تفاصيل الطلب
+        function viewOrderDetails(orderId) {
+            const order = allOrders.find(o => o.id === orderId);
+            if (!order) return;
+            
+            const details = `
+                رقم الطلب: ${order.id}
+                العميل: ${order.customerName}
+                الهاتف: ${order.customerPhone}
+                العنوان: ${order.customerAddress}
+                الولاية: ${order.wilaya}
+                نوع التوصيل: ${order.deliveryType === 'desk' ? 'مكتب' : 'منزل'}
+                المجموع: ${formatCurrency(order.total)}
+                الحالة: ${getStatusText(order.status)}
+                عدد القطع: ${order.totalPieces || 0}
+            `;
+            
+            alert(details);
+        }
+
+        // 📞 الاتصال بالعميل
+        function contactCustomer(orderId) {
+            const order = allOrders.find(o => o.id === orderId);
+            if (!order || !order.customerPhone) return;
+            
+            const phoneNumber = order.customerPhone.replace(/\D/g, '');
+            window.open(`https://wa.me/213${phoneNumber}`, '_blank');
+        }
+
+        // 🛠️ دوال مساعدة
+        function getStatusText(status) {
+            const statusMap = {
+                'pending': 'قيد الانتظار',
+                'confirmed': 'مؤكد',
+                'shipped': 'قيد الشحن',
+                'delivered': 'مكتمل'
+            };
+            return statusMap[status] || status;
+        }
+
+        function getNextStatus(currentStatus) {
+            const statusFlow = {
+                'pending': 'confirmed',
+                'confirmed': 'shipped',
+                'shipped': 'delivered',
+                'delivered': 'pending'
+            };
+            return statusFlow[currentStatus] || 'pending';
+        }
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('ar-DZ', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(amount) + ' دج';
+        }
+
+        function showLoading() {
+            document.getElementById('ordersList').innerHTML = `
+                <div style="padding: 3rem; text-align: center; color: var(--gray);">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <p>جاري تحميل أحدث البيانات...</p>
+                </div>
+            `;
+        }
+
+        function showNotification(message, type = 'info') {
+            // تنفيذ بسيط للإشعارات
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                background: ${type === 'success' ? 'var(--success)' : 'var(--danger)'};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow-lg);
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                    <i class="fas fa-${type === 'success' ? 'check' : 'exclamation'}-circle"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        function setupEventListeners() {
+            document.getElementById('searchInput').addEventListener('input', debounce(loadOrders, 500));
+            document.getElementById('statusFilter').addEventListener('change', loadOrders);
+            document.getElementById('dateFilter').addEventListener('change', loadOrders);
+            document.getElementById('pageSize').addEventListener('change', loadOrders);
+        }
+
+        function setupAutoRefresh() {
+            setInterval(() => {
+                if (document.visibilityState === 'visible') {
+                    loadOrders();
+                }
+            }, CONFIG.AUTO_REFRESH);
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // جعل الدوال متاحة عالمياً
+        window.loadOrders = loadOrders;
+        window.changeOrderStatus = changeOrderStatus;
+        window.viewOrderDetails = viewOrderDetails;
+        window.contactCustomer = contactCustomer;
+
+        console.log('🎉 نظام إدارة الطلبات جاهز للاستخدام!');
+    </script>
+</body>
+</html>
