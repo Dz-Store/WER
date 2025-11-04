@@ -91,6 +91,18 @@ const STORE_CONFIG = {
         "كما في الصورة",
         "أبيض"
       ]
+    },
+    "25": {
+      "name": "مودال 7",
+      "price": 6000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-25-1762245758946-modal15.jpg.webp",
+      "description": "فستان الافراح",
+      "availableSizes": [
+        "M"
+      ],
+      "availableColors": [
+        "كما في الصورة"
+      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -336,7 +348,8 @@ const STORE_CONFIG = {
       22,
       23,
       24,
-      19
+      19,
+      25
     ],
     "discountScope": "selected"
   },
