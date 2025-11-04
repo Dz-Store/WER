@@ -13,6 +13,21 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة"
       ]
+    },
+    "21": {
+      "name": "مودال 3",
+      "price": 6000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-21-1762271201170-modal11.jpg.webp",
+      "description": "فستان بمواصفات عالية",
+      "availableSizes": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "بنفسجي"
+      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -257,7 +272,8 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 400,
     "discountProducts": [
-      20
+      20,
+      21
     ],
     "discountScope": "selected"
   },
