@@ -4,7 +4,7 @@ const STORE_CONFIG = {
       "name": "مودال 1",
       "price": 6000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762294949123-modal6.jpg",
-      "description": "تيشيرت قطني مريح للأطفال",
+      "description": "معطف قطني بتفاصيل فاخرة",
       "availableSizes": [
         "S",
         "M",
@@ -47,7 +47,8 @@ const STORE_CONFIG = {
     "discountPerItem": 300,
     "discountScope": "all",
     "discountProducts": [
-      2
+      2,
+      1
     ]
   },
   "STORE_INFO": {
