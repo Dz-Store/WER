@@ -1,7 +1,7 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
     "1": {
-      "name": "معطف أنيق",
+      "name": "مودال 1",
       "price": 6000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762294949123-modal6.jpg",
       "description": "تيشيرت قطني مريح للأطفال",
@@ -14,6 +14,21 @@ const STORE_CONFIG = {
         "أبيض",
         "أسود",
         "أزرق"
+      ]
+    },
+    "2": {
+      "name": "مودال 2",
+      "price": 6000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg",
+      "description": "فستان الأفراح والمناسبات",
+      "availableSizes": [
+        "M",
+        "S"
+      ],
+      "availableColors": [
+        "وردي",
+        "أحمر",
+        "أبيض"
       ]
     }
   },
@@ -31,7 +46,9 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 300,
     "discountScope": "all",
-    "discountProducts": []
+    "discountProducts": [
+      2
+    ]
   },
   "STORE_INFO": {
     "name": "BENAKRAB SHOPP",
