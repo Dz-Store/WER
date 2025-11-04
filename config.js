@@ -1,19 +1,16 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
     "1": {
-      "name": "معطف أنيق",
+      "name": "مودال 1",
       "price": 6000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762294949123-modal6.jpg",
       "description": "تيشيرت قطني مريح للأطفال",
       "availableSizes": [
         "S",
-        "M",
-        "L"
+        "M"
       ],
       "availableColors": [
-        "أبيض",
-        "أسود",
-        "أزرق"
+        "وردي"
       ]
     }
   },
