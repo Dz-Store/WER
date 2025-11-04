@@ -352,7 +352,11 @@ const STORE_CONFIG = {
       "0792946548"
     ],
     "storeIcon": "👗🛍️",
-    "storeTitle": "أحدث موديلات الأطفال"
+    "storeTitle": "أحدث موديلات الأطفال",
+    "facebookUrl": "https://www.facebook.com/share/v/1A5vxXeBj8/",
+    "instagramUrl": "https://www.instagram.com/eljazayer_elkhadhra?igsh=NGc1b2xzeTFteGNw",
+    "messengerUrl": "https://m.me/ahcene.benakrab",
+    "viberNumber": "0671466489"
   },
   "AGE_SIZES": {
     "5": "S1",
