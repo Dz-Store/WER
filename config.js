@@ -6,8 +6,9 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-19-1761774285629-modal7.jpg.webp",
       "description": "فستان سندريلا",
       "availableSizes": [
-        "M",
-        "S2"
+        "S3",
+        "S2",
+        "S1"
       ],
       "availableColors": [
         "كما في الصورة"
@@ -19,9 +20,10 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-20-1761816208064-modle6.jpg",
       "description": "مودال أنيق",
       "availableSizes": [
-        "S1",
-        "S2",
-        "M"
+        "S3",
+        "S4",
+        "M",
+        "M1"
       ],
       "availableColors": [
         "كما في الصورة"
@@ -33,10 +35,9 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-21-1761838155562-modal5.jpg",
       "description": "مودال تركي بتفصيلات عصرية",
       "availableSizes": [
+        "L",
         "S1",
-        "S2",
-        "M",
-        "L"
+        "S2"
       ],
       "availableColors": [
         "كما في الصورة"
@@ -50,7 +51,13 @@ const STORE_CONFIG = {
       "availableSizes": [
         "S1",
         "S2",
-        "M"
+        "L2",
+        "L1",
+        "M2",
+        "M",
+        "M1",
+        "S4",
+        "S3"
       ],
       "availableColors": [
         "كما في الصورة",
@@ -65,9 +72,9 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-23-1762033027944-modal9.jpg.webp",
       "description": "وصف المنتج الجديد",
       "availableSizes": [
+        "L",
         "S1",
-        "S2",
-        "L"
+        "S2"
       ],
       "availableColors": [
         "كما في الصورة",
@@ -83,9 +90,7 @@ const STORE_CONFIG = {
       "availableSizes": [
         "S1",
         "S2",
-        "S3",
-        "S4",
-        "M"
+        "S3"
       ],
       "availableColors": [
         "كما في الصورة",
@@ -355,13 +360,14 @@ const STORE_CONFIG = {
     "storeTitle": "أحدث موديلات الأطفال"
   },
   "AGE_SIZES": {
-    "6": "S1",
-    "7": "S2",
-    "8": "S3",
-    "9": "S4",
-    "10": "M",
-    "11": "M1",
-    "12": "M2"
+    "5": "S1",
+    "6": "S3",
+    "7": "S4",
+    "8": "M",
+    "9": "M1",
+    "10": "M2",
+    "11": "L1",
+    "12": "L2"
   },
   "AVAILABLE_COLORS": [
     "كما في الصورة",
@@ -382,6 +388,7 @@ const STORE_CONFIG = {
     "M",
     "M1",
     "M2",
-    "L"
+    "L1",
+    "L2"
   ]
 };
