@@ -52,7 +52,8 @@ const STORE_CONFIG = {
     "5": "M",
     "7": "L",
     "9": "XL",
-    "10": "XXL"
+    "10": "XXL",
+    "11": "XXL"
   },
   "AVAILABLE_SIZES": [
     "S",
