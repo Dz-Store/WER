@@ -335,7 +335,8 @@ const STORE_CONFIG = {
       21,
       22,
       23,
-      24
+      24,
+      19
     ],
     "discountScope": "selected"
   },
