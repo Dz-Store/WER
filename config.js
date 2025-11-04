@@ -1,18 +1,5 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
-    "19": {
-      "name": "مودال 1",
-      "price": 8400,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-19-1761774285629-modal7.jpg.webp",
-      "description": "فستان سندريلا",
-      "availableSizes": [
-        "M",
-        "S2"
-      ],
-      "availableColors": [
-        "كما في الصورة"
-      ]
-    },
     "20": {
       "name": "مودال 2",
       "price": 6000,
@@ -25,54 +12,6 @@ const STORE_CONFIG = {
       ],
       "availableColors": [
         "كما في الصورة"
-      ]
-    },
-    "21": {
-      "name": "مودال 3",
-      "price": 4000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-21-1761838155562-modal5.jpg",
-      "description": "مودال تركي بتفصيلات عصرية",
-      "availableSizes": [
-        "S1",
-        "S2",
-        "M",
-        "L"
-      ],
-      "availableColors": [
-        "كما في الصورة"
-      ]
-    },
-    "23": {
-      "name": "مودال 5",
-      "price": 5000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-23-1762033027944-modal9.jpg.webp",
-      "description": "وصف المنتج الجديد",
-      "availableSizes": [
-        "S1",
-        "S2",
-        "L"
-      ],
-      "availableColors": [
-        "كما في الصورة",
-        "زهري",
-        "بنفسجي"
-      ]
-    },
-    "24": {
-      "name": "مودال 6",
-      "price": 4000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-24-1762236610689-modal11.jpg.webp",
-      "description": "فستان الجميلات ، بتفاصيل دقيقة وجدابة",
-      "availableSizes": [
-        "S1",
-        "S2",
-        "S3",
-        "S4",
-        "M"
-      ],
-      "availableColors": [
-        "كما في الصورة",
-        "أبيض"
       ]
     }
   },
@@ -318,11 +257,7 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 400,
     "discountProducts": [
-      20,
-      21,
-      23,
-      24,
-      19
+      20
     ],
     "discountScope": "selected"
   },
