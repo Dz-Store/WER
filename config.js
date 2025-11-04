@@ -45,7 +45,7 @@ const STORE_CONFIG = {
     "facebookUrl": "",
     "instagramUrl": "",
     "messengerUrl": "",
-    "viberNumber": ""
+    "viberNumber": "0671466489"
   },
   "AGE_SIZES": {
     "3": "S",
