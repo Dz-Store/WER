@@ -46,7 +46,7 @@ const STORE_CONFIG = {
       "name": "مودال 4",
       "price": 6000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-22-1762006952336-modal12.jpg.webp",
-      "description": "فستان جميل وخفيف دو جودة عالية",
+      "description": "وصف المنتج الجديد",
       "availableSizes": [
         "S1",
         "S2",
@@ -90,18 +90,6 @@ const STORE_CONFIG = {
       "availableColors": [
         "كما في الصورة",
         "أبيض"
-      ]
-    },
-    "25": {
-      "name": "مودال 7",
-      "price": 6000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-25-1762245758946-modal15.jpg.webp",
-      "description": "فستان الافراح",
-      "availableSizes": [
-        "M"
-      ],
-      "availableColors": [
-        "كما في الصورة"
       ]
     }
   },
@@ -337,6 +325,10 @@ const STORE_CONFIG = {
     "58 - المنيعة": {
       "home": 1000,
       "desk": 400
+    },
+    "59 - فرجيوة": {
+      "home": 900,
+      "desk": 500
     }
   },
   "DISCOUNTS": {
@@ -348,8 +340,7 @@ const STORE_CONFIG = {
       22,
       23,
       24,
-      19,
-      25
+      19
     ],
     "discountScope": "selected"
   },
