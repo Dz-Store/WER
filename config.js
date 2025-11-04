@@ -74,6 +74,23 @@ const STORE_CONFIG = {
         "زهري",
         "بنفسجي"
       ]
+    },
+    "24": {
+      "name": "مودال 6",
+      "price": 4000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-24-1762236610689-modal11.jpg.webp",
+      "description": "فستان الجميلات ، بتفاصيل دقيقة وجدابة",
+      "availableSizes": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "M"
+      ],
+      "availableColors": [
+        "كما في الصورة",
+        "أبيض"
+      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -317,7 +334,8 @@ const STORE_CONFIG = {
       20,
       21,
       22,
-      23
+      23,
+      24
     ],
     "discountScope": "selected"
   },
