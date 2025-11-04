@@ -1,30 +1,19 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
     "1": {
-      "name": "مودال 1",
+      "name": "معطف أنيق",
       "price": 6000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762294949123-modal6.jpg",
       "description": "تيشيرت قطني مريح للأطفال",
-      "availableSizes": [
-        "S",
-        "M"
-      ],
-      "availableColors": [
-        "وردي"
-      ]
-    },
-    "2": {
-      "name": "مودال 2",
-      "price": 4500,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762298650969-modle6.jpg",
-      "description": "فستان الأفراح والمناسبات",
       "availableSizes": [
         "S",
         "M",
         "L"
       ],
       "availableColors": [
-        "أحمر"
+        "أبيض",
+        "أسود",
+        "أزرق"
       ]
     }
   },
@@ -42,14 +31,12 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 300,
     "discountScope": "all",
-    "discountProducts": [
-      2
-    ]
+    "discountProducts": []
   },
   "STORE_INFO": {
-    "name": "متجر الأطفال",
+    "name": "BENAKRAB SHOPP",
     "storeIcon": "👑",
-    "storeTitle": "👑 أحدث موديلات الأطفال",
+    "storeTitle": " أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
       "0671466489",
