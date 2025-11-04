@@ -383,6 +383,7 @@ const STORE_CONFIG = {
     "M",
     "M1",
     "M2",
-    "L"
+    "L1",
+    "L2"
   ]
 };
