@@ -43,7 +43,7 @@ const STORE_CONFIG = {
       ]
     },
     "22": {
-      "name": "مودال 4",
+      "name": "فستان فاخر بمواصفات عالمية",
       "price": 6000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-22-1762006952336-modal12.jpg.webp",
       "description": "وصف المنتج الجديد",
@@ -314,10 +314,10 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 400,
     "discountProducts": [
+      20,
       21,
       22,
-      23,
-      19
+      23
     ],
     "discountScope": "selected"
   },
@@ -354,9 +354,11 @@ const STORE_CONFIG = {
   "AVAILABLE_SIZES": [
     "S1",
     "S2",
+    "S3",
+    "S4",
     "M",
-    "L",
-    "XL",
-    "XXL"
+    "M1",
+    "M2",
+    "L"
   ]
 };
