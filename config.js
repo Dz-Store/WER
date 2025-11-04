@@ -325,6 +325,10 @@ const STORE_CONFIG = {
     "58 - المنيعة": {
       "home": 1000,
       "desk": 400
+    },
+    "59 - فرجيوة": {
+      "home": 900,
+      "desk": 500
     }
   },
   "DISCOUNTS": {
