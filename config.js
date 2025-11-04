@@ -275,7 +275,7 @@ const STORE_CONFIG = {
       20,
       21
     ],
-    "discountScope": "selected"
+    "discountScope": "all"
   },
   "STORE_INFO": {
     "name": "BENAKRAB-Shopp",
