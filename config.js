@@ -12,6 +12,20 @@ const STORE_CONFIG = {
       "availableColors": [
         "وردي"
       ]
+    },
+    "2": {
+      "name": "مودال 2",
+      "price": 4500,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762298650969-modle6.jpg",
+      "description": "فستان الأفراح والمناسبات",
+      "availableSizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "availableColors": [
+        "أحمر"
+      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -28,7 +42,9 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 300,
     "discountScope": "all",
-    "discountProducts": []
+    "discountProducts": [
+      2
+    ]
   },
   "STORE_INFO": {
     "name": "متجر الأطفال",
