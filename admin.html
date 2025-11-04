@@ -1247,7 +1247,7 @@
                 let configUrl;
                 
                 if (tokenConfig && repo) {
-                    configUrl = `https://raw.githubusercontent.com/${tokenConfig.username}/${repo}/${tokenConfig.branch || 'main'}/config.js?t=${Date.now()}`;
+                    configUrl = 'https://raw.githubusercontent.com/Dz-Store/WER/main/config.js?t=' + Date.now(); 
                 } else {
                     configUrl = 'https://raw.githubusercontent.com/Dz-Store/WER/main/config.js?t=' + Date.now();
                 }
