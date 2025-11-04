@@ -3,7 +3,7 @@ const STORE_CONFIG = {
     "1": {
       "name": "تيشيرت أطفال",
       "price": 2500,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762286085820-modal5.jpg",
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762286159535-modal5.jpg",
       "description": "تيشيرت قطني مريح للأطفال",
       "availableSizes": [
         "S",
