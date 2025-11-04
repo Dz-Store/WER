@@ -67,8 +67,7 @@ const STORE_CONFIG = {
       "availableSizes": [
         "S1",
         "S2",
-        "L",
-        "L2"
+        "L"
       ],
       "availableColors": [
         "كما في الصورة",
