@@ -28,7 +28,8 @@ const STORE_CONFIG = {
       "availableColors": [
         "وردي",
         "أحمر",
-        "أبيض"
+        "أبيض",
+        "كما في الصورة"
       ]
     }
   },
