@@ -270,7 +270,7 @@ const STORE_CONFIG = {
   "DISCOUNTS": {
     "minQuantityForDiscount": 2,
     "discountPerItem": 300,
-    "discountScope": "selected",
+    "discountScope": "all",
     "discountProducts": [
       2,
       1
