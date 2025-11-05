@@ -4,7 +4,7 @@ const STORE_CONFIG = {
       "name": "مودال 1",
       "price": 6000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762378313491-6169e68ad981a5c61a35de6eb8ea92ca.jpg",
-      "description": "معطف قطني بتفاصيل فاخرة",
+      "description": "لباس تقليدي فاخر",
       "availableSizes": [
         "S",
         "M",
@@ -282,7 +282,9 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 300,
     "discountScope": "selected",
-    "discountProducts": []
+    "discountProducts": [
+      1
+    ]
   },
   "STORE_INFO": {
     "name": "BENAKRAB SHOPP",
