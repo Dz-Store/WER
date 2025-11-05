@@ -31,6 +31,20 @@ const STORE_CONFIG = {
         "أبيض",
         "كما في الصورة"
       ]
+    },
+    "3": {
+      "name": "مودال 3",
+      "price": 5500,
+      "image": "",
+      "description": "لباس أنيق ، بمواصفات عالمية",
+      "availableSizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "availableColors": [
+        "كما في الصورة"
+      ]
     }
   },
   "DELIVERY_PRICES": {
