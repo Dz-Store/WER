@@ -31,6 +31,19 @@ const STORE_CONFIG = {
         "أبيض",
         "كما في الصورة"
       ]
+    },
+    "3": {
+      "name": "مودال 3",
+      "price": 5500,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762376640949-littlebedouin-girls-luxury-occasion-dress-dress-231324.webp",
+      "description": "فستان الأفراح و المناسيات",
+      "availableSizes": [
+        "XL",
+        "XXL"
+      ],
+      "availableColors": [
+        "كما في الصورة"
+      ]
     }
   },
   "DELIVERY_PRICES": {
