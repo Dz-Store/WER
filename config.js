@@ -285,7 +285,7 @@ const STORE_CONFIG = {
       "0671466489",
       "0551102155"
     ],
-    "facebookUrl": "",
+    "facebookUrl": "https://www.facebook.com/groups/282915216604963/?ref=share&mibextid=NSMWBT",
     "instagramUrl": "",
     "messengerUrl": "",
     "viberNumber": "0671466489"
