@@ -3,7 +3,7 @@ const STORE_CONFIG = {
     "1": {
       "name": "مودال 1",
       "price": 6000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762377795450-patachou-girls-red-felted-coat-570076-b7eb659cd9df2b9058d637aa1ed7a5238058ffde.jpg",
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762378313491-6169e68ad981a5c61a35de6eb8ea92ca.jpg",
       "description": "معطف قطني بتفاصيل فاخرة",
       "availableSizes": [
         "S",
@@ -11,9 +11,7 @@ const STORE_CONFIG = {
         "L"
       ],
       "availableColors": [
-        "أبيض",
-        "أسود",
-        "أزرق"
+        "كما في الصورة"
       ]
     },
     "2": {
@@ -284,9 +282,7 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 300,
     "discountScope": "selected",
-    "discountProducts": [
-      1
-    ]
+    "discountProducts": []
   },
   "STORE_INFO": {
     "name": "BENAKRAB SHOPP",
