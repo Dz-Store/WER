@@ -313,7 +313,8 @@ const STORE_CONFIG = {
     "10": "XXL",
     "11": "XXL",
     "12": "XXL",
-    "13": "XXL"
+    "13": "XXL",
+    "14": "XXL"
   },
   "AVAILABLE_SIZES": [
     "S",
