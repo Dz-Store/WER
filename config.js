@@ -41,7 +41,8 @@ const STORE_CONFIG = {
         "XXL"
       ],
       "availableColors": [
-        "كما في الصورة"
+        "كما في الصورة",
+        "أبيض"
       ]
     }
   },
