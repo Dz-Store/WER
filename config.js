@@ -295,11 +295,11 @@ const STORE_CONFIG = {
     "storeTitle": " أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
-      "0671466489",
+      "0777456755",
       "0551102155"
     ],
-    "facebookUrl": "https://www.facebook.com/share/p/1BUoELuJSU/",
-    "instagramUrl": "https://www.instagram.com/vetements_pour_bebe_nn?igsh=ZzczN3Z5NXFuaHE1",
+    "facebookUrl": "",
+    "instagramUrl": "",
     "messengerUrl": "",
     "viberNumber": "0671466489"
   },
