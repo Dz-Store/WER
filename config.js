@@ -21,7 +21,8 @@ const STORE_CONFIG = {
       "description": "فستان الأفراح والمناسبات",
       "availableSizes": [
         "M",
-        "S"
+        "S",
+        "L"
       ],
       "availableColors": [
         "وردي",
