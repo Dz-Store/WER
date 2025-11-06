@@ -11,9 +11,8 @@ const STORE_CONFIG = {
         "L"
       ],
       "availableColors": [
-        "أبيض",
-        "أسود",
-        "أزرق"
+        "أحمر",
+        "وردي"
       ]
     },
     "2": {
