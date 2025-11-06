@@ -12,7 +12,11 @@ const STORE_CONFIG = {
       "availableColors": [
         "أحمر",
         "كما في الصورة"
-      ]
+      ],
+      "ageSizes": {
+        "8": "S",
+        "10": "L"
+      }
     },
     "2": {
       "name": "مودال 2",
