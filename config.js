@@ -3,15 +3,17 @@ const STORE_CONFIG = {
     "1": {
       "name": "مودال 1",
       "price": 6000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762378313491-6169e68ad981a5c61a35de6eb8ea92ca.jpg",
-      "description": "لباس تقليدي فاخر",
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762377795450-patachou-girls-red-felted-coat-570076-b7eb659cd9df2b9058d637aa1ed7a5238058ffde.jpg",
+      "description": "معطف قطني بتفاصيل فاخرة",
       "availableSizes": [
         "S",
         "M",
         "L"
       ],
       "availableColors": [
-        "كما في الصورة"
+        "أبيض",
+        "أسود",
+        "أزرق"
       ]
     },
     "2": {
@@ -311,7 +313,13 @@ const STORE_CONFIG = {
   },
   "AVAILABLE_SIZES": [
     "S",
+    "S1",
+    "S2",
+    "S3",
     "M",
+    "M1",
+    "M2",
+    "M3",
     "L",
     "XL",
     "XXL"
