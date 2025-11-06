@@ -298,8 +298,8 @@ const STORE_CONFIG = {
       "0671466489",
       "0551102155"
     ],
-    "facebookUrl": "",
-    "instagramUrl": "",
+    "facebookUrl": "https://www.facebook.com/share/p/1BUoELuJSU/",
+    "instagramUrl": "https://www.instagram.com/vetements_pour_bebe_nn?igsh=ZzczN3Z5NXFuaHE1",
     "messengerUrl": "",
     "viberNumber": "0671466489"
   },
