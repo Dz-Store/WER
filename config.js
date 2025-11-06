@@ -295,10 +295,10 @@ const STORE_CONFIG = {
     "storeTitle": " أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
-      "0777456755",
+      "0671466489",
       "0551102155"
     ],
-    "facebookUrl": "",
+    "facebookUrl": "https://www.facebook.com/share/r/1AUYY5favq/",
     "instagramUrl": "",
     "messengerUrl": "",
     "viberNumber": "0671466489"
