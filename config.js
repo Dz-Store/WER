@@ -7,7 +7,7 @@ const STORE_CONFIG = {
       "description": "فستان تقليدي فاخر",
       "availableSizes": [
         "S",
-        "M"
+        "L"
       ],
       "availableColors": [
         "أحمر",
