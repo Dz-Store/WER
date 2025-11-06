@@ -310,7 +310,8 @@ const STORE_CONFIG = {
     "7": "M",
     "8": "M1",
     "9": "M2",
-    "10": "XXL"
+    "10": "XXL",
+    "11": "XXL"
   },
   "AVAILABLE_SIZES": [
     "S",
