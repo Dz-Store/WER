@@ -38,7 +38,8 @@ const STORE_CONFIG = {
       "description": "فستان الأفراح و المناسيات",
       "availableSizes": [
         "XL",
-        "XXL"
+        "XXL",
+        "L"
       ],
       "availableColors": [
         "كما في الصورة",
