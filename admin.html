@@ -2309,7 +2309,7 @@
                     <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; align-items: end;">
                         <div>
                             <label>العمر (سنوات):</label>
-                            <input type="number" value="${age}" min="3" max="12" 
+                            <input type="number" value="${age}" min="2" max="15" 
                                    onchange="updateAgeSizeKey('${age}', this.value)">
                         </div>
                         <div>
@@ -2331,7 +2331,7 @@
         }
 
         function updateAgeSizeKey(oldAge, newAge) {
-            if (newAge && newAge >= 3 && newAge <= 12) {
+            if (newAge && newAge >= 2 && newAge <= 15) {
                 const size = CONFIG.AGE_SIZES[oldAge];
                 delete CONFIG.AGE_SIZES[oldAge];
                 CONFIG.AGE_SIZES[newAge] = size;
@@ -2356,7 +2356,7 @@
         function addNewAgeSize() {
             const ages = Object.keys(CONFIG.AGE_SIZES).map(Number);
             const maxAge = Math.max(...ages);
-            if (maxAge < 12) {
+            if (maxAge < 15) {
                 const newAge = maxAge + 1;
                 CONFIG.AGE_SIZES[newAge] = CONFIG.AVAILABLE_SIZES[CONFIG.AVAILABLE_SIZES.length - 1] || 'XL';
                 STORE_CONFIG.AGE_SIZES[newAge] = CONFIG.AGE_SIZES[newAge];
@@ -2365,7 +2365,7 @@
                 loadAgeSizes();
                 showNotification('تم إضافة عمر جديد', 'success');
             } else {
-                showNotification('لا يمكن إضافة عمر أكبر من 12 سنة', 'error');
+                showNotification('لا يمكن إضافة عمر أكبر من 15 سنة', 'error');
             }
         }
 
