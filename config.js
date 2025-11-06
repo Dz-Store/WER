@@ -299,7 +299,7 @@ const STORE_CONFIG = {
       "0551102155"
     ],
     "facebookUrl": "https://www.facebook.com/share/r/1AUYY5favq/",
-    "instagramUrl": "",
+    "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
     "messengerUrl": "",
     "viberNumber": "0671466489"
   },
