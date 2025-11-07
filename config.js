@@ -9,7 +9,8 @@ const STORE_CONFIG = {
         "XL",
         "S",
         "S1",
-        "M2"
+        "M2",
+        "XXL"
       ],
       "availableColors": [
         "أحمر",
@@ -18,7 +19,11 @@ const STORE_CONFIG = {
       "ageSizes": {
         "5": "S",
         "6": "S1"
-      }
+      },
+      "ageSettings": {
+        "sharedAges": true
+      },
+      "sharedSize": "XL"
     },
     "2": {
       "name": "مودال 2",
