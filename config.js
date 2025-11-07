@@ -6,10 +6,10 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762411966732-6169e68ad981a5c61a35de6eb8ea92ca.jpg",
       "description": "فستان تقليدي فاخر",
       "availableSizes": [
-        "XL",
         "S",
         "S1",
-        "M2"
+        "M2",
+        "S2"
       ],
       "availableColors": [
         "أحمر",
