@@ -29,6 +29,7 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg",
       "description": "فستان الأفراح والمناسبات",
       "availableSizes": [
+        "S1",
         "S"
       ],
       "availableColors": [
@@ -38,11 +39,13 @@ const STORE_CONFIG = {
         "كما في الصورة"
       ],
       "ageSizes": {
-        "8": "S"
+        "8": "S",
+        "9": "S1"
       },
       "ageSettings": {
-        "sharedAges": false
-      }
+        "sharedAges": true
+      },
+      "sharedSize": "M"
     },
     "3": {
       "name": "مودال 3",
