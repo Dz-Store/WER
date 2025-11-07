@@ -28,10 +28,7 @@ const STORE_CONFIG = {
       "price": 6000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg",
       "description": "فستان الأفراح والمناسبات",
-      "availableSizes": [
-        "S1",
-        "S"
-      ],
+      "availableSizes": [],
       "availableColors": [
         "وردي",
         "أحمر",
@@ -43,7 +40,7 @@ const STORE_CONFIG = {
         "9": "S1"
       },
       "ageSettings": {
-        "sharedAges": true
+        "sharedAges": false
       },
       "sharedSize": "M"
     },
