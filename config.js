@@ -20,7 +20,8 @@ const STORE_CONFIG = {
       },
       "ageSettings": {
         "sharedAges": true
-      }
+      },
+      "sharedSize": "M"
     },
     "3": {
       "name": "مودال 3",
