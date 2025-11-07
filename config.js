@@ -8,7 +8,6 @@ const STORE_CONFIG = {
       "availableSizes": [
         "XL",
         "S",
-        "S1",
         "M2"
       ],
       "availableColors": [
@@ -39,7 +38,8 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg",
       "description": "فستان الأفراح والمناسبات",
       "availableSizes": [
-        "S"
+        "S",
+        "S1"
       ],
       "availableColors": [
         "وردي",
@@ -55,8 +55,8 @@ const STORE_CONFIG = {
         },
         {
           "ageFrom": 9,
-          "ageTo": 11,
-          "size": "S"
+          "ageTo": 10,
+          "size": "S1"
         }
       ]
     },
