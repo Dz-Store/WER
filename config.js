@@ -1,37 +1,13 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
-    "1": {
-      "name": "مودال 1",
-      "price": 6000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762411966732-6169e68ad981a5c61a35de6eb8ea92ca.jpg",
-      "description": "فستان تقليدي فاخر",
-      "availableSizes": [
-        "XL",
-        "S",
-        "S1",
-        "M2",
-        "XXL"
-      ],
-      "availableColors": [
-        "أحمر",
-        "كما في الصورة"
-      ],
-      "ageSizes": {
-        "5": "S",
-        "6": "S1"
-      },
-      "ageSettings": {
-        "sharedAges": true
-      },
-      "sharedSize": "XL"
-    },
     "2": {
       "name": "مودال 2",
       "price": 6000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg",
       "description": "فستان الأفراح والمناسبات",
       "availableSizes": [
-        "S"
+        "S",
+        "S1"
       ],
       "availableColors": [
         "وردي",
@@ -41,6 +17,9 @@ const STORE_CONFIG = {
       ],
       "ageSizes": {
         "8": "S"
+      },
+      "ageSettings": {
+        "sharedAges": true
       }
     },
     "3": {
@@ -298,9 +277,7 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 300,
     "discountScope": "selected",
-    "discountProducts": [
-      1
-    ],
+    "discountProducts": [],
     "promoDiscountProducts": [
       3
     ],
