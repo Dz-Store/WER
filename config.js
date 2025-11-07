@@ -44,15 +44,15 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762376640949-littlebedouin-girls-luxury-occasion-dress-dress-231324.webp",
       "description": "فستان الأفراح و المناسيات",
       "availableSizes": [
-        "XL",
-        "XXL",
-        "L"
+        "XXL"
       ],
       "availableColors": [
         "كما في الصورة",
         "أبيض"
       ],
-      "ageSizes": {}
+      "ageSizes": {
+        "14": "XXL"
+      }
     }
   },
   "DELIVERY_PRICES": {
