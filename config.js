@@ -21,7 +21,24 @@ const STORE_CONFIG = {
       },
       "ageSettings": {
         "sharedAges": false
-      }
+      },
+      "ageRanges": [
+        {
+          "ageFrom": 2,
+          "ageTo": 3,
+          "size": "S"
+        },
+        {
+          "ageFrom": 4,
+          "ageTo": 5,
+          "size": "S1"
+        },
+        {
+          "ageFrom": 6,
+          "ageTo": 6,
+          "size": "S2"
+        }
+      ]
     },
     "2": {
       "name": "مودال 2",
