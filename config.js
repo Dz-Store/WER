@@ -295,7 +295,15 @@ const STORE_CONFIG = {
     "discountScope": "selected",
     "discountProducts": [
       1
-    ]
+    ],
+    "promoDiscountProducts": [
+      3
+    ],
+    "enableQuantityDiscount": false,
+    "enablePromotionalDiscount": true,
+    "promotionalDiscountPercent": 20,
+    "promotionalDiscountedPrice": null,
+    "promoDiscountScope": "selected"
   },
   "STORE_INFO": {
     "name": "BENAKRAB SHOPP",
@@ -313,7 +321,6 @@ const STORE_CONFIG = {
   },
   "AGE_SIZES": {
     "3": "S",
-    "4": "S1",
     "5": "S2",
     "6": "S3",
     "7": "M",
