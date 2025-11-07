@@ -32,7 +32,9 @@ const STORE_CONFIG = {
         "أبيض",
         "كما في الصورة"
       ],
-      "ageSizes": {}
+      "ageSizes": {
+        "8": "S"
+      }
     },
     "3": {
       "name": "مودال 3",
