@@ -38,8 +38,8 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg",
       "description": "فستان الأفراح والمناسبات",
       "availableSizes": [
-        "S",
-        "S1"
+        "S1",
+        "S"
       ],
       "availableColors": [
         "وردي",
@@ -319,14 +319,16 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 300,
     "discountScope": "selected",
-    "discountProducts": [],
+    "discountProducts": [
+      1
+    ],
     "promoDiscountProducts": [
       3
     ],
     "enableQuantityDiscount": true,
     "enablePromotionalDiscount": true,
     "promotionalDiscountPercent": 20,
-    "promotionalDiscountedPrice": null,
+    "promotionalDiscountedPrice": 4400,
     "promoDiscountScope": "selected"
   },
   "STORE_INFO": {
