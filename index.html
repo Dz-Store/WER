@@ -1991,7 +1991,7 @@
                 // الانتظار 2 ثانية ثم الانتقال إلى صفحة المنتجات
                 setTimeout(() => {
                     closeOrderConfirmation();
-                    resetOrderForm();
+                    ResetOrderForm();
                     switchPage('page1');
                 }, 2000);
 
@@ -2085,9 +2085,9 @@
         }
 
         // إعادة تعيين النموذج
-         function resetOrderForm() {
+         function ResetOrderForm() {
             cartItems = [];
-            document.getElementById('orderForm').reset();
+            document.getElementById('orderForm').Reset();
             selectedWilaya = null;
             selectedDeliveryType = null;
             updateCartDisplay();
@@ -3385,9 +3385,9 @@
         }
 
         // إعادة تعيين النموذج
-        function resetOrderForm() {
+        function ResetOrderForm() {
             cartItems = [];
-            document.getElementById('orderForm').reset();
+            document.getElementById('orderForm').Reset();
             selectedWilaya = null;
             selectedDeliveryType = null;
             updateCartDisplay();
