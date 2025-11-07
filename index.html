@@ -2067,7 +2067,7 @@
             });
 
             return {
-                timestamp: new Date().toLocaleString('ar-DZ'),
+                timestamp: new Date().toLocaleString('fr-FR'),
                 customerName: formData.name,
                 customerPhone: formData.phone,
                 customerAddress: formData.address,
@@ -2085,7 +2085,7 @@
         }
 
         // إعادة تعيين النموذج
-        function resetOrderForm() {
+        /* function resetOrderForm() {
             cartItems = [];
             document.getElementById('orderForm').reset();
             selectedWilaya = null;
@@ -2108,7 +2108,9 @@
             // إزالة تأثيرات الحقول
             document.querySelectorAll('input, textarea').forEach(field => {
                 field.classList.remove('blink-field', 'field-filled');
-            });
+            });  */
+        
+        <i class="fas fa-arrow-right"></i> الرجوع إلى المنتجات
             
             managePulseEffects();
         }
