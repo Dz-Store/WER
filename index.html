@@ -2499,7 +2499,7 @@
 
 
 
-/* 
+
         
         // =============================================================================
         // 💰 نظام الخصم المحسن مع دعم الخصم الترويجي والكمي
@@ -2631,265 +2631,12 @@
                 return `إشتري ${minQuantity} لتحصل على ${discountPerItem} دج لكل قطعة - أضف ${remaining} قطع أخرى`;
             }
         }
-      */
+      
 
 
 
 
 
-        // =============================================================================
-// 💰 نظام الخصم المحسن مع دعم الخصم الترويجي والكمي - تم التصحيح
-// =============================================================================
-
-// دالة محسنة لحساب السعر بعد الخصم مع دعم الخصم الترويجي والكمي - تم التصحيح
-function calculateDiscountedPrice(originalPrice, quantity, productKey = null) {
-    if (!STORE_CONFIG.DISCOUNTS) {
-        return {
-            finalPrice: originalPrice,
-            hasDiscount: false,
-            discountAmount: 0,
-            discountPerItem: 0,
-            minQuantity: 0,
-            hasPromoDiscount: false,
-            promoDiscountPercent: 0
-        };
-    }
-    
-    let finalPrice = originalPrice;
-    let hasDiscount = false;
-    let hasPromoDiscount = false;
-    let discountAmount = 0;
-    let discountPerItem = 0;
-    let minQuantity = 0;
-    let promoDiscountPercent = 0;
-
-    // التحقق من الخصم الترويجي أولاً - تم التصحيح
-    if (STORE_CONFIG.DISCOUNTS.enablePromotionalDiscount) {
-        const promoScope = STORE_CONFIG.DISCOUNTS.promoDiscountScope || 'all';
-        let applyPromoDiscount = false;
-        
-        if (promoScope === 'all') {
-            applyPromoDiscount = true;
-        } else if (promoScope === 'selected' && STORE_CONFIG.DISCOUNTS.promoDiscountProducts) {
-            const productKeyNum = parseInt(productKey);
-            applyPromoDiscount = STORE_CONFIG.DISCOUNTS.promoDiscountProducts.includes(productKeyNum);
-        }
-        
-        if (applyPromoDiscount) {
-            promoDiscountPercent = STORE_CONFIG.DISCOUNTS.promotionalDiscountPercent || 0;
-            if (promoDiscountPercent > 0) {
-                discountAmount = Math.round(originalPrice * (promoDiscountPercent / 100));
-                finalPrice = originalPrice - discountAmount;
-                hasPromoDiscount = true;
-                hasDiscount = true;
-            }
-        }
-    }
-
-    // إذا لم يكن هناك خصم ترويجي، تحقق من خصم الكمية
-    if (!hasPromoDiscount && STORE_CONFIG.DISCOUNTS.enableQuantityDiscount) {
-        minQuantity = STORE_CONFIG.DISCOUNTS.minQuantityForDiscount || 3;
-        discountPerItem = STORE_CONFIG.DISCOUNTS.discountPerItem || 0;
-        const discountScope = STORE_CONFIG.DISCOUNTS.discountScope || 'all';
-        
-        let applyQuantityDiscount = false;
-        
-        if (discountScope === 'all') {
-            applyQuantityDiscount = true;
-        } else if (discountScope === 'selected' && STORE_CONFIG.DISCOUNTS.discountProducts) {
-            const productKeyNum = parseInt(productKey);
-            applyQuantityDiscount = STORE_CONFIG.DISCOUNTS.discountProducts.includes(productKeyNum);
-        }
-        
-        if (applyQuantityDiscount && quantity >= minQuantity) {
-            discountAmount = discountPerItem * quantity;
-            finalPrice = Math.max(originalPrice - discountAmount, 0);
-            hasDiscount = true;
-        }
-    }
-    
-    return {
-        finalPrice: finalPrice,
-        hasDiscount: hasDiscount,
-        discountAmount: discountAmount,
-        discountPerItem: discountPerItem,
-        minQuantity: minQuantity,
-        hasPromoDiscount: hasPromoDiscount,
-        promoDiscountPercent: promoDiscountPercent
-    };
-}
-
-// دالة لإنشاء رسائل الخصم مع دعم الخصم الترويجي - تم التصحيح
-function createDiscountMessage(productKey = null, quantity = 1) {
-    if (!STORE_CONFIG.DISCOUNTS) return '';
-    
-    // التحقق من الخصم الترويجي أولاً - تم التصحيح
-    if (STORE_CONFIG.DISCOUNTS.enablePromotionalDiscount) {
-        const promoScope = STORE_CONFIG.DISCOUNTS.promoDiscountScope || 'all';
-        let applyPromoDiscount = false;
-        
-        if (promoScope === 'all') {
-            applyPromoDiscount = true;
-        } else if (promoScope === 'selected' && STORE_CONFIG.DISCOUNTS.promoDiscountProducts) {
-            const productKeyNum = parseInt(productKey);
-            applyPromoDiscount = STORE_CONFIG.DISCOUNTS.promoDiscountProducts.includes(productKeyNum);
-        }
-        
-        if (applyPromoDiscount) {
-            const promoPercent = STORE_CONFIG.DISCOUNTS.promotionalDiscountPercent || 0;
-            if (promoPercent > 0) {
-                return `خصم ترويجي ${promoPercent}% - وفر حتى ${Math.round(STORE_CONFIG.PRODUCTS[productKey].price * (promoPercent / 100))} دج`;
-            }
-        }
-    }
-    
-    // إذا لم يكن هناك خصم ترويجي، عرض خصم الكمية
-    const minQuantity = STORE_CONFIG.DISCOUNTS.minQuantityForDiscount || 3;
-    const discountPerItem = STORE_CONFIG.DISCOUNTS.discountPerItem || 0;
-    const discountScope = STORE_CONFIG.DISCOUNTS.discountScope || 'all';
-    
-    let applyQuantityDiscount = false;
-    
-    if (discountScope === 'all') {
-        applyQuantityDiscount = true;
-    } else if (discountScope === 'selected' && STORE_CONFIG.DISCOUNTS.discountProducts) {
-        const productKeyNum = parseInt(productKey);
-        applyQuantityDiscount = STORE_CONFIG.DISCOUNTS.discountProducts.includes(productKeyNum);
-    }
-    
-    if (!applyQuantityDiscount) return '';
-    
-    if (quantity >= minQuantity) {
-        const totalDiscount = discountPerItem * quantity;
-        return `إشتري ${minQuantity} لتحصل على ${discountPerItem} دج لكل قطعة - وفر ${totalDiscount} دج`;
-    } else {
-        const remaining = minQuantity - quantity;
-        return `إشتري ${minQuantity} لتحصل على ${discountPerItem} دج لكل قطعة - أضف ${remaining} قطع أخرى`;
-    }
-}
-
-// =============================================================================
-// 📤 نظام إرسال الطلبات المحسن مع نافذة التأكيد والانتقال للصفحة الأولى - تم التصحيح
-// =============================================================================
-
-// إغلاق نافذة تأكيد الطلب والانتقال للصفحة الأولى - تم التصحيح
-function closeOrderConfirmationAndRedirect() {
-    const modal = document.getElementById('orderConfirmationModal');
-    modal.classList.remove('show');
-    
-    // إعادة تعيين النموذج
-    resetOrderForm();
-    
-    // الانتقال إلى صفحة المنتجات (الصفحة الأولى) - هذا هو التصحيح المطلوب
-    switchPage('page1');
-    
-    // إظهار إشعار نجاح
-    showNotification('تم تأكيد طلبك بنجاح! 🎉', 'success');
-}
-
-// =============================================================================
-// 🎨 نظام المعرض مع الخصم المحسن - تم التصحيح
-// =============================================================================
-
-// عرض تفاصيل الخصم في بطاقات المنتجات - تم التحديد لدعم الخصم الترويجي - تم التصحيح
-function createDiscountBadge(product, quantity = 1, productKey = null) {
-    const discountInfo = calculateDiscountedPrice(product.price, quantity, productKey);
-    
-    if (discountInfo.hasPromoDiscount) {
-        return `
-            <div class="discount-badge promo-discount">
-                <i class="fas fa-gift"></i>
-                خصم ${discountInfo.promoDiscountPercent}%
-                <div class="discount-tooltip">
-                    ${createDiscountMessage(productKey, quantity)}
-                </div>
-            </div>
-        `;
-    } else if (discountInfo.hasDiscount) {
-        return `
-            <div class="discount-badge">
-                <i class="fas fa-percentage"></i>
-                خصم ${discountInfo.discountPerItem} دج للقطعة
-                <div class="discount-tooltip">
-                    ${createDiscountMessage(productKey, quantity)}
-                </div>
-            </div>
-        `;
-    } else if (STORE_CONFIG.DISCOUNTS && STORE_CONFIG.DISCOUNTS.discountPerItem > 0) {
-        // التحقق إذا كان الخصم ينطبق على هذا المنتج - تم التصحيح
-        const discountScope = STORE_CONFIG.DISCOUNTS.discountScope || 'all';
-        let showHint = false;
-        
-        if (discountScope === 'all') {
-            showHint = true;
-        } else if (discountScope === 'selected' && STORE_CONFIG.DISCOUNTS.discountProducts) {
-            const productKeyNum = parseInt(productKey);
-            showHint = STORE_CONFIG.DISCOUNTS.discountProducts.includes(productKeyNum);
-        }
-        
-        if (showHint) {
-            return `
-                <div class="discount-badge discount-hint">
-                    <i class="fas fa-bullhorn"></i>
-                    خصم متاح
-                    <div class="discount-tooltip">
-                        ${createDiscountMessage(productKey, quantity)}
-                    </div>
-                </div>
-            `;
-        }
-    }
-    
-    return '';
-}
-
-// =============================================================================
-// 🛒 نظام السلة مع الخصم المحسن - تم التصحيح
-// =============================================================================
-
-// دالة لإنشاء رسالة الخصم الإجمالي مع دعم الخصم الترويجي - تم التصحيح
-function createTotalDiscountMessage() {
-    if (!STORE_CONFIG.DISCOUNTS) return '';
-    
-    let message = '';
-    
-    // رسالة الخصم الترويجي - تم التصحيح
-    if (STORE_CONFIG.DISCOUNTS.enablePromotionalDiscount) {
-        const promoPercent = STORE_CONFIG.DISCOUNTS.promotionalDiscountPercent || 0;
-        if (promoPercent > 0) {
-            message += `خصم ترويجي ${promoPercent}% `;
-        }
-    }
-    
-    // رسالة خصم الكمية
-    if (STORE_CONFIG.DISCOUNTS.enableQuantityDiscount) {
-        const minQuantity = STORE_CONFIG.DISCOUNTS.minQuantityForDiscount || 3;
-        const discountPerItem = STORE_CONFIG.DISCOUNTS.discountPerItem || 0;
-        const discountScope = STORE_CONFIG.DISCOUNTS.discountScope || 'all';
-        
-        let eligibleQuantity = 0;
-        
-        if (discountScope === 'all') {
-            eligibleQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-        } else if (discountScope === 'selected' && STORE_CONFIG.DISCOUNTS.discountProducts) {
-            const eligibleItems = cartItems.filter(item => 
-                STORE_CONFIG.DISCOUNTS.discountProducts.includes(parseInt(item.key))
-            );
-            eligibleQuantity = eligibleItems.reduce((sum, item) => sum + item.quantity, 0);
-        }
-        
-        if (eligibleQuantity >= minQuantity) {
-            if (message) message += ' و ';
-            message += `خصم كمية ${discountPerItem} دج للقطعة`;
-        }
-    }
-    
-    return message ? `مبروك! حصلت على ${message}` : '';
-}
-
-
-
-        
 
 
         
@@ -3035,7 +2782,7 @@ function createTotalDiscountMessage() {
                 }
             }
             
-            return message ? `مبروك! حصلت على ${message}` : '';
+            return message ? ` جيد! إخترت المودال الأجمل ${}` : '';
         }
 
         // =============================================================================
