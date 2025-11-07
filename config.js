@@ -24,9 +24,7 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg",
       "description": "فستان الأفراح والمناسبات",
       "availableSizes": [
-        "M",
-        "S",
-        "L"
+        "S"
       ],
       "availableColors": [
         "وردي",
