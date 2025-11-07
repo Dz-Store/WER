@@ -79,7 +79,14 @@ const STORE_CONFIG = {
       "ageSettings": {
         "sharedAges": false
       },
-      "sharedSize": "XXL"
+      "sharedSize": "XXL",
+      "ageRanges": [
+        {
+          "ageFrom": 12,
+          "ageTo": 15,
+          "size": "XXL"
+        }
+      ]
     }
   },
   "DELIVERY_PRICES": {
