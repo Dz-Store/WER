@@ -6,30 +6,37 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762411966732-6169e68ad981a5c61a35de6eb8ea92ca.jpg",
       "description": "فستان تقليدي فاخر",
       "availableSizes": [
-        "XL",
         "S",
         "S1",
-        "M2"
+        "M2",
+        "S2"
       ],
       "availableColors": [
         "أحمر",
         "كما في الصورة"
       ],
+      "ageSizes": {
+        "5": "S",
+        "6": "S1"
+      },
+      "ageSettings": {
+        "sharedAges": false
+      },
       "ageRanges": [
         {
-          "ageFrom": 5,
-          "ageTo": 7,
+          "ageFrom": 2,
+          "ageTo": 3,
           "size": "S"
         },
         {
-          "ageFrom": 8,
-          "ageTo": 10,
-          "size": "M2"
+          "ageFrom": 4,
+          "ageTo": 5,
+          "size": "S1"
         },
         {
-          "ageFrom": 11,
-          "ageTo": 12,
-          "size": "XL"
+          "ageFrom": 6,
+          "ageTo": 6,
+          "size": "S2"
         }
       ]
     },
@@ -38,25 +45,26 @@ const STORE_CONFIG = {
       "price": 6000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg",
       "description": "فستان الأفراح والمناسبات",
-      "availableSizes": [
-        "S"
-      ],
+      "availableSizes": [],
       "availableColors": [
         "وردي",
         "أحمر",
         "أبيض",
         "كما في الصورة"
       ],
+      "ageSizes": {
+        "8": "S",
+        "9": "S1"
+      },
+      "ageSettings": {
+        "sharedAges": false
+      },
+      "sharedSize": "M",
       "ageRanges": [
         {
-          "ageFrom": 6,
-          "ageTo": 8,
-          "size": "S"
-        },
-        {
           "ageFrom": 9,
-          "ageTo": 11,
-          "size": "S"
+          "ageTo": 10,
+          "size": "L"
         }
       ]
     },
@@ -72,15 +80,17 @@ const STORE_CONFIG = {
         "كما في الصورة",
         "أبيض"
       ],
+      "ageSizes": {
+        "14": "XXL"
+      },
+      "ageSettings": {
+        "sharedAges": false
+      },
+      "sharedSize": "XXL",
       "ageRanges": [
         {
           "ageFrom": 12,
-          "ageTo": 14,
-          "size": "XXL"
-        },
-        {
-          "ageFrom": 15,
-          "ageTo": 16,
+          "ageTo": 15,
           "size": "XXL"
         }
       ]
