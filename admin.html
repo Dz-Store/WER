@@ -3029,6 +3029,42 @@ async function updateStoreSettingsOnGoogleScript() {
                 loadSettings();
             });
         });
+
+        // ⭐⭐ دالة تحديث إعدادات المتجر على Google Apps Script ⭐⭐
+async function updateStoreSettingsOnGoogleScript() {
+    try {
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzw7NSduBIcVc2ugUKF5EtpmAej7bo7bDFKj0K-aHeXaYmqWmoUYtvOPGX6TjRKKN78/exec";
+        
+        const settings = {
+            storeName: CONFIG.STORE_INFO.name || "Kids-Favorite",
+            storeEmail: "benaakrabahcene@gmail.com",
+            phoneNumbers: CONFIG.STORE_INFO.phoneNumbers || ["0550000000", "0550000001"],
+            storeIcon: CONFIG.STORE_INFO.storeIcon || "👑",
+            storeTitle: CONFIG.STORE_INFO.storeTitle || "👑 أحدث موديلات الأطفال"
+        };
+        
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({
+                action: 'updateStoreSettings',
+                settings: settings
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (result.status === 'success') {
+            console.log('✅ تم تحديث إعدادات المتجر على Google Apps Script');
+            showNotification('تم تحديث إعدادات المتجر على النظام البريدية', 'success');
+        } else {
+            console.error('❌ فشل تحديث إعدادات المتجر:', result.message);
+            showNotification('فشل تحديث الإعدادات البريدية: ' + result.message, 'warning');
+        }
+    } catch (error) {
+        console.error('❌ خطأ في الاتصال بـ Google Apps Script:', error);
+        showNotification('خطأ في الاتصال بالنظام البريدية', 'error');
+    }
+}
     </script>
 </body>
 </html>
