@@ -323,7 +323,8 @@ const STORE_CONFIG = {
       1
     ],
     "promoDiscountProducts": [
-      3
+      3,
+      2
     ],
     "enableQuantityDiscount": true,
     "enablePromotionalDiscount": true,
