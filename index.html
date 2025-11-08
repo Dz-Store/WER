@@ -2772,7 +2772,7 @@
                         STORE_CONFIG.DISCOUNTS.discountProducts.includes(parseInt(item.key))
                     );
                     eligibleQuantity = eligibleItems.reduce((sum, item) => sum + item.quantity, 0);
-                } /* 
+                }  
                 
               if (eligibleQuantity >= minQuantity) {
                      if (message) message += ' و ';
@@ -2780,8 +2780,9 @@
                 }
             }
             
-            return message ? `مبروك! حصلت على ${message}` : ''; 
-        }*/
+            return message ? `مبروك! حصلت على ` : ''; 
+        }
+        /*${message}*/
 
         // =============================================================================
         // 🎨 نظام المعرض مع الخصم المحسن
