@@ -333,7 +333,7 @@ const STORE_CONFIG = {
     "promoDiscountScope": "selected"
   },
   "STORE_INFO": {
-    "name": "BENAKRAB SHOPP",
+    "name": "Kids-Favorite",
     "storeIcon": "👑",
     "storeTitle": "👑 أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
