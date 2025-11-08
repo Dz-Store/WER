@@ -344,7 +344,8 @@ const STORE_CONFIG = {
     "facebookUrl": "https://www.facebook.com/share/r/1AUYY5favq/",
     "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
     "messengerUrl": "",
-    "viberNumber": "0671466489"
+    "viberNumber": "0671466489",
+    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762643508645-Screenshot_20250903-115403_Facebook.jpg"
   },
   "AVAILABLE_SIZES": [
     "S",
