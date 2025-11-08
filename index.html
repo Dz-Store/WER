@@ -2253,7 +2253,7 @@
 
         // دالة خاصة للانتقال إلى تفاصيل الطلبية
         function goToOrderDetails() {
-            switchPage('page2');
+            switchPage('page1');
         }
 
         // =============================================================================
@@ -2286,7 +2286,7 @@
                 history.pushState(null, null, `#${pageId}`);
                 
                 // التحقق من الحقول عند التبديل للصفحة الثانية
-                if (pageId === 'page2') {
+                if (pageId === 'page1') {
                     checkDeliveryFields();
                 }
                 
