@@ -327,7 +327,7 @@ const STORE_CONFIG = {
     ],
     "enableQuantityDiscount": true,
     "enablePromotionalDiscount": true,
-    "promotionalDiscountPercent": 20,
+    "promotionalDiscountPercent": 10,
     "promotionalDiscountedPrice": null,
     "promoDiscountScope": "selected"
   },
