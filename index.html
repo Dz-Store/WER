@@ -3333,7 +3333,7 @@
                 container.appendChild(discountNote);
             } else if ((STORE_CONFIG.DISCOUNTS && STORE_CONFIG.DISCOUNTS.discountPerItem > 0) || 
                       (STORE_CONFIG.DISCOUNTS && STORE_CONFIG.DISCOUNTS.enablePromotionalDiscount)) {
-                /* // إظهار رسالة تذكير بالخصم فقط إذا كان هناك خصم متاح ولم يتم تطبيقه بعد
+                 // إظهار رسالة تذكير بالخصم فقط إذا كان هناك خصم متاح ولم يتم تطبيقه بعد
                 const discountHint = document.createElement('div');
                 discountHint.style.cssText = `
                     background: linear-gradient(135deg, #e6f7ff, #cceeff);
@@ -3348,13 +3348,13 @@
                 discountHint.innerHTML = `
                     <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--secondary);">
                         <i class="fas fa-bullhorn" style="font-size: 1.2rem;"></i>
-                        <strong>${discountMessage || '  '}</strong>
+                        <strong>${discountMessage || ' إشتري قبل نفاد الكمية '}</strong>
                     </div>
                 `;
                 container.appendChild(discountHint);
             }
         }
-         */
+         
 
         // تحديث الكمية
         function updateQuantity(index, change) {
