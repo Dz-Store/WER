@@ -6,6 +6,7 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762411966732-6169e68ad981a5c61a35de6eb8ea92ca.jpg",
       "description": "فستان تقليدي فاخر",
       "availableSizes": [
+        "XL",
         "S",
         "M2"
       ],
@@ -23,6 +24,11 @@ const STORE_CONFIG = {
           "ageFrom": 8,
           "ageTo": 10,
           "size": "M2"
+        },
+        {
+          "ageFrom": 11,
+          "ageTo": 12,
+          "size": "XL"
         }
       ]
     },
