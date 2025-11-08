@@ -333,7 +333,7 @@ const STORE_CONFIG = {
     "promoDiscountScope": "selected"
   },
   "STORE_INFO": {
-    "name": "Kids-Favorite",
+    "name": "Kids-Fav",
     "storeIcon": "👑",
     "storeTitle": "👑 أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
