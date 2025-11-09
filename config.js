@@ -333,9 +333,9 @@ const STORE_CONFIG = {
     "promoDiscountScope": "selected"
   },
   "STORE_INFO": {
-    "name": "Kids-FavKKKKKKKKKKK",
+    "name": "Kids-Fav",
     "storeIcon": "👑",
-    "storeTitle": " أحدث موديلات الأطفال",
+    "storeTitle": "👑 أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
       "0671466489",
@@ -345,7 +345,7 @@ const STORE_CONFIG = {
     "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
     "messengerUrl": "",
     "viberNumber": "0671466489",
-    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762643508645-Screenshot_20250903-115403_Facebook.jpg",
+    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762691085951-Screenshot_20251109-132419_Gallery.jpg",
     "storeEmail": "benaakrabahcene@gmail.com",
     "storeDescription": "متجر Kids-Fav يقدم أحدث وأفخم موديلات ملابس الأطفال بتصاميم عصرية وأنيقة تناسب جميع المناسبات"
   },
