@@ -81,7 +81,7 @@ const STORE_CONFIG = {
       ]
     },
     "4": {
-      "name": "مودال 4",
+      "name": "مودال 4 (لون أحمر)",
       "price": 4800,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1762696334822-modal3.jpg",
       "description": "مودال تركي بتفاصيل عصرية",
