@@ -333,9 +333,9 @@ const STORE_CONFIG = {
     "promoDiscountScope": "selected"
   },
   "STORE_INFO": {
-    "name": "Kids-Fav",
+    "name": "Kids-FavKKKKKKKKKKK",
     "storeIcon": "👑",
-    "storeTitle": "👑 أحدث موديلات الأطفال",
+    "storeTitle": " أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
       "0671466489",
