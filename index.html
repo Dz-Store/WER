@@ -90,19 +90,19 @@
 
         /* إضافة أنماط جديدة للشعار */
         .store-logo {
-            width: 40px;
-            height: 40px;
+            width: auto;
+            height: 45px;
             border-radius: 8px;
-            object-fit: cover;
+            object-fit: contain;
             border: 2px solid white;
             box-shadow: var(--shadow);
         }
 
         .store-logo-small {
-            width: 35px;
-            height: 35px;
+            width: auto;
+            height: 45px;
             border-radius: 6px;
-            object-fit: cover;
+            object-fit: contain;
             border: 2px solid white;
         }
 
@@ -115,7 +115,22 @@
     box-shadow: var(--shadow-lg);
     margin: 0 auto 1rem auto;
 }
+.store-logo-small, .store-logo {
+    width: auto; /* السماح للصورة بتحديد عرضها بناءً على النسبة */
+    height: 45px; /* زيادة الارتفاع بمقدار 0.5 سم تقريباً (من 40px إلى 45px) */
+    border-radius: 8px;
+    object-fit: contain; /* عرض الصورة كاملة دون اقتصاص */
+    border: 2px solid white;
+    box-shadow: var(--shadow);
+}
 
+.store-logo-footer {
+    width: auto;
+    height: 45px;
+    border-radius: 8px;
+    object-fit: contain;
+    border: 2px solid white;
+}
 
         #storeIcon {
             font-size: 1.1rem;
