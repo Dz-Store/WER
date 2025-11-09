@@ -106,15 +106,16 @@
             border: 2px solid white;
         }
 
-        .store-logo-main {
-            width: 80px;
-            height: 80px;
-            border-radius: 12px;
-            object-fit: cover;
-            border: 3px solid white;
-            box-shadow: var(--shadow-lg);
-            margin: 0 auto 1rem auto;
-        }
+          .store-logo-main {
+    width: auto; /* السماح للصورة بتحديد عرضها بناءً على النسبة */
+    height: 100px; /* زيادة الارتفاع بمقدار 1 سم تقريباً (من 80px إلى 100px) */
+    border-radius: 12px;
+    object-fit: contain; /* عرض الصورة كاملة دون اقتصاص */
+    border: 3px solid white;
+    box-shadow: var(--shadow-lg);
+    margin: 0 auto 1rem auto;
+}
+
 
         #storeIcon {
             font-size: 1.1rem;
