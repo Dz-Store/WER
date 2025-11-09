@@ -104,6 +104,31 @@ const STORE_CONFIG = {
           "size": "M2"
         }
       ]
+    },
+    "5": {
+      "name": "مودال 4(لون أزرق)",
+      "price": 4800,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-5-1762696715544-modal4.jpg",
+      "description": "مودال تركي بمواصفات عصرية",
+      "availableSizes": [
+        "L",
+        "XL"
+      ],
+      "availableColors": [
+        "أزرق"
+      ],
+      "ageRanges": [
+        {
+          "ageFrom": 12,
+          "ageTo": 13,
+          "size": "L"
+        },
+        {
+          "ageFrom": 14,
+          "ageTo": 15,
+          "size": "XL"
+        }
+      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -350,7 +375,8 @@ const STORE_CONFIG = {
     "promoDiscountProducts": [
       3,
       2,
-      4
+      4,
+      5
     ],
     "enableQuantityDiscount": true,
     "enablePromotionalDiscount": true,
