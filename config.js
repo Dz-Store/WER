@@ -387,7 +387,7 @@ const STORE_CONFIG = {
   "STORE_INFO": {
     "name": "Kids-Fav",
     "storeIcon": "👑",
-    "storeTitle": "👑 أحدث موديلات الأطفال",
+    "storeTitle": " أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
       "0671466489",
