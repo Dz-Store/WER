@@ -384,8 +384,8 @@ const STORE_CONFIG = {
     "promoDiscountScope": "selected"
   },
   "STORE_INFO": {
-    "name": "Kids-Fav",
-    "storeIcon": "",
+    "name": "Rahouba-Shopp",
+    "storeIcon": "👑",
     "storeTitle": "أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
@@ -396,7 +396,7 @@ const STORE_CONFIG = {
     "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
     "messengerUrl": "",
     "viberNumber": "0671466489",
-    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762804801118-Screenshot_20251110-205919_Gallery.jpg",
+    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762699761951-Screenshot_20251109-154836_Perplexity.jpg",
     "storeEmail": "benaakrabahcene@gmail.com",
     "storeDescription": "متجر Kids-Fav يقدم أحدث وأفخم موديلات ملابس الأطفال بتصاميم عصرية وأنيقة تناسب جميع المناسبات"
   },
