@@ -2168,7 +2168,7 @@
 
 
         /**
- * 🌟 دالة لإنشاء رسالة الخصم الإجمالي داخل بطاقة أنيقة تختفي تلقائيًا
+ * 🌟 دالة لإنشاء رسالة الخصم الإجمالي داخل بطاقة أنيقة
  */
 function createTotalDiscountMessage() {
     const discounts = STORE_CONFIG.DISCOUNTS;
@@ -2211,10 +2211,9 @@ function createTotalDiscountMessage() {
     // ❌ لا رسالة إن لم يكن هناك خصم فعلي
     if (!message) return '';
 
-    // 🟩 إنشاء البطاقة الجميلة
-    const id = 'discountMessage_' + Date.now(); // معرّف فريد للعنصر
+    // 🟩 إنشاء البطاقة الجميلة للعرض
     const styledMessage = `
-        <div id="${id}" style="
+        <div style="
             background-color: #e8f9e9;
             color: #1a7a1f;
             border: 1px solid #b5e0b8;
@@ -2227,8 +2226,7 @@ function createTotalDiscountMessage() {
             align-items: center;
             gap: 8px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-            animation: fadeIn 0.6s ease-in-out;
-            transition: opacity 0.8s ease-out;
+            animation: fadeIn 0.5s ease-in-out;
         ">
             <span style="font-size: 22px;">🎉</span>
             <span>${message} - وفرت <strong>${totalDiscount} دج</strong></span>
@@ -2239,20 +2237,10 @@ function createTotalDiscountMessage() {
                 to { opacity: 1; transform: translateY(0); }
             }
         </style>
-        <script>
-            setTimeout(() => {
-                const el = document.getElementById('${id}');
-                if (el) {
-                    el.style.opacity = '0';
-                    setTimeout(() => el.remove(), 800); // يُزال بعد التلاشي
-                }
-            }, 6000); // ⏱️ تختفي بعد 6 ثوانٍ
-        </script>
     `;
 
     return styledMessage;
 }
-
         /**
          * 🧮 حساب إجمالي الخصم مع دعم الخصم الترويجي والكمي
          */
