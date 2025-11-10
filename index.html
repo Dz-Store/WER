@@ -2123,7 +2123,7 @@
         /**
          * 📊 دالة محسنة لإنشاء رسالة الخصم الإجمالي مع التمييز الواضح
          */
-        function createTotalDiscountMessage() {
+      /*   function createTotalDiscountMessage() {
             if (!STORE_CONFIG.DISCOUNTS) return '';
             
             let message = '';
@@ -2164,7 +2164,125 @@
             }
             
             return message ? `🎊 ${message} - وفرت ${totalDiscount} دج` : '';
+        }*/
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+
+        /**
+ * 🌟 دالة لإنشاء رسالة الخصم الإجمالي داخل بطاقة أنيقة تختفي تلقائيًا
+ */
+function createTotalDiscountMessage() {
+    const discounts = STORE_CONFIG.DISCOUNTS;
+    if (!discounts) return '';
+
+    const totalDiscount = calculateTotalDiscount();
+    if (totalDiscount === 0) return '';
+
+    let message = '';
+
+    // 🟢 أولوية لخصم الكمية
+    if (discounts.enableQuantityDiscount) {
+        const minQuantity = discounts.minQuantityForDiscount || 3;
+        const discountPerItem = discounts.discountPerItem || 0;
+        const discountScope = discounts.discountScope || 'all';
+
+        let eligibleQuantity = 0;
+        if (discountScope === 'all') {
+            eligibleQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        } else if (discountScope === 'selected' && discounts.discountProducts) {
+            const eligibleItems = cartItems.filter(item =>
+                discounts.discountProducts.includes(parseInt(item.key))
+            );
+            eligibleQuantity = eligibleItems.reduce((sum, item) => sum + item.quantity, 0);
         }
+
+        if (eligibleQuantity >= minQuantity) {
+            message = `<strong>خصم كمية ${discountPerItem} دج للقطعة</strong>`;
+        }
+    }
+
+    // 🔵 إذا لم يكن خصم الكمية مفعلاً نتحقق من الترويجي
+    else if (discounts.enablePromotionalDiscount) {
+        const promoPercent = discounts.promotionalDiscountPercent || 0;
+        if (promoPercent > 0) {
+            message = `<strong>خصم ترويجي ${promoPercent}%</strong>`;
+        }
+    }
+
+    // ❌ لا رسالة إن لم يكن هناك خصم فعلي
+    if (!message) return '';
+
+    // 🟩 إنشاء البطاقة الجميلة
+    const id = 'discountMessage_' + Date.now(); // معرّف فريد للعنصر
+    const styledMessage = `
+        <div id="${id}" style="
+            background-color: #e8f9e9;
+            color: #1a7a1f;
+            border: 1px solid #b5e0b8;
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin: 10px 0;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            animation: fadeIn 0.6s ease-in-out;
+            transition: opacity 0.8s ease-out;
+        ">
+            <span style="font-size: 22px;">🎉</span>
+            <span>${message} - وفرت <strong>${totalDiscount} دج</strong></span>
+        </div>
+        <style>
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(5px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+        <script>
+            setTimeout(() => {
+                const el = document.getElementById('${id}');
+                if (el) {
+                    el.style.opacity = '0';
+                    setTimeout(() => el.remove(), 800); // يُزال بعد التلاشي
+                }
+            }, 6000); // ⏱️ تختفي بعد 6 ثوانٍ
+        </script>
+    `;
+
+    return styledMessage;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        
 
         /**
          * 🧮 حساب إجمالي الخصم مع دعم الخصم الترويجي والكمي
