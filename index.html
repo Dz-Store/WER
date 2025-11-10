@@ -2168,7 +2168,10 @@
 
 
         /**
- * 🌟 دالة لإنشاء رسالة الخصم الإجمالي داخل بطاقة أنيقة
+ * 🎯 دالة لإنشاء رسالة الخصم الإجمالي
+ * - تظهر خصم الكمية فقط إذا كان مفعلاً (له أولوية)
+ * - أو الخصم الترويجي فقط إذا لم يكن خصم الكمية مفعلاً
+ * - لا تظهر أي رسالة إن لم يكن هناك خصم مفعّل أو إجمالي الخصم = 0
  */
 function createTotalDiscountMessage() {
     const discounts = STORE_CONFIG.DISCOUNTS;
@@ -2211,35 +2214,7 @@ function createTotalDiscountMessage() {
     // ❌ لا رسالة إن لم يكن هناك خصم فعلي
     if (!message) return '';
 
-    // 🟩 إنشاء البطاقة الجميلة للعرض
-    const styledMessage = `
-        <div style="
-            background-color: #e8f9e9;
-            color: #1a7a1f;
-            border: 1px solid #b5e0b8;
-            border-radius: 10px;
-            padding: 10px 14px;
-            margin: 10px 0;
-            font-size: 15px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-            animation: fadeIn 0.5s ease-in-out;
-        ">
-            <span style="font-size: 22px;">🎉</span>
-            <span>${message} - وفرت <strong>${totalDiscount} دج</strong></span>
-        </div>
-        <style>
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(5px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-        </style>
-    `;
-
-    return styledMessage;
+    return `🎊 ${message} - وفرت ${totalDiscount} دج`;
 }
         /**
          * 🧮 حساب إجمالي الخصم مع دعم الخصم الترويجي والكمي
