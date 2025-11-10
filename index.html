@@ -2167,56 +2167,42 @@
         }*/
 
 
-        /**
- * 🎯 دالة لإنشاء رسالة الخصم الإجم/**
- * 🎯 دالة لإنشاء رسالة الخصم الإجمالي
- * - تظهر خصم الكمية فقط إذا كان مفعلاً (له أولوية)
- * - أو الخصم الترويجي فقط إذا لم يكن خصم الكمية مفعلاً
- * - إذا لم يكن هناك خصم، تظهر رسالة "اختيار موفق يعكس ذوقكم الرفيع"
+/**
+ * 🌟 دالة شاملة لإنشاء رسالة الخصم الإجمالي حسب حالة السلة
+ * - 4 حالات: خصم ترويجي / خصم كمية / كلاهما / لا خصم
  */
 function createTotalDiscountMessage() {
     const discounts = STORE_CONFIG.DISCOUNTS;
-    if (!discounts) return '🎀 اختيار موفق يعكس ذوقكم الرفيع.';
+    if (!discounts) return '🎀 اختيارك لهذا المنتوج يعكس ذوقكم الرفيع.';
 
     const totalDiscount = calculateTotalDiscount();
-    let message = '';
+    const hasPromo = discounts.enablePromotionalDiscount && (discounts.promotionalDiscountPercent || 0) > 0;
+    const hasQuantity = discounts.enableQuantityDiscount && (discounts.discountPerItem || 0) > 0;
 
-    // 🟢 أولوية لخصم الكمية
-    if (discounts.enableQuantityDiscount) {
-        const minQuantity = discounts.minQuantityForDiscount || 3;
+    // 🔸 إذا لم يكن هناك أي نوع من الخصم مفعلاً
+    if (!hasPromo && !hasQuantity) {
+        return '🎀 اختيارك لهذا المنتوج يعكس ذوقكم الرفيع.';
+    }
+
+    // 🔹 إذا كان كلا الخصمين مفعّلين
+    if (hasPromo && hasQuantity) {
+        return `🎉 تمتعت بخصم ترويجي وخصم كمية - وفرت ${totalDiscount} دج`;
+    }
+
+    // 🔸 إذا كان خصم الكمية فقط
+    if (hasQuantity) {
         const discountPerItem = discounts.discountPerItem || 0;
-        const discountScope = discounts.discountScope || 'all';
-
-        let eligibleQuantity = 0;
-        if (discountScope === 'all') {
-            eligibleQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-        } else if (discountScope === 'selected' && discounts.discountProducts) {
-            const eligibleItems = cartItems.filter(item =>
-                discounts.discountProducts.includes(parseInt(item.key))
-            );
-            eligibleQuantity = eligibleItems.reduce((sum, item) => sum + item.quantity, 0);
-        }
-
-        if (eligibleQuantity >= minQuantity) {
-            message = `<strong>خصم كمية ${discountPerItem} دج للقطعة</strong>`;
-        }
+        return `🎊 خصم كمية ${discountPerItem} دج للقطعة - وفرت ${totalDiscount} دج`;
     }
 
-    // 🔵 إذا لم يكن خصم الكمية مفعلاً نتحقق من الترويجي
-    else if (discounts.enablePromotionalDiscount) {
+    // 🔸 إذا كان خصم ترويجي فقط
+    if (hasPromo) {
         const promoPercent = discounts.promotionalDiscountPercent || 0;
-        if (promoPercent > 0) {
-            message = `<strong>خصم ترويجي ${promoPercent}%</strong>`;
-        }
+        return `🎊 خصم ترويجي ${promoPercent}% - وفرت ${totalDiscount} دج`;
     }
 
-    // ✅ في حالة وجود خصم فعلي
-    if (message && totalDiscount > 0) {
-        return `🎊 ${message} - وفرت ${totalDiscount} دج`;
-    }
-
-    // 💬 في حالة عدم وجود أي خصم
-    return '🎀 اختيار موفق يعكس ذوقكم الرفيع.';
+    // 🔸 في حال لم يتحقق أي شرط (نادرًا)
+    return '🎀 اختيارك لهذا المنتوج يعكس ذوقكم الرفيع.';
 }
         /**
          * 🧮 حساب إجمالي الخصم مع دعم الخصم الترويجي والكمي
