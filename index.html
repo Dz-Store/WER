@@ -2167,43 +2167,249 @@
         }*/
 
 
+
+
+
+
+
+        
+
 /**
- * 🌟 دالة شاملة لإنشاء رسالة الخصم الإجمالي حسب حالة السلة
- * - 4 حالات: خصم ترويجي / خصم كمية / كلاهما / لا خصم
+ * دالة مفصّلة لإنتاج رسالة خصم لكل حالة بشكل مستقل ومفصّل (HTML)
+ * - تعرض تفصيل الخصم الترويجي، أو خصم الكمية، أو كلاهما مفصلاً، أو رسالة ذوق راقٍ إن لم يكن هناك خصم
  */
-function createTotalDiscountMessage() {
+function createDetailedDiscountMessage() {
     const discounts = STORE_CONFIG.DISCOUNTS;
-    if (!discounts) return '🎀 اختيارك لهذا المنتوج يعكس ذوقكم الرفيع.';
+    // رسالة ذوق راقٍ إذا لم توجد إعدادات للخصم
+    if (!discounts) return createPlainCard('🎀 اختيارك لهذا المنتوج يعكس ذوقكم الرفيع.');
 
-    const totalDiscount = calculateTotalDiscount();
-    const hasPromo = discounts.enablePromotionalDiscount && (discounts.promotionalDiscountPercent || 0) > 0;
-    const hasQuantity = discounts.enableQuantityDiscount && (discounts.discountPerItem || 0) > 0;
+    // مساعدة حسابية: تحويل عناصر السلة إلى أرقام صحيحة وفرض وجود الحقول
+    const items = (cartItems || []).map(i => ({
+        key: parseInt(i.key),
+        name: i.name || ('منتج ' + i.key),
+        price: Number(i.price) || 0,
+        quantity: Number(i.quantity) || 0
+    }));
 
-    // 🔸 إذا لم يكن هناك أي نوع من الخصم مفعلاً
-    if (!hasPromo && !hasQuantity) {
-        return '🎀 اختيارك لهذا المنتوج يعكس ذوقكم الرفيع.';
+    // --- حسابات خصم ترويجي ---
+    const promoPercent = (discounts.promotionalDiscountPercent || 0);
+    const promoEnabled = discounts.enablePromotionalDiscount && promoPercent > 0;
+
+    // إن وُجدت قائمة products مخصصة للعرض الترويجي، نقتصر عليها
+    const promoProductKeys = Array.isArray(discounts.promoProducts) ? discounts.promoProducts.map(Number) : null;
+
+    function computePromoDetail() {
+        if (!promoEnabled) return { total: 0, items: [] };
+
+        const eligible = promoProductKeys
+            ? items.filter(it => promoProductKeys.includes(it.key))
+            : items.slice(); // كل العناصر إن لم تُحدد قائمة
+
+        const details = eligible.map(it => {
+            const subtotal = it.price * it.quantity;
+            const saved = +(subtotal * promoPercent / 100).toFixed(2);
+            return { key: it.key, name: it.name, qty: it.quantity, subtotal, saved };
+        });
+
+        const totalSaved = details.reduce((s, d) => s + d.saved, 0);
+        return { total: +totalSaved.toFixed(2), items: details };
     }
 
-    // 🔹 إذا كان كلا الخصمين مفعّلين
-    if (hasPromo && hasQuantity) {
-        return `🎉 تمتعت بخصم ترويجي وخصم كمية - وفرت ${totalDiscount} دج`;
+    // --- حسابات خصم كمية ---
+    const qtyEnabled = discounts.enableQuantityDiscount && (discounts.discountPerItem || 0) > 0;
+    const discountPerItem = Number(discounts.discountPerItem || 0);
+    const minQuantity = Number(discounts.minQuantityForDiscount || 3);
+    const discountScope = discounts.discountScope || 'all';
+    const qtyProductKeys = Array.isArray(discounts.discountProducts) ? discounts.discountProducts.map(Number) : null;
+
+    function computeQuantityDetail() {
+        if (!qtyEnabled) return { total: 0, items: [], eligibleQuantity: 0 };
+
+        let eligibleItems = [];
+        if (discountScope === 'all') {
+            eligibleItems = items.slice();
+        } else if (discountScope === 'selected' && qtyProductKeys) {
+            eligibleItems = items.filter(it => qtyProductKeys.includes(it.key));
+        }
+
+        const eligibleQuantity = eligibleItems.reduce((s, it) => s + it.quantity, 0);
+
+        // إذا لم تبلغ الكمية الدنيا، لا يوجد توفير كمي
+        if (eligibleQuantity < minQuantity) {
+            return { total: 0, items: [], eligibleQuantity };
+        }
+
+        const details = eligibleItems.map(it => {
+            const saved = +(discountPerItem * it.quantity).toFixed(2);
+            return { key: it.key, name: it.name, qty: it.quantity, saved };
+        });
+
+        const totalSaved = details.reduce((s, d) => s + d.saved, 0);
+        return { total: +totalSaved.toFixed(2), items: details, eligibleQuantity };
     }
 
-    // 🔸 إذا كان خصم الكمية فقط
-    if (hasQuantity) {
-        const discountPerItem = discounts.discountPerItem || 0;
-        return `🎊 خصم كمية ${discountPerItem} دج للقطعة - وفرت ${totalDiscount} دج`;
+    // احصل على التفاصيل
+    const promo = computePromoDetail();
+    const qty = computeQuantityDetail();
+    const totalSaved = +(promo.total + qty.total).toFixed(2);
+
+    // --- بناء الرسائل التفصيلية لكل حالة (HTML) ---
+    // دوال مساعدة لبناء سطور HTML
+    function createPlainCard(text) {
+        return `
+            <div style="
+                background:#f8f7ff;
+                border:1px solid #e1ddff;
+                color:#2b2350;
+                padding:10px 14px;
+                border-radius:10px;
+                box-shadow:0 2px 6px rgba(43,35,80,0.06);
+                font-weight:500;
+            ">
+                ${text}
+            </div>
+        `;
     }
 
-    // 🔸 إذا كان خصم ترويجي فقط
-    if (hasPromo) {
-        const promoPercent = discounts.promotionalDiscountPercent || 0;
-        return `🎊 خصم ترويجي ${promoPercent}% - وفرت ${totalDiscount} دج`;
+    function buildPromoHtml(promoDetail) {
+        if (promoDetail.total === 0) return '';
+        const lines = promoDetail.items.map(it =>
+            `<div style="margin-bottom:6px;">• ${escapeHtml(it.name)} — الكمية: ${it.qty} — التوفير: <strong>${it.saved} دج</strong></div>`
+        ).join('');
+        return `
+            <div style="padding:8px 0;">
+                <div style="font-weight:600; margin-bottom:6px;">🎊 خصم ترويجي ${promoPercent}%</div>
+                ${lines || '<div>لا يوجد منتجات مشمولة حالياً.</div>'}
+                <div style="margin-top:6px; font-weight:600;">مجموع التوفير من الترويجي: ${promoDetail.total} دج</div>
+            </div>
+        `;
     }
 
-    // 🔸 في حال لم يتحقق أي شرط (نادرًا)
-    return '🎀 اختيارك لهذا المنتوج يعكس ذوقكم الرفيع.';
+    function buildQtyHtml(qtyDetail) {
+        if (qtyDetail.total === 0) {
+            // لو الكمية مفعلة لكن لم تبلغ الحد الأدنى — نوضح ذلك
+            if (qtyEnabled && qtyDetail.eligibleQuantity > 0 && qtyDetail.eligibleQuantity < minQuantity) {
+                return `
+                    <div style="padding:8px 0;">
+                        <div style="font-weight:600; margin-bottom:6px;">🟢 خصم كمية ${discountPerItem} دج للقطعة (قيد التحقق)</div>
+                        <div>الكمية المؤهلة: ${qtyDetail.eligibleQuantity} قطعة (الحد الأدنى المطلوب: ${minQuantity})</div>
+                        <div style="margin-top:6px; font-size:13px; color:#555;">عند بلوغ الحد الأدنى سيحسب الخصم تلقائياً.</div>
+                    </div>
+                `;
+            }
+            return '';
+        }
+
+        const lines = qtyDetail.items.map(it =>
+            `<div style="margin-bottom:6px;">• ${escapeHtml(it.name)} — الكمية: ${it.qty} — التوفير: <strong>${it.saved} دج</strong></div>`
+        ).join('');
+        return `
+            <div style="padding:8px 0;">
+                <div style="font-weight:600; margin-bottom:6px;">🟢 خصم كمية ${discountPerItem} دج للقطعة</div>
+                ${lines}
+                <div style="margin-top:6px; font-weight:600;">مجموع التوفير من كمية: ${qtyDetail.total} دج</div>
+            </div>
+        `;
+    }
+
+    // دالة هروب HTML بسيطة للأسماء
+    function escapeHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+    }
+
+    // --- حالات العرض الأربع مفصلة ---
+    // 1) لا خصم إطلاقًا
+    if (!promoEnabled && !qtyEnabled) {
+        return createPlainCard('🎀 اختيارك لهذا المنتوج يعكس ذوقكم الرفيع.');
+    }
+
+    // 2) كلا الخصمين مفعلان (نريد رسالة مشتركة لكنها مفصّلة لكل نوع)
+    if (promoEnabled && qtyEnabled) {
+        const promoHtml = buildPromoHtml(promo);
+        const qtyHtml = buildQtyHtml(qty);
+
+        return `
+            <div style="
+                background:#fffaf0;
+                border:1px solid #ffe9c2;
+                color:#5a3b00;
+                padding:12px;
+                border-radius:10px;
+                box-shadow:0 2px 6px rgba(90,59,0,0.06);
+            ">
+                <div style="font-weight:700; margin-bottom:8px;">🎉 تمتعت بخصم ترويجي وخصم كمية</div>
+                ${promoHtml}
+                <hr style="border:none;border-top:1px solid rgba(0,0,0,0.06); margin:10px 0;">
+                ${qtyHtml}
+                <div style="margin-top:8px; font-weight:700;">المجموع الكلّي للتوفير: ${totalSaved} دج</div>
+            </div>
+        `;
+    }
+
+    // 3) خصم كمية فقط (مفصّل)
+    if (qtyEnabled && !promoEnabled) {
+        const qtyHtml = buildQtyHtml(qty);
+        if (qty.total === 0) {
+            // لم تبلغ الكمية المطلوبة → نعرض رسالة توضيحية
+            return createPlainCard(`
+                🟢 خصم كمية ${discountPerItem} دج للقطعة<br>
+                الكمية المؤهلة: ${qty.eligibleQuantity} (الحد الأدنى: ${minQuantity})<br>
+                عند الوصول للحد سيطبق الخصم تلقائياً.
+            `);
+        }
+        return `
+            <div style="
+                background:#e8f9e9;
+                border:1px solid #bfecc0;
+                color:#1a7a1f;
+                padding:12px;
+                border-radius:10px;
+                box-shadow:0 2px 6px rgba(26,122,31,0.06);
+            ">
+                ${qtyHtml}
+                <div style="margin-top:8px; font-weight:700;">المجموع الكلّي للتوفير: ${qty.total} دج</div>
+            </div>
+        `;
+    }
+
+    // 4) خصم ترويجي فقط (مفصّل)
+    if (promoEnabled && !qtyEnabled) {
+        const promoHtml = buildPromoHtml(promo);
+        if (promo.total === 0) {
+            return createPlainCard(`🎊 خصم ترويجي ${promoPercent}% - لكن لا توجد منتجات مشمولة حالياً.`);
+        }
+        return `
+            <div style="
+                background:#eef6ff;
+                border:1px solid #cfe4ff;
+                color:#0b3b73;
+                padding:12px;
+                border-radius:10px;
+                box-shadow:0 2px 6px rgba(11,59,115,0.06);
+            ">
+                ${promoHtml}
+                <div style="margin-top:8px; font-weight:700;">المجموع الكلّي للتوفير: ${promo.total} دج</div>
+            </div>
+        `;
+    }
+
+    // fallback
+    return createPlainCard('🎀 اختيارك لهذا المنتوج يعكس ذوقكم الرفيع.');
 }
+
+
+
+
+
+
+
+
+
+
+        
         /**
          * 🧮 حساب إجمالي الخصم مع دعم الخصم الترويجي والكمي
          */
