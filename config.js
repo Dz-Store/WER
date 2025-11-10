@@ -87,9 +87,7 @@ const STORE_CONFIG = {
       "description": "مودال تركي بتفاصيل عصرية",
       "availableSizes": [
         "M1",
-        "M2",
-        "S2",
-        "S1"
+        "M2"
       ],
       "availableColors": [
         "أحمر"
@@ -105,26 +103,7 @@ const STORE_CONFIG = {
           "ageTo": 12,
           "size": "M2"
         }
-      ],
-      "colorImages": {
-        "أزرق": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-أزرق-1762810678141-modal4.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 5,
-              "ageTo": 6,
-              "size": "S"
-            },
-            {
-              "ageFrom": 7,
-              "ageTo": 8,
-              "size": "S1"
-            }
-          ]
-        }
-      }
+      ]
     },
     "5": {
       "name": "مودال 4(لون أزرق)",
@@ -417,7 +396,7 @@ const STORE_CONFIG = {
     "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
     "messengerUrl": "",
     "viberNumber": "0671466489",
-    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762805520165-Screenshot_20251110-210649_Perplexity.jpg",
+    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762814257360-Screenshot_20251110-233548_Perplexity.jpg",
     "storeEmail": "benaakrabahcene@gmail.com",
     "storeDescription": "متجر Kids-Fav يقدم أحدث وأفخم موديلات ملابس الأطفال بتصاميم عصرية وأنيقة تناسب جميع المناسبات"
   },
