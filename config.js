@@ -80,7 +80,7 @@ const STORE_CONFIG = {
     "promoDiscountProducts": []
   },
   "STORE_INFO": {
-    "name": "متجر الأطفال",
+    "name": "Rahouba-shopp",
     "storeIcon": "👑",
     "storeTitle": "👑 أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
