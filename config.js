@@ -75,6 +75,12 @@ const STORE_CONFIG = {
               "size": "XL"
             }
           ]
+        },
+        "أزرق": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-أزرق-1762863314765-image-3.png"
+          ],
+          "ageRanges": []
         }
       }
     },
