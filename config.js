@@ -13,7 +13,18 @@ const STORE_CONFIG = {
         "أزرق",
         "أسود"
       ],
-      "ageRanges": [],
+      "ageRanges": [
+        {
+          "ageFrom": 2,
+          "ageTo": 5,
+          "size": "S"
+        },
+        {
+          "ageFrom": 6,
+          "ageTo": 8,
+          "size": "M"
+        }
+      ],
       "colorImages": {}
     },
     "2": {
