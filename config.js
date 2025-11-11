@@ -58,7 +58,12 @@ const STORE_CONFIG = {
       }
     }
   },
-  "DELIVERY_PRICES": {},
+  "DELIVERY_PRICES": {
+    "43 - ميلة": {
+      "home": 900,
+      "desk": 450
+    }
+  },
   "DISCOUNTS": {
     "enableQuantityDiscount": false,
     "minQuantityForDiscount": 2,
