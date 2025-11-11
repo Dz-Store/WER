@@ -30,7 +30,32 @@ const STORE_CONFIG = {
         "أحمر"
       ],
       "ageRanges": [],
-      "colorImages": {}
+      "colorImages": {
+        "أزرق": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-أزرق-1762901095657-modal4.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": 2,
+              "ageTo": 5,
+              "size": "S"
+            }
+          ]
+        },
+        "أحمر": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-أحمر-1762901190503-modal3.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": 6,
+              "ageTo": 8,
+              "size": "M"
+            }
+          ]
+        }
+      }
     }
   },
   "DELIVERY_PRICES": {},
