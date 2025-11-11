@@ -86,6 +86,12 @@ const STORE_CONFIG = {
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-أزرق-1762863314765-image-3.png"
           ],
           "ageRanges": []
+        },
+        "أبيض": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-أبيض-1762864217861-Screenshot_20251110-233548_Perplexity.jpg"
+          ],
+          "ageRanges": []
         }
       }
     },
