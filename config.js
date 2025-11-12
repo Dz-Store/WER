@@ -12,7 +12,7 @@ const STORE_CONFIG = {
       ],
       "availableColors": [
         "أزرق",
-        "أخضر"
+        "أحمر"
       ],
       "ageRanges": [],
       "colorImages": {
