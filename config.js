@@ -24,11 +24,6 @@ const STORE_CONFIG = {
           "ageFrom": 8,
           "ageTo": 10,
           "size": "M2"
-        },
-        {
-          "ageFrom": 11,
-          "ageTo": 12,
-          "size": "XL"
         }
       ],
       "colorImages": {
@@ -46,11 +41,6 @@ const STORE_CONFIG = {
               "ageFrom": 8,
               "ageTo": 10,
               "size": "M2"
-            },
-            {
-              "ageFrom": 11,
-              "ageTo": 12,
-              "size": "XL"
             }
           ]
         },
