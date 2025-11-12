@@ -8,7 +8,8 @@ const STORE_CONFIG = {
       "availableSizes": [
         "S",
         "S1",
-        "S2"
+        "S2",
+        "S3"
       ],
       "availableColors": [
         "أزرق",
