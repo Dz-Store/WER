@@ -1,47 +1,52 @@
 const STORE_CONFIG = {
-  "PRODUCTS": {
-    "3": {
-      "name": "مودال3",
-      "price": 5000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
-      "description": "",
-      "availableSizes": [],
-      "availableColors": [
-        "أزرق",
-        "أخضر"
+  "COLORS": {
+    "1": {
+      "name": "الاحمر",
+      "price": 3000,
+      "images": [
+        "https://raw.githubusercontent.com/Dz-Store/WER/main/images/color-1-1762969529778-1000043662.jpg"
       ],
-      "ageRanges": [],
-      "colorImages": {
-        "أزرق": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أزرق-1762949709567-1000040694.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 6,
-              "ageTo": 8,
-              "size": "M"
-            }
-          ]
+      "description": "مودال جيد بمواصفات أوربية",
+      "availableSizes": [
+        "S",
+        "S1"
+      ],
+      "ageRanges": [
+        {
+          "ageFrom": 2,
+          "ageTo": 5,
+          "size": "S"
         },
-        "أحمر": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أحمر-1762949826213-1000041887.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 6,
-              "ageTo": 8,
-              "size": "M"
-            },
-            {
-              "ageFrom": 9,
-              "ageTo": 11,
-              "size": "XL"
-            }
-          ]
+        {
+          "ageFrom": 6,
+          "ageTo": 8,
+          "size": "S1"
         }
-      }
+      ]
+    },
+    "2": {
+      "name": "ازرق",
+      "price": 3000,
+      "images": [
+        "https://raw.githubusercontent.com/Dz-Store/WER/main/images/color-2-1762969972266-1000041608.jpg"
+      ],
+      "description": "مودال بمواصفات اوربية",
+      "availableSizes": [
+        "S2",
+        "S3"
+      ],
+      "ageRanges": [
+        {
+          "ageFrom": 6,
+          "ageTo": 8,
+          "size": "S2"
+        },
+        {
+          "ageFrom": 9,
+          "ageTo": 11,
+          "size": "S3"
+        }
+      ]
     }
   },
   "DELIVERY_PRICES": {
@@ -288,7 +293,11 @@ const STORE_CONFIG = {
     "enablePromotionalDiscount": true,
     "promotionalDiscountPercent": 20,
     "promotionalDiscountedPrice": null,
-    "promoDiscountScope": "selected"
+    "promoDiscountScope": "selected",
+    "promoDiscountColors": [
+      1,
+      2
+    ]
   },
   "STORE_INFO": {
     "name": "Rahouba-Shopp",
@@ -329,6 +338,55 @@ const STORE_CONFIG = {
     "XL",
     "XXL"
   ],
+  "PRODUCTS": {
+    "3": {
+      "name": "مودال3",
+      "price": 5000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
+      "description": "",
+      "availableSizes": [
+        "S",
+        "S1",
+        "S2"
+      ],
+      "availableColors": [
+        "أزرق",
+        "أخضر"
+      ],
+      "ageRanges": [],
+      "colorImages": {
+        "أزرق": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أزرق-1762949709567-1000040694.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": 6,
+              "ageTo": 8,
+              "size": "M"
+            }
+          ]
+        },
+        "أحمر": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أحمر-1762949826213-1000041887.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": 6,
+              "ageTo": 8,
+              "size": "M"
+            },
+            {
+              "ageFrom": 9,
+              "ageTo": 11,
+              "size": "XL"
+            }
+          ]
+        }
+      }
+    }
+  },
   "GOOGLE_SHEETS": {
     "enabled": true,
     "scriptUrl": "https://script.google.com/macros/s/AKfycbzw7NSduBIcVc2ugUKF5EtpmAej7bo7bDFKj0K-aHeXaYmqWmoUYtvOPGX6TjRKKN78/exec",
