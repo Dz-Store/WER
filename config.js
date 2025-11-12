@@ -1,214 +1,14 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
-    "2": {
-      "name": "مودال 2",
-      "price": 6000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg",
-      "description": "فستان الأفراح والمناسبات",
-      "availableSizes": [
-        "S1",
-        "S"
-      ],
-      "availableColors": [
-        "كما في الصورة"
-      ],
-      "ageRanges": [
-        {
-          "ageFrom": 6,
-          "ageTo": 8,
-          "size": "S"
-        },
-        {
-          "ageFrom": 9,
-          "ageTo": 10,
-          "size": "S1"
-        }
-      ],
-      "colorImages": {
-        "وردي": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg"
-          ],
-          "ageRanges": []
-        },
-        "أبيض": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg"
-          ],
-          "ageRanges": []
-        },
-        "كما في الصورة": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 6,
-              "ageTo": 8,
-              "size": "S"
-            },
-            {
-              "ageFrom": 9,
-              "ageTo": 10,
-              "size": "S1"
-            }
-          ]
-        }
-      }
-    },
     "3": {
-      "name": "مودال 3",
-      "price": 5500,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762376640949-littlebedouin-girls-luxury-occasion-dress-dress-231324.webp",
-      "description": "فستان الأفراح و المناسيات",
-      "availableSizes": [
-        "XXL"
-      ],
-      "availableColors": [
-        "كما في الصورة",
-        "أبيض"
-      ],
-      "ageRanges": [
-        {
-          "ageFrom": 12,
-          "ageTo": 14,
-          "size": "XXL"
-        }
-      ],
-      "colorImages": {
-        "كما في الصورة": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762376640949-littlebedouin-girls-luxury-occasion-dress-dress-231324.webp"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 12,
-              "ageTo": 14,
-              "size": "XXL"
-            }
-          ]
-        },
-        "أبيض": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762376640949-littlebedouin-girls-luxury-occasion-dress-dress-231324.webp"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 12,
-              "ageTo": 14,
-              "size": "XXL"
-            }
-          ]
-        }
-      }
-    },
-    "4": {
-      "name": "مودال 4 (لون أحمر)",
-      "price": 4800,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1762696334822-modal3.jpg",
-      "description": "مودال تركي بتفاصيل عصرية",
-      "availableSizes": [
-        "M1",
-        "M2",
-        "S2",
-        "S1"
-      ],
-      "availableColors": [
-        "أحمر",
-        "أزرق"
-      ],
-      "ageRanges": [
-        {
-          "ageFrom": 8,
-          "ageTo": 10,
-          "size": "M1"
-        },
-        {
-          "ageFrom": 11,
-          "ageTo": 12,
-          "size": "M2"
-        }
-      ],
-      "colorImages": {
-        "أحمر": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1762696334822-modal3.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 8,
-              "ageTo": 10,
-              "size": "M1"
-            },
-            {
-              "ageFrom": 11,
-              "ageTo": 12,
-              "size": "M2"
-            }
-          ]
-        },
-        "أزرق": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-أزرق-1762810678141-modal4.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 5,
-              "ageTo": 6,
-              "size": "S"
-            },
-            {
-              "ageFrom": 7,
-              "ageTo": 8,
-              "size": "S1"
-            }
-          ]
-        }
-      }
-    },
-    "5": {
-      "name": "مودال 4(لون أزرق)",
-      "price": 4800,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-5-1762696715544-modal4.jpg",
-      "description": "مودال تركي بمواصفات عصرية",
-      "availableSizes": [
-        "L",
-        "XL"
-      ],
-      "availableColors": [
-        "أزرق"
-      ],
-      "ageRanges": [
-        {
-          "ageFrom": 12,
-          "ageTo": 13,
-          "size": "L"
-        },
-        {
-          "ageFrom": 14,
-          "ageTo": 15,
-          "size": "XL"
-        }
-      ],
-      "colorImages": {
-        "أزرق": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-5-1762696715544-modal4.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 12,
-              "ageTo": 13,
-              "size": "L"
-            },
-            {
-              "ageFrom": 14,
-              "ageTo": 15,
-              "size": "XL"
-            }
-          ]
-        }
-      }
+      "name": "مودال3",
+      "price": 5000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
+      "description": "",
+      "availableSizes": [],
+      "availableColors": [],
+      "ageRanges": [],
+      "colorImages": {}
     }
   },
   "DELIVERY_PRICES": {
@@ -449,14 +249,8 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 2,
     "discountPerItem": 300,
     "discountScope": "selected",
-    "discountProducts": [
-      3
-    ],
-    "promoDiscountProducts": [
-      2,
-      4,
-      5
-    ],
+    "discountProducts": [],
+    "promoDiscountProducts": [],
     "enableQuantityDiscount": true,
     "enablePromotionalDiscount": true,
     "promotionalDiscountPercent": 20,
