@@ -5,7 +5,10 @@ const STORE_CONFIG = {
       "price": 5000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
       "description": "مودال الاجيال",
-      "availableSizes": [],
+      "availableSizes": [
+        "M",
+        "XL"
+      ],
       "availableColors": [
         "أزرق",
         "أحمر"
