@@ -1,3 +1,4 @@
+// config.js - إعدادات متجر Rahouba-Shopp
 const STORE_CONFIG = {
   "PRODUCTS": {
     "3": {
@@ -279,20 +280,16 @@ const STORE_CONFIG = {
     }
   },
   "DISCOUNTS": {
+    "enableQuantityDiscount": true,
     "minQuantityForDiscount": 2,
     "discountPerItem": 300,
     "discountScope": "selected",
     "discountProducts": [],
-    "promoDiscountProducts": [],
-    "enableQuantityDiscount": true,
     "enablePromotionalDiscount": true,
     "promotionalDiscountPercent": 20,
-    "promotionalDiscountedPrice": null,
+    "promotionalDiscountedPrice": 0,
     "promoDiscountScope": "selected",
-    "promoDiscountColors": [
-      1,
-      2
-    ]
+    "promoDiscountProducts": []
   },
   "STORE_INFO": {
     "name": "Rahouba-Shopp",
@@ -303,11 +300,11 @@ const STORE_CONFIG = {
       "0671466489",
       "0551102155"
     ],
+    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762805520165-Screenshot_20251110-210649_Perplexity.jpg",
     "facebookUrl": "https://www.facebook.com/share/r/1AUYY5favq/",
     "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
     "messengerUrl": "",
     "viberNumber": "0671466489",
-    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762805520165-Screenshot_20251110-210649_Perplexity.jpg",
     "storeEmail": "benaakrabahcene@gmail.com",
     "storeDescription": "متجر Kids-Fav يقدم أحدث وأفخم موديلات ملابس الأطفال بتصاميم عصرية وأنيقة تناسب جميع المناسبات"
   },
@@ -333,56 +330,7 @@ const STORE_CONFIG = {
     "XL",
     "XXL"
   ],
-  "COLORS": {
-    "1": {
-      "name": "الاحمر",
-      "price": 3000,
-      "images": [
-        "https://raw.githubusercontent.com/Dz-Store/WER/main/images/color-1-1762969529778-1000043662.jpg"
-      ],
-      "description": "مودال جيد بمواصفات أوربية",
-      "availableSizes": [
-        "S",
-        "S1"
-      ],
-      "ageRanges": [
-        {
-          "ageFrom": 2,
-          "ageTo": 5,
-          "size": "S"
-        },
-        {
-          "ageFrom": 6,
-          "ageTo": 8,
-          "size": "S1"
-        }
-      ]
-    },
-    "2": {
-      "name": "ازرق",
-      "price": 3000,
-      "images": [
-        "https://raw.githubusercontent.com/Dz-Store/WER/main/images/color-2-1762969972266-1000041608.jpg"
-      ],
-      "description": "مودال بمواصفات اوربية",
-      "availableSizes": [
-        "S2",
-        "S3"
-      ],
-      "ageRanges": [
-        {
-          "ageFrom": 6,
-          "ageTo": 8,
-          "size": "S2"
-        },
-        {
-          "ageFrom": 9,
-          "ageTo": 11,
-          "size": "S3"
-        }
-      ]
-    }
-  },
+  
   "GOOGLE_SHEETS": {
     "enabled": true,
     "scriptUrl": "https://script.google.com/macros/s/AKfycbzw7NSduBIcVc2ugUKF5EtpmAej7bo7bDFKj0K-aHeXaYmqWmoUYtvOPGX6TjRKKN78/exec",
@@ -425,3 +373,8 @@ const STORE_CONFIG = {
     "enableAnalytics": true
   }
 };
+
+// تصدير الكائن للاستخدام في الملفات الأخرى
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = STORE_CONFIG;
+}
