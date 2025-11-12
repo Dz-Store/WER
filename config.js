@@ -27,23 +27,6 @@ const STORE_CONFIG = {
         }
       ],
       "colorImages": {
-        "أحمر": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762411966732-6169e68ad981a5c61a35de6eb8ea92ca.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 5,
-              "ageTo": 7,
-              "size": "S"
-            },
-            {
-              "ageFrom": 8,
-              "ageTo": 10,
-              "size": "M2"
-            }
-          ]
-        },
         "كما في الصورة": {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762411966732-6169e68ad981a5c61a35de6eb8ea92ca.jpg"
@@ -70,7 +53,13 @@ const STORE_CONFIG = {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-أبيض-1762927307545-1000055019.jpg"
           ],
-          "ageRanges": []
+          "ageRanges": [
+            {
+              "ageFrom": 6,
+              "ageTo": 7,
+              "size": "M"
+            }
+          ]
         }
       }
     },
