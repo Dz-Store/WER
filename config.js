@@ -1,68 +1,5 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
-    "1": {
-      "name": "مودال 1",
-      "price": 6000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762411966732-6169e68ad981a5c61a35de6eb8ea92ca.jpg",
-      "description": "فستان تقليدي فاخر",
-      "availableSizes": [
-        "XL",
-        "S",
-        "M2"
-      ],
-      "availableColors": [
-        "أحمر",
-        "كما في الصورة"
-      ],
-      "ageRanges": [
-        {
-          "ageFrom": 5,
-          "ageTo": 7,
-          "size": "S"
-        },
-        {
-          "ageFrom": 8,
-          "ageTo": 10,
-          "size": "M2"
-        }
-      ],
-      "colorImages": {
-        "كما في الصورة": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762411966732-6169e68ad981a5c61a35de6eb8ea92ca.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 5,
-              "ageTo": 7,
-              "size": "S"
-            },
-            {
-              "ageFrom": 8,
-              "ageTo": 10,
-              "size": "M2"
-            },
-            {
-              "ageFrom": 11,
-              "ageTo": 12,
-              "size": "XL"
-            }
-          ]
-        },
-        "أبيض": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-أبيض-1762927307545-1000055019.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 6,
-              "ageTo": 7,
-              "size": "M"
-            }
-          ]
-        }
-      }
-    },
     "2": {
       "name": "مودال 2",
       "price": 6000,
@@ -73,9 +10,6 @@ const STORE_CONFIG = {
         "S"
       ],
       "availableColors": [
-        "وردي",
-        "أحمر",
-        "أبيض",
         "كما في الصورة"
       ],
       "ageRanges": [
@@ -95,52 +29,13 @@ const STORE_CONFIG = {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg"
           ],
-          "ageRanges": [
-            {
-              "ageFrom": 6,
-              "ageTo": 8,
-              "size": "S"
-            },
-            {
-              "ageFrom": 9,
-              "ageTo": 10,
-              "size": "S1"
-            }
-          ]
-        },
-        "أحمر": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 6,
-              "ageTo": 8,
-              "size": "S"
-            },
-            {
-              "ageFrom": 9,
-              "ageTo": 10,
-              "size": "S1"
-            }
-          ]
+          "ageRanges": []
         },
         "أبيض": {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762299261628-modle6.jpg"
           ],
-          "ageRanges": [
-            {
-              "ageFrom": 6,
-              "ageTo": 8,
-              "size": "S"
-            },
-            {
-              "ageFrom": 9,
-              "ageTo": 10,
-              "size": "S1"
-            }
-          ]
+          "ageRanges": []
         },
         "كما في الصورة": {
           "images": [
