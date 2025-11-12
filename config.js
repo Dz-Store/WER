@@ -5,7 +5,11 @@ const STORE_CONFIG = {
       "price": 5000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
       "description": "",
-      "availableSizes": [],
+      "availableSizes": [
+        "S",
+        "S1",
+        "S2"
+      ],
       "availableColors": [
         "أزرق",
         "أحمر"
