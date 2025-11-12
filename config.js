@@ -6,10 +6,7 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
       "description": "",
       "availableSizes": [],
-      "availableColors": [
-        "أزرق",
-        "أحمر"
-      ],
+      "availableColors": [],
       "ageRanges": [],
       "colorImages": {
         "أزرق": {
