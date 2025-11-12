@@ -1,121 +1,48 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
-    "1": {
-      "name": "مودال 1",
-      "price": 4000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-1762949625289-example.jpg",
-      "description": "مودال راقي بمواصفات أوروبية",
-      "availableSizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "availableColors": [
-        "أحمر",
-        "أزرق"
-      ],
-      "colorImages": {
-        "أحمر": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-أحمر-1762969529778-1000043662.jpg"
-          ],
-          "availableSizes": [
-            "S",
-            "M",
-            "L"
-          ]
-        },
-        "أزرق": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-1-أزرق-1762969972266-1000041608.jpg"
-          ],
-          "availableSizes": [
-            "M",
-            "L"
-          ]
-        }
-      }
-    },
-    "2": {
-      "name": "مودال 2",
-      "price": 3500,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-1762949625290-example.jpg",
-      "description": "تصميم عصري ومريح للأطفال",
-      "availableSizes": [
-        "S1",
-        "S2",
-        "M1"
-      ],
-      "availableColors": [
-        "أخضر",
-        "وردي"
-      ],
-      "colorImages": {
-        "أخضر": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-أخضر-1762970000000-example.jpg"
-          ],
-          "availableSizes": [
-            "S1",
-            "S2"
-          ]
-        },
-        "وردي": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-2-وردي-1762970100000-example.jpg"
-          ],
-          "availableSizes": [
-            "S1",
-            "S2",
-            "M1"
-          ]
-        }
-      }
-    },
     "3": {
-      "name": "مودال 3",
+      "name": "مودال3",
       "price": 5000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
-      "description": "أحدث موديلات 2024",
+      "description": "",
       "availableSizes": [
         "S",
         "S1",
-        "S2",
-        "M"
+        "S2"
       ],
       "availableColors": [
         "أزرق",
-        "أخضر",
-        "أحمر"
+        "أخضر"
       ],
+      "ageRanges": [],
       "colorImages": {
         "أزرق": {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أزرق-1762949709567-1000040694.jpg"
           ],
-          "availableSizes": [
-            "S",
-            "M"
-          ]
-        },
-        "أخضر": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أخضر-1762949750000-example.jpg"
-          ],
-          "availableSizes": [
-            "S1",
-            "S2"
+          "ageRanges": [
+            {
+              "ageFrom": 6,
+              "ageTo": 8,
+              "size": "M"
+            }
           ]
         },
         "أحمر": {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أحمر-1762949826213-1000041887.jpg"
           ],
-          "availableSizes": [
-            "S",
-            "S1",
-            "S2",
-            "M"
+          "ageRanges": [
+            {
+              "ageFrom": 6,
+              "ageTo": 8,
+              "size": "M"
+            },
+            {
+              "ageFrom": 9,
+              "ageTo": 11,
+              "size": "XL"
+            }
           ]
         }
       }
@@ -356,19 +283,18 @@ const STORE_CONFIG = {
     }
   },
   "DISCOUNTS": {
-    "enableQuantityDiscount": true,
     "minQuantityForDiscount": 2,
     "discountPerItem": 300,
     "discountScope": "selected",
-    "discountProducts": [
-      1,
-      3
-    ],
+    "discountProducts": [],
+    "promoDiscountProducts": [],
+    "enableQuantityDiscount": true,
     "enablePromotionalDiscount": true,
     "promotionalDiscountPercent": 20,
-    "promotionalDiscountedPrice": 0,
+    "promotionalDiscountedPrice": null,
     "promoDiscountScope": "selected",
-    "promoDiscountProducts": [
+    "promoDiscountColors": [
+      1,
       2
     ]
   },
@@ -381,11 +307,11 @@ const STORE_CONFIG = {
       "0671466489",
       "0551102155"
     ],
-    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762805520165-Screenshot_20251110-210649_Perplexity.jpg",
     "facebookUrl": "https://www.facebook.com/share/r/1AUYY5favq/",
     "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
     "messengerUrl": "",
     "viberNumber": "0671466489",
+    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762805520165-Screenshot_20251110-210649_Perplexity.jpg",
     "storeEmail": "benaakrabahcene@gmail.com",
     "storeDescription": "متجر Kids-Fav يقدم أحدث وأفخم موديلات ملابس الأطفال بتصاميم عصرية وأنيقة تناسب جميع المناسبات"
   },
@@ -411,6 +337,56 @@ const STORE_CONFIG = {
     "XL",
     "XXL"
   ],
+  "COLORS": {
+    "1": {
+      "name": "الاحمر",
+      "price": 3000,
+      "images": [
+        "https://raw.githubusercontent.com/Dz-Store/WER/main/images/color-1-1762969529778-1000043662.jpg"
+      ],
+      "description": "مودال جيد بمواصفات أوربية",
+      "availableSizes": [
+        "S",
+        "S1"
+      ],
+      "ageRanges": [
+        {
+          "ageFrom": 2,
+          "ageTo": 5,
+          "size": "S"
+        },
+        {
+          "ageFrom": 6,
+          "ageTo": 8,
+          "size": "S1"
+        }
+      ]
+    },
+    "2": {
+      "name": "ازرق",
+      "price": 3000,
+      "images": [
+        "https://raw.githubusercontent.com/Dz-Store/WER/main/images/color-2-1762969972266-1000041608.jpg"
+      ],
+      "description": "مودال بمواصفات اوربية",
+      "availableSizes": [
+        "S2",
+        "S3"
+      ],
+      "ageRanges": [
+        {
+          "ageFrom": 6,
+          "ageTo": 8,
+          "size": "S2"
+        },
+        {
+          "ageFrom": 9,
+          "ageTo": 11,
+          "size": "S3"
+        }
+      ]
+    }
+  },
   "GOOGLE_SHEETS": {
     "enabled": true,
     "scriptUrl": "https://script.google.com/macros/s/AKfycbzw7NSduBIcVc2ugUKF5EtpmAej7bo7bDFKj0K-aHeXaYmqWmoUYtvOPGX6TjRKKN78/exec",
@@ -433,6 +409,11 @@ const STORE_CONFIG = {
       "png",
       "webp"
     ]
+  },
+  "AGE_RANGES_MANAGEMENT": {
+    "enabled": true,
+    "minAge": 2,
+    "maxAge": 15
   },
   "GITHUB_INTEGRATION": {
     "enabled": true,
