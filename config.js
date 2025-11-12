@@ -25,11 +25,6 @@ const STORE_CONFIG = {
               "ageFrom": 6,
               "ageTo": 8,
               "size": "M"
-            },
-            {
-              "ageFrom": 9,
-              "ageTo": 11,
-              "size": "XL"
             }
           ]
         },
