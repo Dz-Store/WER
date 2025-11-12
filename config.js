@@ -8,7 +8,7 @@ const STORE_CONFIG = {
       "availableSizes": [],
       "availableColors": [
         "أزرق",
-        "أخضر"
+        "أحمر"
       ],
       "ageRanges": [],
       "colorImages": {
