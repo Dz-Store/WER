@@ -4,7 +4,7 @@ const STORE_CONFIG = {
       "name": "مودال3",
       "price": 5000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
-      "description": "",
+      "description": "مودال الاجيال",
       "availableSizes": [],
       "availableColors": [
         "أزرق",
