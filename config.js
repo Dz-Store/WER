@@ -43,6 +43,23 @@ const STORE_CONFIG = {
               "size": "XL"
             }
           ]
+        },
+        "وردي": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-وردي-1763013315764-1000055058.jpg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": 2,
+              "ageTo": 4,
+              "size": "S"
+            },
+            {
+              "ageFrom": 4,
+              "ageTo": 5,
+              "size": "S1"
+            }
+          ]
         }
       }
     }
