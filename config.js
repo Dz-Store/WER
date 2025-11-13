@@ -6,63 +6,19 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
       "description": "مودال الاجيال",
       "availableSizes": [
-        "M",
-        "XL"
+        "M"
       ],
       "availableColors": [
-        "أزرق",
-        "أحمر",
-        "وردي"
+        "أحمر"
       ],
-      "ageRanges": [],
-      "colorImages": {
-        "أزرق": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أزرق-1762949709567-1000040694.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 6,
-              "ageTo": 8,
-              "size": "M"
-            }
-          ]
-        },
-        "أحمر": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أحمر-1762949826213-1000041887.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 6,
-              "ageTo": 8,
-              "size": "M"
-            },
-            {
-              "ageFrom": 9,
-              "ageTo": 11,
-              "size": "XL"
-            }
-          ]
-        },
-        "وردي": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-وردي-1763013315764-1000055058.jpg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": 2,
-              "ageTo": 4,
-              "size": "S"
-            },
-            {
-              "ageFrom": 4,
-              "ageTo": 5,
-              "size": "S1"
-            }
-          ]
+      "ageRanges": [
+        {
+          "ageFrom": 7,
+          "ageTo": 9,
+          "size": "M"
         }
-      }
+      ],
+      "colorImages": {}
     }
   },
   "DELIVERY_PRICES": {
