@@ -1,55 +1,33 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
-    "3": {
-      "name": "مودال3",
-      "price": 5000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
-      "description": "مودال الاجيال",
+    "4": {
+      "name": "مودال 1",
+      "price": 5500,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763138343013-1000056028.jpg",
+      "description": "  Ensemble نايك دو جودة عالية",
       "availableSizes": [
+        "S",
         "M",
         "L",
-        "S",
-        "XL"
+        "XXL"
       ],
       "availableColors": [
-        "أحمر",
-        "أزرق"
+        "noir",
+        "gris"
       ],
       "ageRanges": [],
       "colorImages": {
-        "أحمر": {
+        "gris": {
           "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أحمر-1763045546587-1000043662.jpg"
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-gris-1763136806775-1000056027.jpg"
           ],
-          "ageRanges": [
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "S"
-            },
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "M"
-            },
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "L"
-            }
-          ]
+          "ageRanges": []
         },
-        "أزرق": {
+        "noir": {
           "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أزرق-1763045729112-1000043659.jpg"
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-noir-1763136842629-1000056028.jpg"
           ],
-          "ageRanges": [
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "XL"
-            }
-          ]
+          "ageRanges": []
         }
       }
     }
@@ -294,11 +272,11 @@ const STORE_CONFIG = {
     "discountScope": "selected",
     "discountProducts": [],
     "promoDiscountProducts": [
-      3
+      4
     ],
-    "enableQuantityDiscount": true,
+    "enableQuantityDiscount": false,
     "enablePromotionalDiscount": true,
-    "promotionalDiscountPercent": 20,
+    "promotionalDiscountPercent": 10,
     "promotionalDiscountedPrice": null,
     "promoDiscountScope": "selected",
     "promoDiscountColors": [
@@ -307,30 +285,30 @@ const STORE_CONFIG = {
     ]
   },
   "STORE_INFO": {
-    "name": "Rahouba-Shopp",
+    "name": "SANIX-DZ",
     "storeIcon": "👑",
     "storeTitle": "أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
-      "0671466489",
-      "0551102155"
+      "0795511986",
+      "0778506974"
     ],
     "facebookUrl": "https://www.facebook.com/share/r/1AUYY5favq/",
     "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
     "messengerUrl": "",
     "viberNumber": "0671466489",
-    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762805520165-Screenshot_20251110-210649_Perplexity.jpg",
+    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1763136861213-1000056031.jpg",
     "storeEmail": "benaakrabahcene@gmail.com",
     "storeDescription": "متجر Kids-Fav يقدم أحدث وأفخم موديلات ملابس الأطفال بتصاميم عصرية وأنيقة تناسب جميع المناسبات"
   },
   "AVAILABLE_COLORS": [
     "أبيض",
-    "أسود",
+    "noir",
     "أحمر",
     "أزرق",
     "أخضر",
     "وردي",
-    "كما في الصورة"
+    "gris"
   ],
   "AVAILABLE_SIZES": [
     "S",
