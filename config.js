@@ -35,10 +35,28 @@ const STORE_CONFIG = {
       "price": 5000,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763136593098-1000056027.jpg",
       "description": "Ensemble",
-      "availableSizes": [],
+      "availableSizes": [
+        "S",
+        "M",
+        "L",
+        "XXL"
+      ],
       "availableColors": [],
       "ageRanges": [],
-      "colorImages": {}
+      "colorImages": {
+        "gris": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-gris-1763136806775-1000056027.jpg"
+          ],
+          "ageRanges": []
+        },
+        "noir": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-noir-1763136842629-1000056028.jpg"
+          ],
+          "ageRanges": []
+        }
+      }
     }
   },
   "DELIVERY_PRICES": {
