@@ -345,87 +345,36 @@ const STORE_CONFIG = {
     "XL",
     "XXL"
   ],
-  
-  // ===========================================================================
-  // 🔥 نظام دليل المقاسات المزدوج - للصغار والكبار
-  // ===========================================================================
-  
   "SIZE_GUIDE": {
-    // =========================================================================
-    // 👶 جدول الأعمار والقياسات للصغار (من 2-15 سنة)
-    // =========================================================================
-    
-    
-    // =========================================================================
-    // 👨‍💼 جدول الطول والوزن والقياسات للكبار
-    // =========================================================================
-    "ADULTS_HEIGHT_WEIGHT_GUIDE": {
-      "XS": {
-        "heightFrom": 150,
-        "heightTo": 160,
-        "weightFrom": 40,
-        "weightTo": 55,
-        "enabled": true,
-        "category": "كبار"
-      },
-      "S": {
-        "heightFrom": 160,
-        "heightTo": 175,
-        "weightFrom": 50,
-        "weightTo": 65,
-        "enabled": true,
-        "category": "كبار"
-      },
-      "M": {
-        "heightFrom": 170,
-        "heightTo": 180,
-        "weightFrom": 65,
-        "weightTo": 80,
-        "enabled": true,
-        "category": "كبار"
-      },
-      "L": {
-        "heightFrom": 180,
-        "heightTo": 195,
-        "weightFrom": 70,
-        "weightTo": 90,
-        "enabled": true,
-        "category": "كبار"
-      },
-      "XL": {
-        "heightFrom": 185,
-        "heightTo": 200,
-        "weightFrom": 85,
-        "weightTo": 110,
-        "enabled": true,
-        "category": "كبار"
-      },
-      "XXL": {
-        "heightFrom": 195,
-        "heightTo": 210,
-        "weightFrom": 100,
-        "weightTo": 130,
-        "enabled": true,
-        "category": "كبار"
-      }
+    "S": {
+      "heightFrom": 160,
+      "heightTo": 175,
+      "weightFrom": 50,
+      "weightTo": 65,
+      "enabled": true
     },
-    
-    // =========================================================================
-    // ⚙️ إعدادات نظام المقاسات
-    // =========================================================================
-    "SETTINGS": {
-      "kidsMinAge": 2,
-      "kidsMaxAge": 15,
-      "adultsMinHeight": 150,
-      "adultsMaxHeight": 210,
-      "adultsMinWeight": 40,
-      "adultsMaxWeight": 130,
-      "autoDetectCategory": true,
-      "showBothGuides": true,
-      "defaultGuide": "auto" // "kids", "adults", "auto"
+    "M": {
+      "heightFrom": 170,
+      "heightTo": 180,
+      "weightFrom": 65,
+      "weightTo": 80,
+      "enabled": true
+    },
+    "L": {
+      "heightFrom": 180,
+      "heightTo": 195,
+      "weightFrom": 70,
+      "weightTo": 90,
+      "enabled": true
+    },
+    "XL": {
+      "heightFrom": 185,
+      "heightTo": 200,
+      "weightFrom": 85,
+      "weightTo": 110,
+      "enabled": true
     }
   },
-
   "COLORS": {
     "1": {
       "name": "الاحمر",
