@@ -285,7 +285,7 @@ const STORE_CONFIG = {
     ]
   },
   "STORE_INFO": {
-    "name": "Rahouba-Shopp",
+    "name": "SANIX-DZ",
     "storeIcon": "👑",
     "storeTitle": "أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
