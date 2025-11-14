@@ -3301,52 +3301,51 @@
         // =============================================================================
 
         function initAdultsSizeGuide() {
-            const container = document.getElementById('adultsSizeGuideContainer');
-            const tableBody = document.getElementById('adultsSizeGuideBody');
+    const container = document.getElementById('adultsSizeGuideContainer');
+    const tableBody = document.getElementById('adultsSizeGuideBody');
+    
+    // التحقق من وجود دليل مقاسات الكبار في config
+    if (STORE_CONFIG.SIZE_GUIDE) {
+        const adultsGuide = STORE_CONFIG.SIZE_GUIDE;
+        
+        // مسح الجدول أولاً
+        tableBody.innerHTML = '';
+        
+        let hasValidSizes = false;
+        
+        // إضافة الصفوف للجدول
+        Object.keys(adultsGuide).forEach(size => {
+            const sizeData = adultsGuide[size];
             
-            // التحقق من وجود دليل مقاسات الكبار في config
-            if (STORE_CONFIG.SIZE_GUIDE && STORE_CONFIG.SIZE_GUIDE.ADULTS_HEIGHT_WEIGHT_GUIDE) {
-                const adultsGuide = STORE_CONFIG.SIZE_GUIDE.ADULTS_HEIGHT_WEIGHT_GUIDE;
+            // التحقق من أن المقاس مفعل
+            if (sizeData.enabled !== false) {
+                hasValidSizes = true;
                 
-                // مسح الجدول أولاً
-                tableBody.innerHTML = '';
-                
-                let hasValidSizes = false;
-                
-                // إضافة الصفوف للجدول
-                Object.keys(adultsGuide).forEach(size => {
-                    const sizeData = adultsGuide[size];
-                    
-                    // التحقق من أن المقاس مفعل
-                    if (sizeData.enabled !== false) {
-                        hasValidSizes = true;
-                        
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
-                            <td><strong>${size}</strong></td>
-                            <td>${sizeData.heightFrom || 0}-${sizeData.heightTo || 0} سم</td>
-                            <td>${sizeData.weightFrom || 0}-${sizeData.weightTo || 0} كغ</td>
-                            <td>${sizeData.category || 'كبار'}</td>
-                        `;
-                        tableBody.appendChild(row);
-                    }
-                });
-                
-                // إظهار الجدول فقط إذا كان هناك مقاسات صالحة
-                if (hasValidSizes) {
-                    container.classList.add('show');
-                    console.log('✅ تم تحميل دليل مقاسات الكبار');
-                } else {
-                    container.style.display = 'none';
-                    console.log('ℹ️ لا توجد مقاسات كبار مفعلة في الإعدادات');
-                }
-            } else {
-                // إخفاء الجدول إذا لم يكن موجوداً في config
-                container.style.display = 'none';
-                console.log('ℹ️ دليل مقاسات الكبار غير موجود في الإعدادات');
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><strong>${size}</strong></td>
+                    <td>${sizeData.heightFrom || 0}-${sizeData.heightTo || 0} سم</td>
+                    <td>${sizeData.weightFrom || 0}-${sizeData.weightTo || 0} كغ</td>
+                    <td>${sizeData.category || 'كبار'}</td>
+                `;
+                tableBody.appendChild(row);
             }
+        });
+        
+        // إظهار الجدول فقط إذا كان هناك مقاسات صالحة
+        if (hasValidSizes) {
+            container.classList.add('show');
+            console.log('✅ تم تحميل دليل مقاسات الكبار');
+        } else {
+            container.style.display = 'none';
+            console.log('ℹ️ لا توجد مقاسات كبار مفعلة في الإعدادات');
         }
-
+    } else {
+        // إخفاء الجدول إذا لم يكن موجوداً في config
+        container.style.display = 'none';
+        console.log('ℹ️ دليل مقاسات الكبار غير موجود في الإعدادات');
+    }
+}
         // =============================================================================
         // 🎯 تهيئة الأحداث والمستمعين
         // =============================================================================
