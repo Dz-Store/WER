@@ -290,8 +290,8 @@ const STORE_CONFIG = {
     "storeTitle": "أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
-      "0671466489",
-      "0551102155"
+      "0795511986",
+      "0778506974"
     ],
     "facebookUrl": "https://www.facebook.com/share/r/1AUYY5favq/",
     "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
