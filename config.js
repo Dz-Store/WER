@@ -29,6 +29,16 @@ const STORE_CONFIG = {
           "ageRanges": []
         }
       }
+    },
+    "4": {
+      "name": "مودال 2",
+      "price": 5000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763136593098-1000056027.jpg",
+      "description": "Ensemble",
+      "availableSizes": [],
+      "availableColors": [],
+      "ageRanges": [],
+      "colorImages": {}
     }
   },
   "DELIVERY_PRICES": {
@@ -302,12 +312,12 @@ const STORE_CONFIG = {
   },
   "AVAILABLE_COLORS": [
     "أبيض",
-    "أسود",
+    "noir",
     "أحمر",
     "أزرق",
     "أخضر",
     "وردي",
-    "كما في الصورة"
+    "gris"
   ],
   "AVAILABLE_SIZES": [
     "S",
