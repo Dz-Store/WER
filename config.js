@@ -345,56 +345,29 @@ const STORE_CONFIG = {
     "XL",
     "XXL"
   ],
-  
-  // ===========================================================================
-  // 🔥 نظام دليل المقاسات للكبار فقط
-  // ===========================================================================
-  
   "SIZE_GUIDE": {
-    "ADULTS_HEIGHT_WEIGHT_GUIDE": {
-      "S": {
-        "heightFrom": 160,
-        "heightTo": 175,
-        "weightFrom": 50,
-        "weightTo": 65,
-        "enabled": true,
-        "category": "كبار"
-      },
-      "M": {
-        "heightFrom": 170,
-        "heightTo": 180,
-        "weightFrom": 65,
-        "weightTo": 80,
-        "enabled": true,
-        "category": "كبار"
-      },
-      "L": {
-        "heightFrom": 180,
-        "heightTo": 195,
-        "weightFrom": 70,
-        "weightTo": 90,
-        "enabled": true,
-        "category": "كبار"
-      },
-      "XL": {
-        "heightFrom": 185,
-        "heightTo": 200,
-        "weightFrom": 85,
-        "weightTo": 110,
-        "enabled": true,
-        "category": "كبار"
-      },
-      "XXL": {
-        "heightFrom": 195,
-        "heightTo": 210,
-        "weightFrom": 100,
-        "weightTo": 130,
-        "enabled": true,
-        "category": "كبار"
-      }
+    "M": {
+      "heightFrom": 170,
+      "heightTo": 180,
+      "weightFrom": 65,
+      "weightTo": 80,
+      "enabled": true
+    },
+    "L": {
+      "heightFrom": 180,
+      "heightTo": 195,
+      "weightFrom": 70,
+      "weightTo": 90,
+      "enabled": true
+    },
+    "XL": {
+      "heightFrom": 185,
+      "heightTo": 200,
+      "weightFrom": 85,
+      "weightTo": 110,
+      "enabled": true
     }
   },
-
   "COLORS": {
     "1": {
       "name": "الاحمر",
