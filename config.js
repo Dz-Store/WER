@@ -21,13 +21,35 @@ const STORE_CONFIG = {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-gris-1763136806775-1000056027.jpg"
           ],
-          "ageRanges": []
+          "ageRanges": [
+            {
+              "ageFrom": "2",
+              "ageTo": "5",
+              "size": "S1"
+            },
+            {
+              "ageFrom": "6",
+              "ageTo": "8",
+              "size": "S2"
+            }
+          ]
         },
         "noir": {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-noir-1763136842629-1000056028.jpg"
           ],
-          "ageRanges": []
+          "ageRanges": [
+            {
+              "ageFrom": "9",
+              "ageTo": "11",
+              "size": "M"
+            },
+            {
+              "ageFrom": "12",
+              "ageTo": "14",
+              "size": "M1"
+            }
+          ]
         }
       }
     }
