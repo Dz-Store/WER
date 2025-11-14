@@ -3,7 +3,7 @@ const STORE_CONFIG = {
     "4": {
       "name": "مودال 2",
       "price": 5800,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763136593098-1000056027.jpg",
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763138343013-1000056028.jpg",
       "description": "  Ensemble نايك دو جودة عالية",
       "availableSizes": [
         "S",
@@ -276,7 +276,7 @@ const STORE_CONFIG = {
     ],
     "enableQuantityDiscount": false,
     "enablePromotionalDiscount": true,
-    "promotionalDiscountPercent": 14,
+    "promotionalDiscountPercent": 13,
     "promotionalDiscountedPrice": null,
     "promoDiscountScope": "selected",
     "promoDiscountColors": [
