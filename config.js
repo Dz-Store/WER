@@ -323,29 +323,7 @@ const STORE_CONFIG = {
     "XL",
     "XXL"
   ],
-  "SIZE_GUIDE": {
-    "M": {
-      "heightFrom": 170,
-      "heightTo": 180,
-      "weightFrom": 65,
-      "weightTo": 80,
-      "enabled": true
-    },
-    "L": {
-      "heightFrom": 180,
-      "heightTo": 195,
-      "weightFrom": 70,
-      "weightTo": 90,
-      "enabled": true
-    },
-    "XL": {
-      "heightFrom": 185,
-      "heightTo": 200,
-      "weightFrom": 85,
-      "weightTo": 110,
-      "enabled": true
-    }
-  },
+  "SIZE_GUIDE": {},
   "COLORS": {
     "1": {
       "name": "الاحمر",
