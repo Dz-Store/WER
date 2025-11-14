@@ -21,7 +21,13 @@ const STORE_CONFIG = {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-gris-1763136806775-1000056027.jpg"
           ],
-          "ageRanges": []
+          "ageRanges": [
+            {
+              "ageFrom": 14,
+              "ageTo": 15,
+              "size": "S"
+            }
+          ]
         },
         "noir": {
           "images": [
