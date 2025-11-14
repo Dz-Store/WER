@@ -6,10 +6,10 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763138343013-1000056028.jpg",
       "description": "  Ensemble نايك دو جودة عالية",
       "availableSizes": [
-        "S",
         "M",
-        "L",
-        "XXL"
+        "S1",
+        "S2",
+        "M1"
       ],
       "availableColors": [
         "noir",
