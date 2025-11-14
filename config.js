@@ -345,7 +345,7 @@ const STORE_CONFIG = {
     "XL",
     "XXL"
   ],
-  "SIZE_GUIDE.ADULTS": {
+  "SIZE_GUIDE": {
     "S": {
       "heightFrom": 160,
       "heightTo": 175,
