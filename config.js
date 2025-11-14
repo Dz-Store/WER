@@ -2,7 +2,7 @@ const STORE_CONFIG = {
   "PRODUCTS": {
     "4": {
       "name": "مودال 2",
-      "price": 5000,
+      "price": 5800,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763136593098-1000056027.jpg",
       "description": "  Ensemble نايك دو جودة عالية",
       "availableSizes": [
