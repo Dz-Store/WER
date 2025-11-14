@@ -7,6 +7,7 @@ const STORE_CONFIG = {
       "description": "مودال الاجيال",
       "availableSizes": [
         "M",
+        "XL",
         "L"
       ],
       "availableColors": [
@@ -19,25 +20,13 @@ const STORE_CONFIG = {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أحمر-1763045546587-1000043662.jpg"
           ],
-          "ageRanges": [
-            {
-              "ageFrom": 6,
-              "ageTo": 8,
-              "size": "M"
-            }
-          ]
+          "ageRanges": []
         },
         "أزرق": {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أزرق-1763045729112-1000043659.jpg"
           ],
-          "ageRanges": [
-            {
-              "ageFrom": 9,
-              "ageTo": 10,
-              "size": "L"
-            }
-          ]
+          "ageRanges": []
         }
       }
     }
