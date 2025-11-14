@@ -1,35 +1,5 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
-    "3": {
-      "name": "مودال3",
-      "price": 5000,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
-      "description": "مودال الاجيال",
-      "availableSizes": [
-        "M",
-        "XL",
-        "L"
-      ],
-      "availableColors": [
-        "أحمر",
-        "أزرق"
-      ],
-      "ageRanges": [],
-      "colorImages": {
-        "أحمر": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أحمر-1763045546587-1000043662.jpg"
-          ],
-          "ageRanges": []
-        },
-        "أزرق": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أزرق-1763045729112-1000043659.jpg"
-          ],
-          "ageRanges": []
-        }
-      }
-    },
     "4": {
       "name": "مودال 2",
       "price": 5000,
@@ -41,7 +11,10 @@ const STORE_CONFIG = {
         "L",
         "XXL"
       ],
-      "availableColors": [],
+      "availableColors": [
+        "noir",
+        "gris"
+      ],
       "ageRanges": [],
       "colorImages": {
         "gris": {
@@ -298,9 +271,7 @@ const STORE_CONFIG = {
     "discountPerItem": 300,
     "discountScope": "selected",
     "discountProducts": [],
-    "promoDiscountProducts": [
-      3
-    ],
+    "promoDiscountProducts": [],
     "enableQuantityDiscount": true,
     "enablePromotionalDiscount": true,
     "promotionalDiscountPercent": 20,
@@ -324,7 +295,7 @@ const STORE_CONFIG = {
     "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
     "messengerUrl": "",
     "viberNumber": "0671466489",
-    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762805520165-Screenshot_20251110-210649_Perplexity.jpg",
+    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1763136861213-1000056031.jpg",
     "storeEmail": "benaakrabahcene@gmail.com",
     "storeDescription": "متجر Kids-Fav يقدم أحدث وأفخم موديلات ملابس الأطفال بتصاميم عصرية وأنيقة تناسب جميع المناسبات"
   },
