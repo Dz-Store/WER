@@ -409,6 +409,13 @@ const STORE_CONFIG = {
       "weightFrom": 85,
       "weightTo": 110,
       "enabled": true
+    },
+    "S": {
+      "heightFrom": 160,
+      "heightTo": 175,
+      "weightFrom": 50,
+      "weightTo": 65,
+      "enabled": true
     }
   },
   "COLORS": {
