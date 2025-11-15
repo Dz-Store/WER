@@ -3195,7 +3195,7 @@
             console.log(`✅ تم تحميل ${Object.keys(STORE_CONFIG.PRODUCTS).length} منتج مع نظام الخصم المحسن`);
         }
 
-       /* function updateSelectedProducts() {
+        function updateSelectedProducts() {
             const container = document.getElementById('selectedProducts');
             container.innerHTML = '';
             
@@ -3279,115 +3279,9 @@
                     </div>
                 `;
                 container.appendChild(productElement);
-            }); */
+            }); 
         
-             function updateSelectedProducts() {
-    const container = document.getElementById('selectedProducts');
-    container.innerHTML = '';
-    
-    if (cartItems.length === 0) {
-        // ... الكود الحالي ...
-        return;
-    }
-    
-    const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-    
-    // حساب الخصم بناءً على الكمية الإجمالية لجميع المنتجات
-    const totalDiscountInfo = calculateTotalDiscount();
-    const shouldApplyDiscount = totalDiscountInfo > 0;
-    
-    cartItems.forEach((item, index) => {
-        const productElement = document.createElement('div');
-        productElement.className = 'selected-product';
-        
-        // التصحيح: حساب السعر بناءً على الكمية الإجمالية
-        let finalPrice = item.price;
-        let discountAmount = 0;
-        let hasDiscount = false;
-        let discountType = '';
-        
-        if (shouldApplyDiscount) {
-            // إذا كان الخصم الترويجي مفعل
-            if (STORE_CONFIG.DISCOUNTS.enablePromotionalDiscount) {
-                const promoScope = STORE_CONFIG.DISCOUNTS.promoDiscountScope || 'all';
-                let applyPromoDiscount = false;
-                
-                if (promoScope === 'all') {
-                    applyPromoDiscount = true;
-                } else if (promoScope === 'selected' && STORE_CONFIG.DISCOUNTS.promoDiscountProducts) {
-                    const productKeyNum = parseInt(item.key);
-                    applyPromoDiscount = STORE_CONFIG.DISCOUNTS.promoDiscountProducts.includes(productKeyNum);
-                }
-                
-                if (applyPromoDiscount) {
-                    const promoPercent = STORE_CONFIG.DISCOUNTS.promotionalDiscountPercent || 0;
-                    discountAmount = Math.round(item.price * (promoPercent / 100));
-                    finalPrice = item.price - discountAmount;
-                    hasDiscount = true;
-                    discountType = 'promo';
-                }
-            }
-            
-            // إذا لم يكن هناك خصم ترويجي، تطبيق خصم الكمية
-            if (!hasDiscount && STORE_CONFIG.DISCOUNTS.enableQuantityDiscount) {
-                const minQuantity = STORE_CONFIG.DISCOUNTS.minQuantityForDiscount || 3;
-                const discountPerItem = STORE_CONFIG.DISCOUNTS.discountPerItem || 0;
-                const discountScope = STORE_CONFIG.DISCOUNTS.discountScope || 'all';
-                
-                let applyQuantityDiscount = false;
-                
-                if (discountScope === 'all') {
-                    applyQuantityDiscount = totalQuantity >= minQuantity;
-                } else if (discountScope === 'selected' && STORE_CONFIG.DISCOUNTS.discountProducts) {
-                    const productKeyNum = parseInt(item.key);
-                    applyQuantityDiscount = STORE_CONFIG.DISCOUNTS.discountProducts.includes(productKeyNum) && totalQuantity >= minQuantity;
-                }
-                
-                if (applyQuantityDiscount) {
-                    discountAmount = discountPerItem * item.quantity;
-                    finalPrice = Math.max(item.price - discountPerItem, 0); // خصم لكل قطعة
-                    hasDiscount = true;
-                    discountType = 'quantity';
-                }
-            }
-        }
-        
-        productElement.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
-            <div class="selected-product-info">
-                <h4 class="selected-product-title">${item.name}</h4>
-                <div class="selected-product-details">
-                    <span class="selected-product-detail">العمر: ${item.age}</span>
-                    <span class="selected-product-detail">المقاس: ${item.size || 'غير محدد'}</span>
-                    <span class="selected-product-detail">اللون: ${item.color || 'غير محدد'}</span>
-                </div>
-                <div class="selected-product-price">
-                    <div>
-                        ${hasDiscount ? `
-                            <div style="display: flex; align-items: center; gap: 0.3rem; font-size: 0.8rem;">
-                                <span style="color: var(--gray); text-decoration: line-through;">${item.price} دج</span>
-                                <span style="color: var(--success); font-weight: 700;">${finalPrice} دج</span>
-                                <span style="background: ${discountType === 'promo' ? 'var(--primary)' : 'var(--warning)'}; color: white; padding: 0.1rem 0.3rem; border-radius: 8px; font-size: 0.6rem;">
-                                    ${discountType === 'promo' ? `خصم ${STORE_CONFIG.DISCOUNTS.promotionalDiscountPercent}%` : `وفر ${discountAmount} دج`}
-                                </span>
-                            </div>
-                        ` : `
-                            <span style="color: var(--success); font-weight: 700; font-size: 0.8rem;">${item.price} دج</span>
-                        `}
-                    </div>
-                    <div class="selected-product-quantity">
-                        <button onclick="updateQuantity(${index}, -1)">-</button>
-                        <span>${item.quantity}</span>
-                        <button onclick="updateQuantity(${index}, 1)">+</button>
-                        <button class="selected-product-remove" onclick="removeFromCart(${index})">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `;
-        container.appendChild(productElement);
-    });
+             
             // إضافة ملاحظة الخصم الإجمالي مع التمييز الواضح
             if (discountInfo > 0) {
                 const discountType = STORE_CONFIG.DISCOUNTS.enablePromotionalDiscount ? 'promo' : 'discount';
