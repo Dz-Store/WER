@@ -2417,18 +2417,18 @@
             if (!currentProductKey) return;
             
             if (!selectedAge) {
-                showNotification('⚠️ الرجاء اختيار المقاس أولاً قبل إضافة المنتج إلى السلة', 'warning');
+                showNotification('⚠️ الرجاء اختيار اللون والمقاس أولا قبل إضافة المنتج إلى السلة', 'warning');
                 return;
             }
             
             if (!selectedColor) {
-                showNotification('⚠️ الرجاء اختيار اللون أولاً قبل إضافة المنتج إلى السلة', 'warning');
+                showNotification('⚠️ الرجاء اختيار اللون والمقاس أولا قبل إضافة المنتج إلى السلة', 'warning');
                 return;
             }
             
             const quantity = parseInt(document.getElementById('quantityDisplay').textContent);
             
-            // الحصول على المقاس المناسب بناءً على العمر المختار
+            // الحصول على المقاس المناسب بناء على العمر المختار
             const product = STORE_CONFIG.PRODUCTS[currentProductKey];
             const colorData = product.colorImages && product.colorImages[selectedColor];
             
@@ -3244,6 +3244,11 @@
                 // حساب الخصم لكل عنصر - التصحيح: استخدام الكمية الإجمالية
                 const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
                 const itemDiscountInfo = calculateDiscountedPrice(item.price, totalQuantity, item.key);
+                if (item.quantity > 1) {
+                      itemDiscountInfo.finalPrice = itemDiscountInfo.finalPrice;
+                     } else {
+                   itemDiscountInfo.finalPrice = itemDiscountInfo.finalPrice + itemDiscountInfo.discountAmount;
+                  }
                 const hasDiscount = itemDiscountInfo.hasDiscount || itemDiscountInfo.hasPromoDiscount;
                 
                 productElement.innerHTML = `
