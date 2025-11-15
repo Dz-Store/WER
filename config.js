@@ -351,12 +351,12 @@ const STORE_CONFIG = {
   },
   "AVAILABLE_COLORS": [
     "أبيض",
-    "أسود(noir)",
+    "أسود",
     "أحمر",
     "أزرق",
     "أخضر",
     "وردي",
-    "رمادي( gris)"
+    "كما في الصورة"
   ],
   "AVAILABLE_SIZES": [
     "S",
