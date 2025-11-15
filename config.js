@@ -11,7 +11,10 @@ const STORE_CONFIG = {
         "L",
         "XL"
       ],
-      "availableColors": [],
+      "availableColors": [
+        "أسود(Noir)",
+        "رماضي(Gris)"
+      ],
       "ageRanges": [
         {
           "ageFrom": "A",
