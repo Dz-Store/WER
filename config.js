@@ -55,7 +55,7 @@ const STORE_CONFIG = {
     },
     "4": {
       "name": "Nike Baggy Jogger",
-      "price": 5000,
+      "price": 5800,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763217318680-modal1.jpeg",
       "description": " Nike Baggy Jogger  نوعية رفيعة بلونين مختلفين",
       "availableSizes": [
