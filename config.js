@@ -6,18 +6,55 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763217318680-modal1.jpeg",
       "description": " Nike Baggy Jogger  نوعية رفيعة بلونين مختلفين",
       "availableSizes": [
-        "S3",
-        "S1"
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "availableColors": [
         "أسود",
-        "كما في الصورة"
+        "كما في الصورة",
+        "أسود(noir)",
+        "رمادي( gris)"
       ],
-      "ageRanges": [],
+      "ageRanges": [
+        {
+          "ageFrom": "A",
+          "ageTo": "A",
+          "size": "S"
+        }
+      ],
       "colorImages": {
         "أسود(noir)": {
           "images": [
             "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-أسود(noir)-1763220059803-modal1.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "S"
+            },
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "M"
+            },
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "L"
+            },
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "XL"
+            }
+          ]
+        },
+        "رمادي( gris)": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-رمادي( gris)-1763220141967-modal2.jpeg"
           ],
           "ageRanges": [
             {
@@ -283,10 +320,10 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 1,
     "discountPerItem": 800,
     "discountScope": "selected",
-    "discountProducts": [],
-    "promoDiscountProducts": [
+    "discountProducts": [
       4
     ],
+    "promoDiscountProducts": [],
     "enableQuantityDiscount": true,
     "enablePromotionalDiscount": true,
     "promotionalDiscountPercent": 20,
