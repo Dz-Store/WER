@@ -304,8 +304,8 @@ const STORE_CONFIG = {
       "desk": 550
     },
     "58 - المنيعة": {
-      "home": 900,
-      "desk": 400
+      "home": 1100,
+      "desk": 500
     }
   },
   "DISCOUNTS": {
