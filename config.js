@@ -6,10 +6,7 @@ const STORE_CONFIG = {
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763138343013-1000056028.jpg",
       "description": "  Ensemble نايك دو جودة عالية",
       "availableSizes": [
-        "M",
-        "S1",
-        "S2",
-        "M1"
+        "S"
       ],
       "availableColors": [
         "noir",
@@ -23,14 +20,9 @@ const STORE_CONFIG = {
           ],
           "ageRanges": [
             {
-              "ageFrom": "2",
-              "ageTo": "5",
-              "size": "S1"
-            },
-            {
-              "ageFrom": "6",
-              "ageTo": "8",
-              "size": "S2"
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "S"
             }
           ]
         },
@@ -40,14 +32,9 @@ const STORE_CONFIG = {
           ],
           "ageRanges": [
             {
-              "ageFrom": "9",
-              "ageTo": "11",
+              "ageFrom": "A",
+              "ageTo": "A",
               "size": "M"
-            },
-            {
-              "ageFrom": "12",
-              "ageTo": "14",
-              "size": "M1"
             }
           ]
         }
