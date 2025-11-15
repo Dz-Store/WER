@@ -62,7 +62,10 @@ const STORE_CONFIG = {
         "S3",
         "S1"
       ],
-      "availableColors": [],
+      "availableColors": [
+        "أسود",
+        "كما في الصورة"
+      ],
       "ageRanges": [],
       "colorImages": {
         "أسود": {
