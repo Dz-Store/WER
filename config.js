@@ -13,9 +13,7 @@ const STORE_CONFIG = {
       ],
       "availableColors": [
         "أسود",
-        "كما في الصورة",
-        "أبيض",
-        "أخضر"
+        "كما في الصورة"
       ],
       "ageRanges": [
         {
