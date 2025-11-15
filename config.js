@@ -359,7 +359,7 @@ const STORE_CONFIG = {
     "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
     "messengerUrl": "",
     "viberNumber": "0671466489",
-    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762805520165-Screenshot_20251110-210649_Perplexity.jpg",
+    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1763217953279-Screenshot_20250903-115403_Facebook.jpg",
     "storeEmail": "benaakrabahcene@gmail.com",
     "storeDescription": "متجر Kids-Fav يقدم أحدث وأفخم موديلات ملابس الأطفال بتصاميم عصرية وأنيقة تناسب جميع المناسبات"
   },
