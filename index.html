@@ -3247,7 +3247,7 @@
                 // تعديل السعر النهائي حسب شرط الكمية
 if (item.quantity === 1) {
     // لو الكمية واحدة ننقص قيمة الخصم
-    itemDiscountInfo.finalPrice = itemDiscountInfo.finalPrice - itemDiscountInfo.discountAmount;
+    itemDiscountInfo.finalPrice = item.price - itemDiscountInfo.discountAmount;
 } else {
     // لو الكمية أكثر من واحد يبقى السعر كما هو
     itemDiscountInfo.finalPrice = itemDiscountInfo.finalPrice;
