@@ -12,6 +12,8 @@ const STORE_CONFIG = {
         "XL"
       ],
       "availableColors": [
+        "أسود",
+        "كما في الصورة",
         "أسود(noir)",
         "رمادي( gris)"
       ],
