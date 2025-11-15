@@ -15,13 +15,7 @@ const STORE_CONFIG = {
         "أسود(Noir)",
         "رماضي(Gris)"
       ],
-      "ageRanges": [
-        {
-          "ageFrom": "A",
-          "ageTo": "A",
-          "size": "S"
-        }
-      ],
+      "ageRanges": [],
       "colorImages": {
         "أسود(noir)": {
           "images": [
