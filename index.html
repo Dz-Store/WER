@@ -3280,6 +3280,7 @@
                 `;
                 container.appendChild(productElement);
             }); */
+        
              function updateSelectedProducts() {
     const container = document.getElementById('selectedProducts');
     container.innerHTML = '';
@@ -3387,9 +3388,6 @@
         `;
         container.appendChild(productElement);
     });
-    
-           
-            
             // إضافة ملاحظة الخصم الإجمالي مع التمييز الواضح
             if (discountInfo > 0) {
                 const discountType = STORE_CONFIG.DISCOUNTS.enablePromotionalDiscount ? 'promo' : 'discount';
