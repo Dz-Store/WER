@@ -292,8 +292,8 @@ const STORE_CONFIG = {
       "desk": 700
     },
     "55 - توقرت": {
-      "home": 950,
-      "desk": 550
+      "home": 900,
+      "desk": null
     },
     "56 - جانت": {
       "home": 1100,
