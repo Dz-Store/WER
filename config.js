@@ -350,9 +350,9 @@ const STORE_CONFIG = {
     ]
   },
   "STORE_INFO": {
-    "name": "Rahouba-Shopp",
+    "name": "SANIX-DZ",
     "storeIcon": "👑",
-    "storeTitle": "أحدث موديلات الأطفال",
+    "storeTitle": "Nike Baggy  Jogger",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
       "0671466489",
