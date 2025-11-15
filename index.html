@@ -3250,7 +3250,7 @@ if (item.quantity === 1) {
     itemDiscountInfo.finalPrice = item.price - itemDiscountInfo.discountAmount;
 } else {
     // لو الكمية أكثر من واحد يبقى السعر كما هو
-    itemDiscountInfo.finalPrice = itemDiscountInfo.finalPrice;
+    itemDiscountInfo.finalPrice = item.price- itemDiscountInfo.discountAmount;
 }
                 const hasDiscount = itemDiscountInfo.hasDiscount || itemDiscountInfo.hasPromoDiscount;
                 
