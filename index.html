@@ -3268,9 +3268,9 @@ if (item.quantity === 1) {
                                 ${hasDiscount ? `
                                     <div style="display: flex; align-items: center; gap: 0.3rem; font-size: 0.8rem;">
                                         <span style="color: var(--gray); text-decoration: line-through;">${item.price} دج</span>
-                                        <span style="color: var(--success); font-weight: 700;">${itemDiscountInfo.finalPrice} دج</span>
+                                        <span style="color: var(--success); font-weight: 700;">${itemDiscountInfo.finalPrice} </span>
                                         <span style="background: ${itemDiscountInfo.hasPromoDiscount ? 'var(--primary)' : 'var(--warning)'}; color: white; padding: 0.1rem 0.3rem; border-radius: 8px; font-size: 0.6rem;">
-                                            ${itemDiscountInfo.hasPromoDiscount ? `خصم ${itemDiscountInfo.promoDiscountPercent}%` : `وفر ${itemDiscountInfo.discountAmount} دج`}
+                                            ${itemDiscountInfo.hasPromoDiscount ? `خصم ${itemDiscountInfo.promoDiscountPercent}` : `وفر ${itemDiscountInfo.discountAmount} دج`}
                                         </span>
                                     </div>
                                 ` : `
