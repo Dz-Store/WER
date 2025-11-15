@@ -11,67 +11,9 @@ const STORE_CONFIG = {
         "L",
         "XL"
       ],
-      "availableColors": [
-        "أسود(Noir)",
-        "رماضي(Gris)"
-      ],
+      "availableColors": [],
       "ageRanges": [],
-      "colorImages": {
-        "أسود(noir)": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-أسود(noir)-1763220059803-modal1.jpeg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "S"
-            },
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "M"
-            },
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "L"
-            },
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "XL"
-            }
-          ]
-        },
-        "رمادي( gris)": {
-          "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-رمادي( gris)-1763220141967-modal2.jpeg"
-          ],
-          "ageRanges": [
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "S"
-            },
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "M"
-            },
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "L"
-            },
-            {
-              "ageFrom": "A",
-              "ageTo": "A",
-              "size": "XL"
-            }
-          ]
-        }
-      }
+      "colorImages": {}
     }
   },
   "DELIVERY_PRICES": {
