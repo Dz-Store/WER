@@ -300,8 +300,8 @@ const STORE_CONFIG = {
       "desk": 500
     },
     "57 - المغير": {
-      "home": 950,
-      "desk": 550
+      "home": 900,
+      "desk": null
     },
     "58 - المنيعة": {
       "home": 1100,
