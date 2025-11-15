@@ -2192,67 +2192,65 @@
         // =============================================================================
 
         function initSizeGuide() {
-            const sizeGuideContainer = document.getElementById('sizeGuideContainer');
-            if (!sizeGuideContainer) return;
-            
-            // التحقق من وجود جدول المقاسات في config.js
-            if (STORE_CONFIG.SIZE_GUIDE && STORE_CONFIG.SIZE_GUIDE.length > 0) {
-                const sizeGuide = STORE_CONFIG.SIZE_GUIDE;
-                
-                // إنشاء جدول المقاسات
-                let sizeGuideHTML = `
-                    <div class="size-guide-section">
-                        <h3 class="size-guide-title">
-                            <i class="fas fa-ruler-combined"></i>
-                            جدول المقاسات
-                        </h3>
-                        <div class="size-guide-table-container">
-                            <table class="size-guide-table">
-                                <thead>
-                                    <tr>
-                `;
-                
-                // إضافة رؤوس الأعمدة
-                const headers = Object.keys(sizeGuide[0]);
-                headers.forEach(header => {
-                    sizeGuideHTML += `<th>${header}</th>`;
-                });
-                
+    const sizeGuideContainer = document.getElementById('sizeGuideContainer');
+    if (!sizeGuideContainer) return;
+    
+    // التحقق من وجود جدول المقاسات في config.js - تم التصحيح
+    if (STORE_CONFIG.SIZE_GUIDE && Object.keys(STORE_CONFIG.SIZE_GUIDE).length > 0) {
+        const sizeGuide = STORE_CONFIG.SIZE_GUIDE;
+        
+        // إنشاء جدول المقاسات - تم التصحيح
+        let sizeGuideHTML = `
+            <div class="size-guide-section">
+                <h3 class="size-guide-title">
+                    <i class="fas fa-ruler-combined"></i>
+                    جدول المقاسات
+                </h3>
+                <div class="size-guide-table-container">
+                    <table class="size-guide-table">
+                        <thead>
+                            <tr>
+                                <th>المقاس</th>
+                                <th>الطول (سم)</th>
+                                <th>الوزن (كجم)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        `;
+        
+        // إضافة بيانات الجدول - تم التصحيح
+        Object.keys(sizeGuide).forEach(size => {
+            const sizeData = sizeGuide[size];
+            if (sizeData.enabled !== false) { // عرض فقط المقاسات المفعلة
                 sizeGuideHTML += `
-                                    </tr>
-                                </thead>
-                                <tbody>
+                    <tr>
+                        <td><strong>${size}</strong></td>
+                        <td>${sizeData.heightFrom} - ${sizeData.heightTo}</td>
+                        <td>${sizeData.weightFrom} - ${sizeData.weightTo}</td>
+                    </tr>
                 `;
-                
-                // إضافة بيانات الجدول
-                sizeGuide.forEach(row => {
-                    sizeGuideHTML += `<tr>`;
-                    headers.forEach(header => {
-                        sizeGuideHTML += `<td>${row[header]}</td>`;
-                    });
-                    sizeGuideHTML += `</tr>`;
-                });
-                
-                sizeGuideHTML += `
-                                </tbody>
-                            </table>
-                            <p class="size-guide-note">
-                                <i class="fas fa-info-circle"></i>
-                                هذه المقاسات تقريبية وقد تختلف قليلاً حسب القماش والتصميم
-                            </p>
-                        </div>
-                    </div>
-                `;
-                
-                sizeGuideContainer.innerHTML = sizeGuideHTML;
-                console.log('✅ تم تحميل جدول المقاسات بنجاح');
-            } else {
-                // إخفاء الحاوية إذا لم يكن هناك جدول مقاسات
-                sizeGuideContainer.style.display = 'none';
-                console.log('ℹ️ لا يوجد جدول مقاسات في الإعدادات');
             }
-        }
-
+        });
+        
+        sizeGuideHTML += `
+                        </tbody>
+                    </table>
+                    <p class="size-guide-note">
+                        <i class="fas fa-info-circle"></i>
+                        هذه المقاسات تقريبية وقد تختلف قليلاً حسب القماش والتصميم
+                    </p>
+                </div>
+            </div>
+        `;
+        
+        sizeGuideContainer.innerHTML = sizeGuideHTML;
+        console.log('✅ تم تحميل جدول المقاسات بنجاح');
+    } else {
+        // إخفاء الحاوية إذا لم يكن هناك جدول مقاسات
+        sizeGuideContainer.style.display = 'none';
+        console.log('ℹ️ لا يوجد جدول مقاسات في الإعدادات');
+    }
+}
         // =============================================================================
         // 🚚 نظام التوصيل والولايات
         // =============================================================================
