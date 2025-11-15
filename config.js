@@ -1,40 +1,53 @@
 const STORE_CONFIG = {
   "PRODUCTS": {
-    "4": {
-      "name": "مودال 1",
-      "price": 5500,
-      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763138343013-1000056028.jpg",
-      "description": "  Ensemble نايك دو جودة عالية",
+    "3": {
+      "name": "مودال3",
+      "price": 5000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-1762949625289-1000043662.jpg",
+      "description": "مودال الاجيال",
       "availableSizes": [
-        "S"
+        "M",
+        "L",
+        "S",
+        "XL"
       ],
       "availableColors": [
-        "noir",
-        "gris"
+        "أحمر",
+        "أزرق"
       ],
       "ageRanges": [],
       "colorImages": {
-        "gris": {
+        "أحمر": {
           "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-gris-1763136806775-1000056027.jpg"
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أحمر-1763045546587-1000043662.jpg"
           ],
           "ageRanges": [
             {
               "ageFrom": "A",
               "ageTo": "A",
               "size": "S"
+            },
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "M"
+            },
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "L"
             }
           ]
         },
-        "noir": {
+        "أزرق": {
           "images": [
-            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-noir-1763136842629-1000056028.jpg"
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-3-أزرق-1763045729112-1000043659.jpg"
           ],
           "ageRanges": [
             {
               "ageFrom": "A",
               "ageTo": "A",
-              "size": "M"
+              "size": "XL"
             }
           ]
         }
@@ -280,14 +293,14 @@ const STORE_CONFIG = {
     "discountPerItem": 300,
     "discountScope": "selected",
     "discountProducts": [
-      4
+      3
     ],
     "promoDiscountProducts": [
-      4
+      3
     ],
     "enableQuantityDiscount": true,
     "enablePromotionalDiscount": false,
-    "promotionalDiscountPercent": 10,
+    "promotionalDiscountPercent": 20,
     "promotionalDiscountedPrice": null,
     "promoDiscountScope": "selected",
     "promoDiscountColors": [
@@ -296,30 +309,30 @@ const STORE_CONFIG = {
     ]
   },
   "STORE_INFO": {
-    "name": "SANIX-DZ",
+    "name": "Rahouba-Shopp",
     "storeIcon": "👑",
     "storeTitle": "أحدث موديلات الأطفال",
     "tagline": "متجر أفخم الملابس",
     "phoneNumbers": [
-      "0795511986",
-      "0778506974"
+      "0671466489",
+      "0551102155"
     ],
     "facebookUrl": "https://www.facebook.com/share/r/1AUYY5favq/",
     "instagramUrl": "https://www.instagram.com/p/DJCtlffoxj9/?igsh=MWoyaGFkYXRicmJrMQ==",
     "messengerUrl": "",
     "viberNumber": "0671466489",
-    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1763136861213-1000056031.jpg",
+    "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1762805520165-Screenshot_20251110-210649_Perplexity.jpg",
     "storeEmail": "benaakrabahcene@gmail.com",
     "storeDescription": "متجر Kids-Fav يقدم أحدث وأفخم موديلات ملابس الأطفال بتصاميم عصرية وأنيقة تناسب جميع المناسبات"
   },
   "AVAILABLE_COLORS": [
     "أبيض",
-    "noir",
+    "أسود",
     "أحمر",
     "أزرق",
     "أخضر",
     "وردي",
-    "gris"
+    "كما في الصورة"
   ],
   "AVAILABLE_SIZES": [
     "S",
@@ -336,10 +349,24 @@ const STORE_CONFIG = {
   ],
   "SIZE_GUIDE": {
     "M": {
-      "heightFrom": 150,
-      "heightTo": 160,
-      "weightFrom": 40,
-      "weightTo": 55,
+      "heightFrom": 170,
+      "heightTo": 180,
+      "weightFrom": 65,
+      "weightTo": 80,
+      "enabled": true
+    },
+    "L": {
+      "heightFrom": 180,
+      "heightTo": 195,
+      "weightFrom": 70,
+      "weightTo": 90,
+      "enabled": true
+    },
+    "XL": {
+      "heightFrom": 185,
+      "heightTo": 200,
+      "weightFrom": 85,
+      "weightTo": 110,
       "enabled": true
     }
   },
