@@ -52,6 +52,44 @@ const STORE_CONFIG = {
           ]
         }
       }
+    },
+    "4": {
+      "name": "Nike Baggy Jogger",
+      "price": 5000,
+      "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763217318680-modal1.jpeg",
+      "description": " Nike Baggy Jogger  نوعية رفيعة بلونين مختلفين",
+      "availableSizes": [
+        "S3",
+        "S1"
+      ],
+      "availableColors": [],
+      "ageRanges": [],
+      "colorImages": {
+        "أسود": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-أسود-1763217395071-modal1.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": "12",
+              "ageTo": "14",
+              "size": "S1"
+            }
+          ]
+        },
+        "كما في الصورة": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-كما في الصورة-1763217444556-modal2.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": "14",
+              "ageTo": "16",
+              "size": "S3"
+            }
+          ]
+        }
+      }
     }
   },
   "DELIVERY_PRICES": {
@@ -295,7 +333,9 @@ const STORE_CONFIG = {
     "discountProducts": [
       3
     ],
-    "promoDiscountProducts": [],
+    "promoDiscountProducts": [
+      4
+    ],
     "enableQuantityDiscount": true,
     "enablePromotionalDiscount": false,
     "promotionalDiscountPercent": 20,
