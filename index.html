@@ -3166,9 +3166,13 @@
                 wilayaSelect.classList.add('wilaya-pulse');
             }
             
-            const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+          /*   const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
             const discountInfo = calculateTotalDiscount();
-            const discountMessage = createTotalDiscountMessage();
+            const discountMessage = createTotalDiscountMessage(); */
+            const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+             const discountInfo = calculateTotalDiscount(totalQuantity);
+             const discountMessage = createTotalDiscountMessage(totalQuantity);
+
             
             cartItems.forEach((item, index) => {
                 const productElement = document.createElement('div');
@@ -3228,6 +3232,15 @@
                     </div>
                 `;
                 container.appendChild(discountNote);
+
+
+
+      
+
+
+
+            
+            
             } else if ((STORE_CONFIG.DISCOUNTS && STORE_CONFIG.DISCOUNTS.discountPerItem > 0) || 
                       (STORE_CONFIG.DISCOUNTS && STORE_CONFIG.DISCOUNTS.enablePromotionalDiscount)) {
                 // إظهار رسالة تذكير بالخصم فقط إذا كان هناك خصم متاح ولم يتم تطبيقه بعد
