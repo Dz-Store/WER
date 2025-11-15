@@ -292,7 +292,7 @@ const STORE_CONFIG = {
     "أزرق",
     "أخضر",
     "وردي",
-    "رماضي(Gris)"
+    "رمادي(Gris)"
   ],
   "AVAILABLE_SIZES": [
     "S",
