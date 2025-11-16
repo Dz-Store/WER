@@ -343,6 +343,15 @@ const STORE_CONFIG = {
     "storeEmail": "benaakrabahcene@gmail.com",
     "storeDescription": "متجر Kids-Fav يقدم أحدث وأفخم موديلات ملابس الأطفال بتصاميم عصرية وأنيقة تناسب جميع المناسبات"
   },
+  "GOOGLE_SHEETS": {
+    "enabled": true,
+    "scriptUrl": "https://script.google.com/macros/s/AKfycbzw7NSduBIcVc2ugUKF5EtpmAej7bo7bDFKj0K-aHeXaYmqWmoUYtvOPGX6TjRKKN78/exec",
+    "ordersSheetId": "1U3ak4PZfAZR7oPUquLUETsv-ZhzrXR9v5XYSdTUeOxw",
+    "productsSheetId": "1U3ak4PZfAZR7oPUquLUETsv-ZhzrXR9v5XYSdTUeOxw",
+    "url": "https://docs.google.com/spreadsheets/d/1U3ak4PZfAZR7oPUquLUETsv-ZhzrXR9v5XYSdTUeOxw/edit?usp=drivesdk",
+    "autoUpdate": true,
+    "description": ""
+  },
   "AVAILABLE_COLORS": [
     "أبيض",
     "أسود(Noir)",
@@ -382,70 +391,63 @@ const STORE_CONFIG = {
       "heightTo": 160,
       "weightFrom": 50,
       "weightTo": 70,
-      "enabled": true
+      "enabled": false
     },
     "39": {
       "heightFrom": 152,
       "heightTo": 162,
       "weightFrom": 53,
       "weightTo": 74,
-      "enabled": true
+      "enabled": false
     },
     "40": {
       "heightFrom": 154,
       "heightTo": 164,
       "weightFrom": 56,
       "weightTo": 78,
-      "enabled": true
+      "enabled": false
     },
     "41": {
       "heightFrom": 156,
       "heightTo": 166,
       "weightFrom": 59,
       "weightTo": 82,
-      "enabled": true
+      "enabled": false
     },
     "42": {
       "heightFrom": 158,
       "heightTo": 168,
       "weightFrom": 62,
       "weightTo": 86,
-      "enabled": true
+      "enabled": false
     },
     "43": {
       "heightFrom": 160,
       "heightTo": 170,
       "weightFrom": 65,
       "weightTo": 90,
-      "enabled": true
+      "enabled": false
     },
     "44": {
       "heightFrom": 162,
       "heightTo": 172,
       "weightFrom": 68,
       "weightTo": 94,
-      "enabled": true
+      "enabled": false
     },
     "45": {
       "heightFrom": 164,
       "heightTo": 174,
       "weightFrom": 71,
       "weightTo": 98,
-      "enabled": true
+      "enabled": false
     },
     "46": {
       "heightFrom": 166,
       "heightTo": 176,
       "weightFrom": 74,
       "weightTo": 102,
-      "enabled": true
-    },
-    "XS": {
-      "heightFrom": 150,
-      "heightTo": 160,
-      "weightFrom": 40,
-      "weightTo": 55,
-      "enabled": true
+      "enabled": false
     },
     "S": {
       "heightFrom": 160,
@@ -454,12 +456,54 @@ const STORE_CONFIG = {
       "weightTo": 65,
       "enabled": true
     },
+    "S1": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
+    },
+    "S2": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
+    },
+    "S3": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
+    },
     "M": {
       "heightFrom": 170,
       "heightTo": 180,
       "weightFrom": 65,
       "weightTo": 80,
       "enabled": true
+    },
+    "M1": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
+    },
+    "M2": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
+    },
+    "M3": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": false
     },
     "L": {
       "heightFrom": 180,
@@ -475,61 +519,19 @@ const STORE_CONFIG = {
       "weightTo": 110,
       "enabled": true
     },
-    "S1": {
-      "heightFrom": 160,
-      "heightTo": 180,
-      "weightFrom": 50,
-      "weightTo": 80,
-      "enabled": true
-    },
-    "S2": {
-      "heightFrom": 160,
-      "heightTo": 180,
-      "weightFrom": 50,
-      "weightTo": 80,
-      "enabled": true
-    },
-    "S3": {
-      "heightFrom": 160,
-      "heightTo": 180,
-      "weightFrom": 50,
-      "weightTo": 80,
-      "enabled": true
-    },
-    "M1": {
-      "heightFrom": 160,
-      "heightTo": 180,
-      "weightFrom": 50,
-      "weightTo": 80,
-      "enabled": true
-    },
-    "M2": {
-      "heightFrom": 160,
-      "heightTo": 180,
-      "weightFrom": 50,
-      "weightTo": 80,
-      "enabled": true
-    },
-    "M3": {
-      "heightFrom": 160,
-      "heightTo": 180,
-      "weightFrom": 50,
-      "weightTo": 80,
-      "enabled": true
-    },
     "XXL": {
       "heightFrom": 190,
       "heightTo": 205,
       "weightFrom": 95,
       "weightTo": 120,
-      "enabled": true
+      "enabled": false
     },
     "XXXL": {
       "heightFrom": 195,
       "heightTo": 210,
       "weightFrom": 105,
       "weightTo": 140,
-      "enabled": true
+      "enabled": false
     }
   },
   "COLORS": {
@@ -581,12 +583,6 @@ const STORE_CONFIG = {
         }
       ]
     }
-  },
-  "GOOGLE_SHEETS": {
-    "enabled": true,
-    "scriptUrl": "https://script.google.com/macros/s/AKfycbzw7NSduBIcVc2ugUKF5EtpmAej7bo7bDFKj0K-aHeXaYmqWmoUYtvOPGX6TjRKKN78/exec",
-    "ordersSheetId": "1U3ak4PZfAZR7oPUquLUETsv-ZhzrXR9v5XYSdTUeOxw",
-    "productsSheetId": "1U3ak4PZfAZR7oPUquLUETsv-ZhzrXR9v5XYSdTUeOxw"
   },
   "ADMIN_SETTINGS": {
     "password": "1234",
