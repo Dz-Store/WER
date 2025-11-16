@@ -11,9 +11,67 @@ const STORE_CONFIG = {
         "L",
         "XL"
       ],
-      "availableColors": [],
+      "availableColors": [
+        "أسود",
+        "رمادي"
+      ],
       "ageRanges": [],
-      "colorImages": {}
+      "colorImages": {
+        "أسود": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-أسود-1763314062749-modal1.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "S"
+            },
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "M"
+            },
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "L"
+            },
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "XL"
+            }
+          ]
+        },
+        "رمادي": {
+          "images": [
+            "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-رمادي-1763314176653-modal2.jpeg"
+          ],
+          "ageRanges": [
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "S"
+            },
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "M"
+            },
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "L"
+            },
+            {
+              "ageFrom": "A",
+              "ageTo": "A",
+              "size": "XL"
+            }
+          ]
+        }
+      }
     }
   },
   "DELIVERY_PRICES": {
