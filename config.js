@@ -377,6 +377,69 @@ const STORE_CONFIG = {
     "46"
   ],
   "SIZE_GUIDE": {
+    "38": {
+      "heightFrom": 150,
+      "heightTo": 160,
+      "weightFrom": 50,
+      "weightTo": 70,
+      "enabled": true
+    },
+    "39": {
+      "heightFrom": 152,
+      "heightTo": 162,
+      "weightFrom": 53,
+      "weightTo": 74,
+      "enabled": true
+    },
+    "40": {
+      "heightFrom": 154,
+      "heightTo": 164,
+      "weightFrom": 56,
+      "weightTo": 78,
+      "enabled": true
+    },
+    "41": {
+      "heightFrom": 156,
+      "heightTo": 166,
+      "weightFrom": 59,
+      "weightTo": 82,
+      "enabled": true
+    },
+    "42": {
+      "heightFrom": 158,
+      "heightTo": 168,
+      "weightFrom": 62,
+      "weightTo": 86,
+      "enabled": true
+    },
+    "43": {
+      "heightFrom": 160,
+      "heightTo": 170,
+      "weightFrom": 65,
+      "weightTo": 90,
+      "enabled": true
+    },
+    "44": {
+      "heightFrom": 162,
+      "heightTo": 172,
+      "weightFrom": 68,
+      "weightTo": 94,
+      "enabled": true
+    },
+    "45": {
+      "heightFrom": 164,
+      "heightTo": 174,
+      "weightFrom": 71,
+      "weightTo": 98,
+      "enabled": true
+    },
+    "46": {
+      "heightFrom": 166,
+      "heightTo": 176,
+      "weightFrom": 74,
+      "weightTo": 102,
+      "enabled": true
+    },
     "XS": {
       "heightFrom": 150,
       "heightTo": 160,
@@ -410,6 +473,62 @@ const STORE_CONFIG = {
       "heightTo": 200,
       "weightFrom": 85,
       "weightTo": 110,
+      "enabled": true
+    },
+    "S1": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": true
+    },
+    "S2": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": true
+    },
+    "S3": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": true
+    },
+    "M1": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": true
+    },
+    "M2": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": true
+    },
+    "M3": {
+      "heightFrom": 160,
+      "heightTo": 180,
+      "weightFrom": 50,
+      "weightTo": 80,
+      "enabled": true
+    },
+    "XXL": {
+      "heightFrom": 190,
+      "heightTo": 205,
+      "weightFrom": 95,
+      "weightTo": 120,
+      "enabled": true
+    },
+    "XXXL": {
+      "heightFrom": 195,
+      "heightTo": 210,
+      "weightFrom": 105,
+      "weightTo": 140,
       "enabled": true
     }
   },
