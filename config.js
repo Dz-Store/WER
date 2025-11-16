@@ -363,9 +363,34 @@ const STORE_CONFIG = {
     "M3",
     "L",
     "XL",
-    "XXL"
+    "XXL",
+    "XXXL",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "45",
+    "46"
   ],
   "SIZE_GUIDE": {
+    "XS": {
+      "heightFrom": 150,
+      "heightTo": 160,
+      "weightFrom": 40,
+      "weightTo": 55,
+      "enabled": true
+    },
+    "S": {
+      "heightFrom": 160,
+      "heightTo": 175,
+      "weightFrom": 50,
+      "weightTo": 65,
+      "enabled": true
+    },
     "M": {
       "heightFrom": 170,
       "heightTo": 180,
@@ -385,13 +410,6 @@ const STORE_CONFIG = {
       "heightTo": 200,
       "weightFrom": 85,
       "weightTo": 110,
-      "enabled": true
-    },
-    "S": {
-      "heightFrom": 160,
-      "heightTo": 175,
-      "weightFrom": 50,
-      "weightTo": 65,
       "enabled": true
     }
   },
