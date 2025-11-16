@@ -3696,6 +3696,65 @@ if (item.quantity === 1) {
             loadStoreLogo();
         }
 
+
+        function updateSocialMediaLinks() {
+    if (!STORE_CONFIG.STORE_INFO) return;
+    
+    const storeInfo = STORE_CONFIG.STORE_INFO;
+    
+    // تحديث الروابط في الأزرار العائمة
+        
+    if (storeInfo.facebookUrl) {
+        document.getElementById('facebookBtn').href = storeInfo.facebookUrl;
+        document.getElementById('facebookBtn').style.display = 'flex';
+    }
+    
+    if (storeInfo.instagramUrl) {
+        document.getElementById('instagramBtn').href = storeInfo.instagramUrl;
+        document.getElementById('instagramBtn').style.display = 'flex';
+    }
+    
+    if (storeInfo.messengerUrl) {
+        document.getElementById('messengerBtn').href = storeInfo.messengerUrl;
+        document.getElementById('messengerBtn').style.display = 'flex';
+    }
+    
+    // تحديث الروابط في وسائل التواصل تحت الشعار
+        
+    if (storeInfo.facebookUrl) {
+        document.getElementById('facebookBtnUnderLogo').href = storeInfo.facebookUrl;
+        document.getElementById('facebookBtnUnderLogo').style.display = 'flex';
+    }
+    
+    if (storeInfo.instagramUrl) {
+        document.getElementById('instagramBtnUnderLogo').href = storeInfo.instagramUrl;
+        document.getElementById('instagramBtnUnderLogo').style.display = 'flex';
+    }
+    
+    if (storeInfo.messengerUrl) {
+        document.getElementById('messengerBtnUnderLogo').href = storeInfo.messengerUrl;
+        document.getElementById('messengerBtnUnderLogo').style.display = 'flex';
+    }
+    
+    // تحديث الروابط في التذييل
+    if (storeInfo.facebookUrl) {
+        document.getElementById('facebookFooter').href = storeInfo.facebookUrl;
+    }
+    
+    if (storeInfo.instagramUrl) {
+        document.getElementById('instagramFooter').href = storeInfo.instagramUrl;
+    }
+    
+       
+    if (storeInfo.messengerUrl) {
+        document.getElementById('messengerFooter').href = storeInfo.messengerUrl;
+    }
+    
+    console.log('✅ تم تحديث روابط وسائل التواصل الاجتماعي');
+}
+
+
+        
         function setupRealTimeUpdates() {
             // يمكن إضافة نظام التحديثات الفورية هنا
             console.log('✅ تم إعداد نظام التحديثات الفورية');
