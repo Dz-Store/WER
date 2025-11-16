@@ -363,7 +363,7 @@ const STORE_CONFIG = {
     "M3",
     "L",
     "XL",
-    "XXL"
+    "XXL ، 31 ، 32  ،33 ،34 ،35 ،36"
   ],
   "SIZE_GUIDE": {
     "M": {
