@@ -292,33 +292,33 @@ const STORE_CONFIG = {
       "desk": 700
     },
     "55 - توقرت": {
-      "home": 900,
-      "desk": null
+      "home": 950,
+      "desk": 550
     },
     "56 - جانت": {
       "home": 1100,
       "desk": 500
     },
     "57 - المغير": {
-      "home": 900,
-      "desk": null
+      "home": 950,
+      "desk": 550
     },
     "58 - المنيعة": {
-      "home": 1100,
-      "desk": 500
+      "home": 900,
+      "desk": 400
     }
   },
   "DISCOUNTS": {
     "minQuantityForDiscount": 1,
     "discountPerItem": 800,
     "discountScope": "selected",
-    "discountProducts": [
+    "discountProducts": [],
+    "promoDiscountProducts": [
       4
     ],
-    "promoDiscountProducts": [],
-    "enableQuantityDiscount": true,
-    "enablePromotionalDiscount": false,
-    "promotionalDiscountPercent": 10,
+    "enableQuantityDiscount": false,
+    "enablePromotionalDiscount": true,
+    "promotionalDiscountPercent": 20,
     "promotionalDiscountedPrice": null,
     "promoDiscountScope": "selected",
     "promoDiscountColors": [
