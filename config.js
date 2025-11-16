@@ -296,12 +296,12 @@ const STORE_CONFIG = {
   },
   "AVAILABLE_COLORS": [
     "أبيض",
-    "أسود(Noir)",
+    "أسود",
     "أحمر",
     "أزرق",
     "أخضر",
     "وردي",
-    "رمادي(Gris)"
+    "رمادي"
   ],
   "AVAILABLE_SIZES": [
     "S",
