@@ -2509,10 +2509,12 @@
     console.log(`✅ تم اختيار المقاس: ${size} (الفهرس: ${index})`);
     
     addToCart(currentProductKey, quantity, selectedAge, selectedColor, size);
-    closeProductModal1();
+    closeProductModal();
     
     // الانتقال مباشرة إلى صفحة تفاصيل الطلب
     goToOrderDetails();
+
+                      
 }
 
         function addToCart(productKey, quantity, age, color, size = null) {
