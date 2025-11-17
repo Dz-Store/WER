@@ -5,12 +5,7 @@ const STORE_CONFIG = {
       "price": 5800,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763217318680-modal1.jpeg",
       "description": " Nike Baggy Jogger  نوعية رفيعة بلونين مختلفين",
-      "availableSizes": [
-        "L",
-        "XL",
-        "S",
-        "M"
-      ],
+      "availableSizes": [],
       "availableColors": [
         "أسود",
         "رمادي"
