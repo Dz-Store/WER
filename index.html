@@ -1661,33 +1661,81 @@
     display: flex;
     gap: 0.3rem;
     margin-bottom: 0.3rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* منع الانتقال لسطر جديد */
+    overflow-x: auto; /* إمكانية التمرير أفقيًا إذا لم يتسع */
+    padding-bottom: 0.2rem;
 }
 
 .selected-product-detail {
     background: rgba(0,0,0,0.05);
     padding: 0.15rem 0.4rem;
     border-radius: 4px;
-    font-size: 0.65rem; /* تصغير الخط */
-    font-weight: 800; /* جعل الخط عريض (gras) */
+    font-size: 0.65rem;
+    font-weight: 800;
     color: var(--dark);
     border: 1px solid rgba(0,0,0,0.1);
+    white-space: nowrap; /* منع كسر النص */
+    flex-shrink: 0; /* منع التصغير */
+}
+
+/* إخفاء شريط التمرير لتحسين المظهر */
+.selected-product-details::-webkit-scrollbar {
+    height: 3px;
+}
+
+.selected-product-details::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.selected-product-details::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
 }
 
 /* تحسينات إضافية للعرض في السلة */
+.selected-product {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: var(--light);
+    border-radius: var(--radius);
+    margin-bottom: 0.8rem;
+    position: relative;
+    font-size: 0.8rem;
+}
+
+.selected-product img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.selected-product-info {
+    flex: 1;
+    min-width: 0; /* يسمح بالتصغير */
+}
+
 .selected-product-title {
     margin: 0 0 0.3rem 0;
-    font-size: 0.8rem; /* تصغير حجم العنوان */
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--dark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .selected-product-price {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.75rem; /* تصغير حجم السعر */
+    font-size: 0.75rem;
     font-weight: 700;
+    margin-top: 0.3rem;
 }
 
 .selected-product-quantity {
@@ -1700,12 +1748,13 @@
     background: var(--primary);
     color: white;
     border: none;
-    width: 22px; /* تصغير الأزرار */
+    width: 22px;
     height: 22px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 0.65rem;
     font-weight: 700;
+    flex-shrink: 0;
 }
 
 .selected-product-quantity span {
@@ -1713,6 +1762,7 @@
     min-width: 22px;
     text-align: center;
     font-size: 0.75rem;
+    flex-shrink: 0;
 }
 
 .selected-product-remove {
@@ -1727,8 +1777,62 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
+/* تحسينات للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .selected-product {
+        padding: 0.6rem;
+        gap: 0.6rem;
+    }
+    
+    .selected-product img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .selected-product-details {
+        gap: 0.2rem;
+    }
+    
+    .selected-product-detail {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.3rem;
+    }
+    
+    .selected-product-title {
+        font-size: 0.75rem;
+    }
+    
+    .selected-product-price {
+        font-size: 0.7rem;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+    }
+    
+    .selected-product-quantity {
+        gap: 0.2rem;
+    }
+    
+    .selected-product-quantity button {
+        width: 20px;
+        height: 20px;
+        font-size: 0.6rem;
+    }
+    
+    .selected-product-quantity span {
+        min-width: 20px;
+        font-size: 0.7rem;
+    }
+}
+
+/* تحسينات للشاشات المتوسطة والكبيرة */
+@media (min-width: 768px) {
+    .selected-product-details {
+        flex-wrap: wrap; /* السماح بالانتقال لسطر جديد في الشاشات الكبيرة */
+    }
+}
         /* أنماط جديدة للفايبر */
         .viber-btn {
             background: #7360F2 !important;
