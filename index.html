@@ -1657,69 +1657,77 @@
             flex: 1;
         }
 
-        .selected-product-title {
-            margin: 0 0 0.3rem 0;
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
-
         .selected-product-details {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 0.3rem;
-            flex-wrap: wrap;
-        }
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 0.3rem;
+    flex-wrap: wrap;
+}
 
-        .selected-product-detail {
-            background: rgba(0,0,0,0.05);
-            padding: 0.15rem 0.4rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-        }
+.selected-product-detail {
+    background: rgba(0,0,0,0.05);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.65rem; /* تصغير الخط */
+    font-weight: 800; /* جعل الخط عريض (gras) */
+    color: var(--dark);
+    border: 1px solid rgba(0,0,0,0.1);
+}
 
-        .selected-product-price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-        }
+/* تحسينات إضافية للعرض في السلة */
+.selected-product-title {
+    margin: 0 0 0.3rem 0;
+    font-size: 0.8rem; /* تصغير حجم العنوان */
+    font-weight: 700;
+    color: var(--dark);
+}
 
-        .selected-product-quantity {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
+.selected-product-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem; /* تصغير حجم السعر */
+    font-weight: 700;
+}
 
-        .selected-product-quantity button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 0.7rem;
-        }
+.selected-product-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
 
-        .selected-product-quantity span {
-            font-weight: 700;
-            min-width: 25px;
-            text-align: center;
-        }
+.selected-product-quantity button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 22px; /* تصغير الأزرار */
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
 
-        .selected-product-remove {
-            background: #e74c3c;
-            color: white;
-            border: none;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 0.7rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.selected-product-quantity span {
+    font-weight: 700;
+    min-width: 22px;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.selected-product-remove {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
         /* أنماط جديدة للفايبر */
         .viber-btn {
