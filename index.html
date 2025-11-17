@@ -2477,47 +2477,43 @@
         // 🛒 نظام السلة والطلبات - تم التعديل
         // =============================================================================
 
-        function goToOrderDetails() {
-            switchPage('page2');
-        }
-
         function addToCartFromModal() {
-            if (!currentProductKey) return;
-            
-            if (!selectedAge) {
-                showNotification('⚠️ الرجاء اختيار اللون والمقاس أولا قبل إضافة المنتج إلى السلة', 'warning');
-                return;
-            }
-            
-            if (!selectedColor) {
-                showNotification('⚠️ الرجاء اختيار اللون والمقاس أولا قبل إضافة المنتج إلى السلة', 'warning');
-                return;
-            }
-            
-            const quantity = parseInt(document.getElementById('quantityDisplay').textContent);
-            
-            // الحصول على المقاس المناسب بناء على العمر المختار
-            const product = STORE_CONFIG.PRODUCTS[currentProductKey];
-            const colorData = product.colorImages && product.colorImages[selectedColor];
-            
-            let size = selectedAge;
-            
-            // البحث في نطاقات الأعمار للحصول على المقاس المناسب
-            if (colorData && colorData.ageRanges && colorData.ageRanges.length > 0) {
-                const selectedRange = colorData.ageRanges.find(range => 
-                    `${range.ageFrom}-${range.ageTo}` === selectedAge
-                );
-                if (selectedRange) {
-                    size = selectedRange.size;
-                }
-            }
-            
-            addToCart(currentProductKey, quantity, selectedAge, selectedColor, size);
-            closeProductModal();
-            
-            // الانتقال مباشرة إلى صفحة تفاصيل الطلب
-            goToOrderDetails();
-        }
+    if (!currentProductKey) return;
+    
+    if (!selectedAge) {
+        showNotification('⚠️ الرجاء اختيار المقاس أولاً قبل إضافة المنتج إلى السلة', 'warning');
+        return;
+    }
+    
+    if (!selectedColor) {
+        showNotification('⚠️ الرجاء اختيار اللون أولاً قبل إضافة المنتج إلى السلة', 'warning');
+        return;
+    }
+    
+    const quantity = parseInt(document.getElementById('quantityDisplay').textContent);
+    
+    // الحصول على العنصر المختار
+    const selectedOption = document.querySelector('#ageOptions .size-option.selected');
+    
+    if (!selectedOption) {
+        showNotification('⚠️ الرجاء اختيار مقاس صحيح', 'warning');
+        return;
+    }
+    
+    // الحصول على المقاس مباشرة من dataset
+    const size = selectedOption.dataset.size;
+    
+    // يمكننا أيضاً استخدام الفهرس إذا احتجنا إليه
+    const index = selectedOption.dataset.index;
+    
+    console.log(`✅ تم اختيار المقاس: ${size} (الفهرس: ${index})`);
+    
+    addToCart(currentProductKey, quantity, selectedAge, selectedColor, size);
+    closeProductModal();
+    
+    // الانتقال مباشرة إلى صفحة تفاصيل الطلب
+    goToOrderDetails();
+}
 
         function addToCart(productKey, quantity, age, color, size = null) {
             const product = STORE_CONFIG.PRODUCTS[productKey];
@@ -3027,91 +3023,114 @@
         }
 
         function showAvailableSizesForColor(productKey, color) {
-            const product = STORE_CONFIG.PRODUCTS[productKey];
-            const ageOptions = document.getElementById('ageOptions');
-            const sizeOptionsContainer = document.getElementById('sizeOptionsContainer');
-            
-            // مسح خيارات المقاسات السابقة
-            ageOptions.innerHTML = '';
-            selectedAge = null;
-            
-            // إظهار قسم المقاسات
-            sizeOptionsContainer.style.display = 'block';
-            
-            // الحصول على ageRanges من config.js للون المحدد
-            let ageRanges = [];
-            
-            if (product.colorImages && product.colorImages[color] && product.colorImages[color].ageRanges) {
-                // استخدام ageRanges الخاصة باللون المختار
-                ageRanges = product.colorImages[color].ageRanges;
-            } else if (product.ageRanges) {
-                // استخدام ageRanges العامة للمنتج
-                ageRanges = product.ageRanges;
+    const product = STORE_CONFIG.PRODUCTS[productKey];
+    const ageOptions = document.getElementById('ageOptions');
+    const sizeOptionsContainer = document.getElementById('sizeOptionsContainer');
+    
+    // مسح خيارات المقاسات السابقة
+    ageOptions.innerHTML = '';
+    selectedAge = null;
+    
+    // إظهار قسم المقاسات
+    sizeOptionsContainer.style.display = 'block';
+    
+    // الحصول على ageRanges من config.js للون المحدد
+    let ageRanges = [];
+    
+    if (product.colorImages && product.colorImages[color] && product.colorImages[color].ageRanges) {
+        // استخدام ageRanges الخاصة باللون المختار
+        ageRanges = product.colorImages[color].ageRanges;
+    } else if (product.ageRanges) {
+        // استخدام ageRanges العامة للمنتج
+        ageRanges = product.ageRanges;
+    }
+    
+    if (ageRanges.length > 0) {
+        // تجميع خيارات المقاسات حسب نطاق العمر
+        const ageGroups = {};
+        
+        ageRanges.forEach((range, index) => {
+            const ageKey = `${range.ageFrom}-${range.ageTo}`;
+            if (!ageGroups[ageKey]) {
+                ageGroups[ageKey] = {
+                    ageFrom: range.ageFrom,
+                    ageTo: range.ageTo,
+                    options: []
+                };
             }
-            
-            if (ageRanges.length > 0) {
-                ageRanges.forEach((range, index) => {
-                    const ageOption = document.createElement('div');
-                    ageOption.className = 'size-option';
-                    
-                    // عرض نطاق الأعمار والمقاس مع دعم فئة A للبالغين
-                    let ageText = '';
-                    if (range.ageFrom === 'A' && range.ageTo === 'A') {
-                        ageText = `الكبار - المقاس: ${range.size}`;
-                    } else {
-                        ageText = `${range.ageFrom}-${range.ageTo} سنوات - المقاس: ${range.size}`;
-                    }
-                    
-                    ageOption.textContent = ageText;
-                    ageOption.dataset.age = `${range.ageFrom}-${range.ageTo}`;
-                    ageOption.dataset.size = range.size;
-                    
-                    ageOption.addEventListener('click', () => {
-                        document.querySelectorAll('#ageOptions .size-option').forEach(option => {
-                            option.classList.remove('selected');
-                        });
-                        ageOption.classList.add('selected');
-                        selectedAge = `${range.ageFrom}-${range.ageTo}`;
-                        
-                        // التحقق من إمكانية تفعيل زر أضف الآن
-                        checkAddButtonState();
-                    });
-                    
-                    ageOptions.appendChild(ageOption);
-                });
-            } else {
-                // إذا لم يكن هناك نطاقات أعمار، استخدام المقاسات التقليدية
-                const availableSizes = product.availableSizes || [];
-                if (availableSizes.length > 0) {
-                    availableSizes.forEach(size => {
-                        const ageOption = document.createElement('div');
-                        ageOption.className = 'size-option';
-                        ageOption.textContent = `المقاس: ${size}`;
-                        ageOption.dataset.size = size;
-                        
-                        ageOption.addEventListener('click', () => {
-                            document.querySelectorAll('#ageOptions .size-option').forEach(option => {
-                                option.classList.remove('selected');
-                            });
-                            ageOption.classList.add('selected');
-                            selectedAge = size;
-                            
-                            // التحقق من إمكانية تفعيل زر أضف الآن
-                            checkAddButtonState();
-                        });
-                        
-                        ageOptions.appendChild(ageOption);
-                    });
+            // تخزين كل خيار مع الفهرس والمقاس
+            ageGroups[ageKey].options.push({
+                index: index,
+                size: range.size
+            });
+        });
+        
+        // عرض خيارات المقاسات
+        Object.values(ageGroups).forEach(ageGroup => {
+            ageGroup.options.forEach(option => {
+                const ageOption = document.createElement('div');
+                ageOption.className = 'size-option';
+                
+                // تنسيق نص الخيار بناءً على نطاق العمر والمقاس
+                let ageText = '';
+                if (ageGroup.ageFrom === 'A' && ageGroup.ageTo === 'A') {
+                    ageText = `الكبار - المقاس: ${option.size}`;
                 } else {
-                    ageOptions.innerHTML = `
-                        <div style="color: #666; text-align: center; padding: 1rem;">
-                            <i class="fas fa-ruler"></i>
-                            <p>لا توجد مقاسات متاحة لهذا اللون</p>
-                        </div>
-                    `;
+                    ageText = `${ageGroup.ageFrom}-${ageGroup.ageTo} سنوات - المقاس: ${option.size}`;
                 }
-            }
+                
+                ageOption.textContent = ageText;
+                ageOption.dataset.age = `${ageGroup.ageFrom}-${ageGroup.ageTo}`;
+                ageOption.dataset.size = option.size;
+                ageOption.dataset.index = option.index; // تخزين الفهرس للمرجعية
+                
+                ageOption.addEventListener('click', () => {
+                    document.querySelectorAll('#ageOptions .size-option').forEach(option => {
+                        option.classList.remove('selected');
+                    });
+                    ageOption.classList.add('selected');
+                    selectedAge = `${ageGroup.ageFrom}-${ageGroup.ageTo}`;
+                    
+                    // التحقق من إمكانية تفعيل زر أضف الآن
+                    checkAddButtonState();
+                });
+                
+                ageOptions.appendChild(ageOption);
+            });
+        });
+    } else {
+        // إذا لم يكن هناك نطاقات أعمار، استخدام المقاسات التقليدية
+        const availableSizes = product.availableSizes || [];
+        if (availableSizes.length > 0) {
+            availableSizes.forEach(size => {
+                const ageOption = document.createElement('div');
+                ageOption.className = 'size-option';
+                ageOption.textContent = `المقاس: ${size}`;
+                ageOption.dataset.size = size;
+                
+                ageOption.addEventListener('click', () => {
+                    document.querySelectorAll('#ageOptions .size-option').forEach(option => {
+                        option.classList.remove('selected');
+                    });
+                    ageOption.classList.add('selected');
+                    selectedAge = size;
+                    
+                    // التحقق من إمكانية تفعيل زر أضف الآن
+                    checkAddButtonState();
+                });
+                
+                ageOptions.appendChild(ageOption);
+            });
+        } else {
+            ageOptions.innerHTML = `
+                <div style="color: #666; text-align: center; padding: 1rem;">
+                    <i class="fas fa-ruler"></i>
+                    <p>لا توجد مقاسات متاحة لهذا اللون</p>
+                </div>
+            `;
         }
+    }
+}
 
         function checkAddButtonState() {
             const addButton = document.getElementById('addToCartFromModal');
