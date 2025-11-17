@@ -2485,7 +2485,7 @@
     if (!currentProductKey) return;
     
     if (!selectedAge) {
-        showNotification('⚠️ الرجاء اختيار نطاق العمر أولاً قبل إضافة المنتج إلى السلة', 'warning');
+        showNotification('⚠️ الرجاء اختيار المقاس أولاً قبل إضافة المنتج إلى السلة', 'warning');
         return;
     }
     
@@ -2496,32 +2496,16 @@
     
     const quantity = parseInt(document.getElementById('quantityDisplay').textContent);
     
-    // الحصول على المنتج والبيانات المرتبطة به
-    const product = STORE_CONFIG.PRODUCTS[currentProductKey];
-    const colorData = product.colorImages && product.colorImages[selectedColor];
+    // الحصول على العنصر المختار
+    const selectedOption = document.querySelector('#ageOptions .size-option.selected');
     
-    let size = null;
-    
-    // البحث في نطاقات الأعمار للحصول على المقاسات المرتبطة
-    if (colorData && colorData.ageRanges && colorData.ageRanges.length > 0) {
-        // العثور على نطاق العمر المختار
-        const selectedRange = colorData.ageRanges.find(range => 
-            `${range.ageFrom}-${range.ageTo}` === selectedAge
-        );
-        
-        if (selectedRange) {
-            size = selectedRange.size;
-        } else {
-            // إذا لم يتم العثور على نطاق محدد، استخدام أول مقاس متاح
-            const firstRange = colorData.ageRanges[0];
-            size = firstRange.size;
-        }
+    if (!selectedOption) {
+        showNotification('⚠️ الرجاء اختيار مقاس صحيح', 'warning');
+        return;
     }
     
-    // إذا لم يتم العثور على مقاس، استخدام نطاق العمر كمقاس
-    if (!size) {
-        size = selectedAge;
-    }
+    // الحصول على المقاس من dataset
+    const size = selectedOption.dataset.size;
     
     addToCart(currentProductKey, quantity, selectedAge, selectedColor, size);
     closeProductModal();
@@ -2529,7 +2513,6 @@
     // الانتقال مباشرة إلى صفحة تفاصيل الطلب
     goToOrderDetails();
 }
-
         function addToCart(productKey, quantity, age, color, size = null) {
             const product = STORE_CONFIG.PRODUCTS[productKey];
             
@@ -2843,7 +2826,7 @@
             } else {
                 const remaining = minQuantity - quantity;
                 return `💡 <strong>خصم كمية متاح</strong> - إشتري ${remaining} قطع إضافية لتحصل على خصم ${discountPerItem} دج لكل قطعة`;
-            }
+    }
         }
 
         function createDiscountBadge(product, quantity = 1, productKey = null) {
@@ -3038,6 +3021,7 @@
         }
 
        function showAvailableSizesForColor(productKey, color) {
+    confunction showAvailableSizesForColor(productKey, color) {
     const product = STORE_CONFIG.PRODUCTS[productKey];
     const ageOptions = document.getElementById('ageOptions');
     const sizeOptionsContainer = document.getElementById('sizeOptionsContainer');
