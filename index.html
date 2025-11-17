@@ -3437,7 +3437,13 @@
                 // حساب الخصم لكل عنصر - التصحيح: استخدام الكمية الإجمالية
                 const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
                 const itemDiscountInfo = calculateDiscountedPrice(item.price, totalQuantity, item.key);
-                
+                if (item.quantity === 1) {
+    // لو الكمية واحدة ننقص قيمة الخصم
+    itemDiscountInfo.finalPrice = itemDiscountInfo.finalPrice - itemDiscountInfo.discountAmount;
+} else {
+    // لو الكمية لا تساوي 1 (يعني أكبر من 1)
+    itemDiscountInfo.finalPrice = ((itemDiscountInfo.finalPrice + itemDiscountInfo.discountAmount)*totalQuantity)-(itemDiscountInfo.discountAmount*totalQuantity);
+}
                 const hasDiscount = itemDiscountInfo.hasDiscount || itemDiscountInfo.hasPromoDiscount;
                 
                 productElement.innerHTML = `
