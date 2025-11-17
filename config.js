@@ -5,7 +5,12 @@ const STORE_CONFIG = {
       "price": 5800,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763217318680-modal1.jpeg",
       "description": " Nike Baggy Jogger  نوعية رفيعة بلونين مختلفين",
-      "availableSizes": [],
+      "availableSizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "availableColors": [
         "أسود",
         "رمادي"
@@ -36,11 +41,6 @@ const STORE_CONFIG = {
               "ageFrom": "A",
               "ageTo": "A",
               "size": "XL"
-            },
-            {
-              "ageFrom": "12",
-              "ageTo": "14",
-              "size": "S1"
             }
           ]
         },
@@ -312,10 +312,10 @@ const STORE_CONFIG = {
     "minQuantityForDiscount": 1,
     "discountPerItem": 800,
     "discountScope": "selected",
-    "discountProducts": [],
-    "promoDiscountProducts": [
+    "discountProducts": [
       4
     ],
+    "promoDiscountProducts": [],
     "enableQuantityDiscount": true,
     "enablePromotionalDiscount": false,
     "promotionalDiscountPercent": 20,
@@ -342,7 +342,8 @@ const STORE_CONFIG = {
     "logo": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/store-logo-1763217953279-Screenshot_20250903-115403_Facebook.jpg",
     "storeEmail": "benaakrabahcene@gmail.com",
     "storeDescription": "متجر Kids-Fav يقدم أحدث وأفخم موديلات ملابس الأطفال بتصاميم عصرية وأنيقة تناسب جميع المناسبات",
-    "whatsappUrl": "https://wa.me/213671466489"
+    "whatsappUrl": "https://wa.me/213671466489",
+    "whatsappNumber": "213671466489"
   },
   "GOOGLE_SHEETS": {
     "enabled": true,
