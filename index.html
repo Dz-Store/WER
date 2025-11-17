@@ -1733,7 +1733,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
     margin-top: 0.3rem;
 }
@@ -1748,20 +1748,20 @@
     background: var(--primary);
     color: white;
     border: none;
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     font-weight: 700;
     flex-shrink: 0;
 }
 
 .selected-product-quantity span {
     font-weight: 700;
-    min-width: 22px;
+    min-width: 20px;
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     flex-shrink: 0;
 }
 
@@ -1769,11 +1769,11 @@
     background: #e74c3c;
     color: white;
     border: none;
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2598,12 +2598,12 @@
     if (!currentProductKey) return;
     
     if (!selectedAge) {
-        showNotification('⚠️ الرجاء اختيار المقاس أولاً قبل إضافة المنتج إلى السلة', 'warning');
+        showNotification('⚠️ الرجاء اختيار اللون والمقاس أولاً قبل إضافة المنتج إلى السلة', 'warning');
         return;
     }
     
     if (!selectedColor) {
-        showNotification('⚠️ الرجاء اختيار اللون أولاً قبل إضافة المنتج إلى السلة', 'warning');
+        showNotification('⚠️ الرجاء اختيار اللون والمقاس أولاً قبل إضافة المنتج إلى السلة', 'warning');
         return;
     }
     
@@ -3286,13 +3286,13 @@
             const productColors = product.availableColors || [];
             
             if (productSizes.length > 1) {
-                showNotification('الرجاء اختيار المقاس أولاً', 'warning');
+                showNotification('الرجاء اختيار اللون والمقاس أولاً', 'warning');
                 showProductDetails(productKey);
                 return;
             }
             
             if (productColors.length > 1) {
-                showNotification('الرجاء اختيار اللون أولاً', 'warning');
+                showNotification('الرجاء اختيار اللون والمقاس أولاً', 'warning');
                 showProductDetails(productKey);
                 return;
             }
