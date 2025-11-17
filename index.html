@@ -2482,43 +2482,42 @@
         }
 
         function addToCartFromModal() {
-    if (!currentProductKey) return;
-    
-    if (!selectedAge) {
-        showNotification('⚠️ الرجاء اختيار اللون والمقاس أولا قبل إضافة المنتج إلى السلة', 'warning');
-        return;
-    }
-    
-    if (!selectedColor) {
-        showNotification('⚠️ الرجاء اختيار اللون والمقاس أولا قبل إضافة المنتج إلى السلة', 'warning');
-        return;
-    }
-    
-    const quantity = parseInt(document.getElementById('quantityDisplay').textContent);
-    
-    // الحصول على المقاس المناسب بناء على العمر المختار
-    const product = STORE_CONFIG.PRODUCTS[currentProductKey];
-    const colorData = product.colorImages && product.colorImages[selectedColor];
-    
-    let finalSize = selectedAge; // استخدام selectedAge كقيمة افتراضية
-    
-    // البحث في نطاقات الأعمار للحصول على المقاس المناسب
-    if (colorData && colorData.ageRanges && colorData.ageRanges.length > 0) {
-        const selectedRange = colorData.ageRanges.find(range => 
-            `${range.ageFrom}-${range.ageTo}` === selectedAge
-        );
-        if (selectedRange) {
-            finalSize = selectedRange.size; // هذا هو المقاس الفعلي
+            if (!currentProductKey) return;
+            
+            if (!selectedAge) {
+                showNotification('⚠️ الرجاء اختيار المقاس أولاً قبل إضافة المنتج إلى السلة', 'warning');
+                return;
+            }
+            
+            if (!selectedColor) {
+                showNotification('⚠️ الرجاء اختيار اللون أولاً قبل إضافة المنتج إلى السلة', 'warning');
+                return;
+            }
+            
+            const quantity = parseInt(document.getElementById('quantityDisplay').textContent);
+            
+            // الحصول على المقاس المناسب بناءً على العمر المختار
+            const product = STORE_CONFIG.PRODUCTS[currentProductKey];
+            const colorData = product.colorImages && product.colorImages[selectedColor];
+            
+            let size = selectedAge;
+            
+            // البحث في نطاقات الأعمار للحصول على المقاس المناسب
+            if (colorData && colorData.ageRanges && colorData.ageRanges.length > 0) {
+                const selectedRange = colorData.ageRanges.find(range => 
+                    `${range.ageFrom}-${range.ageTo}` === selectedAge
+                );
+                if (selectedRange) {
+                    size = selectedRange.size;
+                }
+            }
+            
+            addToCart(currentProductKey, quantity, selectedAge, selectedColor, size);
+            closeProductModal();
+            
+            // الانتقال مباشرة إلى صفحة تفاصيل الطلب
+            goToOrderDetails();
         }
-    }
-    
-    // تمرير finalSize بدلاً من selectedAge
-    addToCart(currentProductKey, quantity, finalSize, selectedColor, finalSize);
-    closeProductModal();
-    
-    // الانتقال مباشرة إلى صفحة تفاصيل الطلب
-    goToOrderDetails();
-}
 
         function addToCart(productKey, quantity, age, color, size = null) {
             const product = STORE_CONFIG.PRODUCTS[productKey];
@@ -2538,18 +2537,12 @@
             if (existingItemIndex > -1) {
                 cartItems[existingItemIndex].quantity += quantity;
             } else {
-                // الحصول على صورة اللون المختار
-                let itemImage = product.image;
-                if (product.colorImages && product.colorImages[color] && product.colorImages[color].images.length > 0) {
-                    itemImage = product.colorImages[color].images[0];
-                }
-                
                 cartItems.push({
                     key: productKey,
                     name: product.name,
                     price: parseInt(product.price),
                     quantity: quantity,
-                    image: itemImage, // استخدام صورة اللون المختار
+                    image: product.image,
                     age: age,
                     color: itemColor,
                     size: finalSize
