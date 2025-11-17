@@ -2481,43 +2481,30 @@
             switchPage('page2');
         }
 
-        function addToCartFromModal() {
-            if (!currentProductKey) return;
-            
-            if (!selectedAge) {
-                showNotification('⚠️ الرجاء اختيار اللون والمقاس أولا قبل إضافة المنتج إلى السلة', 'warning');
-                return;
-            }
-            
-            if (!selectedColor) {
-                showNotification('⚠️ الرجاء اختيار اللون والمقاس أولا قبل إضافة المنتج إلى السلة', 'warning');
-                return;
-            }
-            
-            const quantity = parseInt(document.getElementById('quantityDisplay').textContent);
-            
-            // الحصول على المقاس المناسب بناء على العمر المختار
-            const product = STORE_CONFIG.PRODUCTS[currentProductKey];
-            const colorData = product.colorImages && product.colorImages[selectedColor];
-            
-            let size = selectedAge;
-            
-            // البحث في نطاقات الأعمار للحصول على المقاس المناسب
-            if (colorData && colorData.ageRanges && colorData.ageRanges.length > 0) {
-                const selectedRange = colorData.ageRanges.find(range => 
-                    `${range.ageFrom}-${range.ageTo}` === selectedAge
-                );
-                if (selectedRange) {
-                    size = selectedRange.size;
-                }
-            }
-            
-            addToCart(currentProductKey, quantity, selectedAge, selectedColor, size);
-            closeProductModal();
-            
-            // الانتقال مباشرة إلى صفحة تفاصيل الطلب
-            goToOrderDetails();
-        }
+       function addToCartFromModal() {
+    if (!currentProductKey) return;
+    
+    if (!selectedAge) {
+        showNotification('⚠️ الرجاء اختيار المقاس أولاً قبل إضافة المنتج إلى السلة', 'warning');
+        return;
+    }
+    
+    if (!selectedColor) {
+        showNotification('⚠️ الرجاء اختيار اللون أولاً قبل إضافة المنتج إلى السلة', 'warning');
+        return;
+    }
+    
+    const quantity = parseInt(document.getElementById('quantityDisplay').textContent);
+    
+    // استخدام المقاس المختار مباشرة (selectedAge هو الآن المقاس نفسه)
+    const size = selectedAge;
+    
+    addToCart(currentProductKey, quantity, selectedAge, selectedColor, size);
+    closeProductModal();
+    
+    // الانتقال مباشرة إلى صفحة تفاصيل الطلب
+    goToOrderDetails();
+}
 
         function addToCart(productKey, quantity, age, color, size = null) {
             const product = STORE_CONFIG.PRODUCTS[productKey];
@@ -3050,28 +3037,21 @@
     }
     
     if (ageRanges.length > 0) {
-        ageRanges.forEach((range, index) => {
+        // استخراج المقاسات الفريدة من ageRanges
+        const uniqueSizes = [...new Set(ageRanges.map(range => range.size))];
+        
+        uniqueSizes.forEach(size => {
             const ageOption = document.createElement('div');
             ageOption.className = 'size-option';
-            
-            // عرض نطاق الأعمار والمقاس مع دعم فئة A للبالغين
-            let ageText = '';
-            if (range.ageFrom === 'A' && range.ageTo === 'A') {
-                ageText = `الكبار - المقاس: ${range.size}`;
-            } else {
-                ageText = `${range.ageFrom}-${range.ageTo} سنوات - المقاس: ${range.size}`;
-            }
-            
-            ageOption.textContent = ageText;
-            ageOption.dataset.age = `${range.ageFrom}-${range.ageTo}`;
-            ageOption.dataset.size = range.size;
+            ageOption.textContent = `المقاس: ${size}`;
+            ageOption.dataset.size = size;
             
             ageOption.addEventListener('click', () => {
                 document.querySelectorAll('#ageOptions .size-option').forEach(option => {
                     option.classList.remove('selected');
                 });
                 ageOption.classList.add('selected');
-                selectedAge = `${range.ageFrom}-${range.ageTo}`;
+                selectedAge = size; // تخزين المقاس مباشرة
                 
                 // التحقق من إمكانية تفعيل زر أضف الآن
                 checkAddButtonState();
@@ -3112,6 +3092,8 @@
         }
     }
 }
+
+    
         function checkAddButtonState() {
             const addButton = document.getElementById('addToCartFromModal');
             
