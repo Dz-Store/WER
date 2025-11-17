@@ -3442,7 +3442,7 @@
     itemDiscountInfo.finalPrice = itemDiscountInfo.finalPrice - itemDiscountInfo.discountAmount;
 } else {
     // لو الكمية لا تساوي 1 (يعني أكبر من 1)
-    itemDiscountInfo.finalPrice = ((itemDiscountInfo.finalPrice + itemDiscountInfo.discountAmount)*totalQuantity)-(itemDiscountInfo.discountAmount*totalQuantity);
+    itemDiscountInfo.finalPrice = ((itemDiscountInfo.finalPrice + itemDiscountInfo.discountAmount + itemDiscountInfo.discountAmount)*totalQuantity)-(itemDiscountInfo.discountAmount*totalQuantity);
 }
                 const hasDiscount = itemDiscountInfo.hasDiscount || itemDiscountInfo.hasPromoDiscount;
                 
