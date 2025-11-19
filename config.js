@@ -2,15 +2,10 @@ const STORE_CONFIG = {
   "PRODUCTS": {
     "4": {
       "name": "Nike Baggy Jogger",
-      "price": 5000,
+      "price": 5800,
       "image": "https://raw.githubusercontent.com/Dz-Store/WER/main/images/product-4-1763217318680-modal1.jpeg",
       "description": " Nike Baggy Jogger  نوعية رفيعة بلونين مختلفين",
-      "availableSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "availableSizes": [],
       "availableColors": [
         "أسود",
         "رمادي"
@@ -41,6 +36,11 @@ const STORE_CONFIG = {
               "ageFrom": "A",
               "ageTo": "A",
               "size": "XL"
+            },
+            {
+              "ageFrom": "12",
+              "ageTo": "14",
+              "size": "S1"
             }
           ]
         },
@@ -316,8 +316,8 @@ const STORE_CONFIG = {
     "promoDiscountProducts": [
       4
     ],
-    "enableQuantityDiscount": false,
-    "enablePromotionalDiscount": true,
+    "enableQuantityDiscount": true,
+    "enablePromotionalDiscount": false,
     "promotionalDiscountPercent": 20,
     "promotionalDiscountedPrice": null,
     "promoDiscountScope": "selected",
