@@ -2587,6 +2587,7 @@
                             
                             showNotification('تم حذف صورة اللون من GitHub والإعدادات', 'success');
                             loadProductsManagement();
+                            reloadProductManagementWithActiveTab(productId, color);
                             
                         } else {
                             const errorData = await deleteResponse.json();
